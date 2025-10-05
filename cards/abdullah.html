@@ -3,70 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بطاقات NFC</title>
+<title>عبدالله الشريف</title>
 <style>
   body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background: linear-gradient(to bottom, #f0f2f5, #ffffff);
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
-  h1 {
+  .profile-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 350px;
+    width: 100%;
+    padding: 30px;
     text-align: center;
-    margin-bottom: 30px;
   }
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: auto;
+  .profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
   }
-  .card {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+  .profile-card h1 {
+    margin: 10px 0 5px;
+    font-size: 24px;
+    color: #333;
   }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  }
-  .card h2 {
-    margin: 10px 0;
-    font-size: 20px;
-  }
-  .card p {
-    margin: 6px 0;
+  .profile-card p {
+    margin: 5px 0 15px;
     color: #555;
   }
-  .card a {
+  .social-links a {
     display: inline-block;
-    margin-top: 8px;
-    padding: 8px 12px;
-    background-color: #0b74de;
-    color: white;
+    margin: 5px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
   }
+  .social-links a.facebook { background: #3b5998; }
+  .social-links a.instagram { background: #e4405f; }
+  .social-links a.whatsapp { background: #25D366; }
+  .social-links a:hover { opacity: 0.85; transform: scale(1.05); }
 </style>
 </head>
 <body>
-  <h1>بطاقات الموظفين</h1>
-  <div class="cards-container">
-    <div class="card">
-      <h2>عبدالله الشريف</h2>
-      <p>المسمى: مصمم ويب</p>
-      <a href="cards/abdullah.html">عرض الصفحة</a>
-    </div>
-    <div class="card">
-      <h2>أحمد علي</h2>
-      <p>المسمى: مطور ويب</p>
-      <a href="cards/ahmad.html">عرض الصفحة</a>
-    </div>
-    <!-- ممكن تضيف كروت جديدة هنا بنفس الشكل -->
+
+<div class="profile-card">
+  <img src="https://via.placeholder.com/120" alt="عبدالله الشريف">
+  <h1>عبدالله الشريف</h1>
+  <p>مصمم ويب</p>
+  <div class="social-links">
+    <a href="https://facebook.com/username" class="facebook" target="_blank">فيسبوك</a>
+    <a href="https://instagram.com/username" class="instagram" target="_blank">انستا</a>
+    <a href="https://wa.me/0777XXXXXX" class="whatsapp" target="_blank">واتساب</a>
   </div>
+</div>
+
 </body>
 </html>
