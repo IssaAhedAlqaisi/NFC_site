@@ -1,24 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>عبدالله الشريف</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 20px; }
-    .card { background: #fff; border-radius: 10px; padding: 20px; max-width: 400px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h1 { margin: 0 0 10px; font-size: 24px; }
-    p { margin: 6px 0; color: #333; }
-    a { display: inline-block; margin: 8px 6px 0 0; padding: 8px 12px; text-decoration: none; background: #0b74de; color: #fff; border-radius: 6px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بطاقات NFC</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  .card h2 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .card p {
+    margin: 6px 0;
+    color: #555;
+  }
+  .card a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #0b74de;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>عبدالله الشريف</h1>
-    <p>المسمى: (ضع هنا المسمى الوظيفي)</p>
-    <p>الهاتف: 0777-XXXXXX</p>
-    <a href="tel:0777XXXXXX">اتصل الآن</a>
-    <a href="https://instagram.com/username" target="_blank">انستا</a>
+  <h1>بطاقات الموظفين</h1>
+  <div class="cards-container">
+    <div class="card">
+      <h2>عبدالله الشريف</h2>
+      <p>المسمى: مصمم ويب</p>
+      <a href="cards/abdullah.html">عرض الصفحة</a>
+    </div>
+    <div class="card">
+      <h2>أحمد علي</h2>
+      <p>المسمى: مطور ويب</p>
+      <a href="cards/ahmad.html">عرض الصفحة</a>
+    </div>
+    <!-- ممكن تضيف كروت جديدة هنا بنفس الشكل -->
   </div>
 </body>
 </html>
