@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>عبدالله الشريف</title>
 <style>
-/* ===== خلفية الصفحة ===== */
 body {
-    margin: 0; 
-    padding: 0;
+    margin: 0; padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     min-height: 100vh;
@@ -17,7 +15,7 @@ body {
     align-items: center;
 }
 
-/* ===== بطاقة الملف الشخصي ===== */
+/* بطاقة الملف الشخصي */
 .profile-card {
     background: #fff;
     border-radius: 25px;
@@ -25,11 +23,10 @@ body {
     padding: 35px 30px;
     text-align: center;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    position: relative;
     overflow: hidden;
 }
 
-/* ===== إطار الصورة ===== */
+/* صورة عبدالله */
 .profile-card img {
     width: 140px;
     height: 140px;
@@ -39,52 +36,44 @@ body {
     margin-bottom: 20px;
     transition: transform 0.3s;
 }
-.profile-card img:hover {
-    transform: scale(1.05);
-}
+.profile-card img:hover { transform: scale(1.05); }
 
-/* ===== الاسم والمسمى ===== */
-.profile-card h1 {
-    margin: 0 0 5px;
-    font-size: 28px;
-    color: #333;
-}
-.profile-card p {
-    margin: 0 0 25px;
-    color: #666;
-    font-size: 16px;
-}
+/* الاسم والمسمى */
+.profile-card h1 { margin: 0 0 5px; font-size: 28px; color: #333; }
+.profile-card p { margin: 0 0 25px; color: #666; font-size: 16px; }
 
-/* ===== أيقونات الشبكات ===== */
+/* أيقونات الشبكات */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 .social-links a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48%;
-    padding: 12px 0;
-    border-radius: 12px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
     color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
+.social-links a svg { width: 24px; height: 24px; }
+
+/* ألوان كل شبكة */
 .social-links a.facebook { background: #3b5998; }
 .social-links a.instagram { background: #e4405f; }
 .social-links a.whatsapp { background: #25D366; }
 .social-links a.linkedin { background: #0a66c2; }
+
+/* تأثير Hover */
 .social-links a:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform: scale(1.15);
     opacity: 0.9;
 }
 
-/* ===== زر حفظ جهة الاتصال ===== */
+/* زر حفظ جهة الاتصال */
 .save-contact {
     display: inline-block;
     margin-top: 25px;
@@ -98,33 +87,22 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
-.save-contact:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
+.save-contact:hover { transform: scale(1.05); opacity: 0.9; }
 </style>
 </head>
 <body>
 
 <div class="profile-card">
-  <!-- صورة عبدالله -->
   <img src="https://i.imgur.com/IMxPZIz.png" alt="عبدالله الشريف">
-  
-  <!-- الاسم والمسمى -->
   <h1>عبدالله الشريف</h1>
   <p>مصمم ويب</p>
-  
-  <!-- أيقونات الشبكات -->
-  <div class="social-links">
-    <a href="https://facebook.com/username" class="facebook" target="_blank">فيسبوك</a>
-    <a href="https://instagram.com/username" class="instagram" target="_blank">انستا</a>
-    <a href="https://wa.me/0777XXXXXX" class="whatsapp" target="_blank">واتساب</a>
-    <a href="https://linkedin.com/in/username" class="linkedin" target="_blank">لينكدإن</a>
-  </div>
-  
-  <!-- زر حفظ جهة الاتصال -->
-  <a href="cards/abdullah.vcf" download class="save-contact">حفظ جهة الاتصال</a>
-</div>
 
-</body>
-</html>
+  <div class="social-links">
+    <a href="https://facebook.com/username" class="facebook" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.716-1.795 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+    </a>
+    <a href="https://instagram.com/username" class="instagram" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.342 3.608 1.317.975.975 1.255 2.242 1.317 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.849c-.062 1.366-.342 2.633-1.317 3.608-.975.975-2.242 1.255-3.608 1.317-1.265.058-1.645.069-4.849.069s-3.584-.012-4.849-.07c-1.366-.062-2.633-.342-3.608-1.317-.975-.975-1.255-2.242-1.317-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.342-2.633 1.317-3.608.975-.975 2.242-1.255 3.608-1.317C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.77.13 4.602.428 3.675 1.355c-.927.927-1.225 2.095-1.283 3.377C2.014 5.668 2 6.077 2 9.336v5.328c0 3.259.014 3.668.072 4.948.058 1.282.356 2.45 1.283 3.377.927.927 2.095 1.225 3.377 1.283 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c1.282-.058 2.45-.356 3.377-1.283.927-.927 1.225-2.095 1.283-3.377.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.058-1.282-.356-2.45-1.283-3.377-.927-.927-2.095-1.225-3.377-1.283C15.668.014 15.259 0 12 0z"/><circle cx="12" cy="12" r="3.2"/></svg>
+    </a>
+    <a href="https://wa.me/0777XXXXXX" class="whatsapp" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163a11.933 11.933 0 01-1.64-6.024C.104 5.34 5.42 0 12 0c3.21 0 6.21 1.256 8.485 3.515C22.744 5.79 24 8.79 24 12c0 6.58-5.42 11.896-11.985 11.987a11.946 11.946 0 01-6.024-1.64L.057 24zm6.597-3.807c1.749.995 3.882 1.578 6.035 1.577 5.421 0 9.825-4.404 9.825-9.824 0-5.421-4.404-9.825-9.825-9.825-5.42 0-9.824 4.404-9.824 9.825 0 2.105.651 4.167 1.888 5.844l-.999 3.648 3.544-.929zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.148-1.758-.867-2.031-.967-.272-.099-.47-.148-.669.149-.198.297-.768.967-.941 1.164-.173.198-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.074-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.148.198 2.096 3.2 5.076 4.487.709.306 1.26.489 1.69.626.71.227 1
