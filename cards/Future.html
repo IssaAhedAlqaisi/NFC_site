@@ -27,28 +27,20 @@
         .header {
             width: 100%;
             background: white;
-            padding: 30px 20px;
+            padding: 0;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
+        .logo-link {
+            display: block;
+            width: 100%;
+        }
+        
         .logo {
-            max-width: 250px;
+            width: 100%;
             height: auto;
-            margin-bottom: 15px;
-        }
-        
-        .company-name {
-            font-size: 28px;
-            font-weight: 800;
-            color: #1e3c72;
-            margin-bottom: 8px;
-        }
-        
-        .company-tagline {
-            font-size: 18px;
-            color: #2a5298;
-            font-weight: 500;
+            display: block;
         }
         
         .container {
@@ -137,13 +129,16 @@
             color: #6c757d;
         }
         
-        .contact-number {
+        .contact-type {
             direction: ltr;
             font-family: 'Courier New', monospace;
             font-size: 16px;
             font-weight: 600;
             color: #2a5298;
             text-align: left;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 8px;
         }
         
         .social-section {
@@ -273,15 +268,7 @@
         
         @media (max-width: 768px) {
             .header {
-                padding: 20px 15px;
-            }
-            
-            .logo {
-                max-width: 200px;
-            }
-            
-            .company-name {
-                font-size: 24px;
+                padding: 0;
             }
             
             .section {
@@ -322,7 +309,7 @@
                 margin-bottom: 10px;
             }
             
-            .contact-number {
+            .contact-type {
                 text-align: center;
                 margin-top: 5px;
             }
@@ -331,9 +318,9 @@
 </head>
 <body>
     <div class="header">
-        <img src="https://i.imgur.com/C4YoUxn.jpeg" alt="Future's Journey" class="logo">
-        <h1 class="company-name">Future's Journey</h1>
-        <p class="company-tagline">مؤسسة رحلة المستقبل للبرمجة</p>
+        <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="logo-link" target="_blank">
+            <img src="https://i.imgur.com/C4YoUxn.jpeg" alt="Future's Journey" class="logo">
+        </a>
     </div>
     
     <div class="container">
@@ -351,7 +338,7 @@
                         <div class="contact-name">عبدالملك الشريف</div>
                         <div class="contact-role">مسؤول</div>
                     </div>
-                    <div class="contact-number">+962798457949</div>
+                    <div class="contact-type">واتساب</div>
                 </a>
                 
                 <a href="https://wa.me/962799261490" class="contact-button" target="_blank">
@@ -362,7 +349,7 @@
                         <div class="contact-name">عبدالله القيسي</div>
                         <div class="contact-role">مسؤول</div>
                     </div>
-                    <div class="contact-number">+962799261490</div>
+                    <div class="contact-type">واتساب</div>
                 </a>
                 
                 <a href="https://wa.me/962795830276" class="contact-button" target="_blank">
@@ -373,7 +360,7 @@
                         <div class="contact-name">عماد الدرباشي</div>
                         <div class="contact-role">مبيعات</div>
                     </div>
-                    <div class="contact-number">+962795830276</div>
+                    <div class="contact-type">واتساب</div>
                 </a>
             </div>
         </div>
@@ -392,7 +379,7 @@
                         <div class="contact-name">عبدالملك الشريف</div>
                         <div class="contact-role">مسؤول</div>
                     </div>
-                    <div class="contact-number">+962798457949</div>
+                    <div class="contact-type">اتصال</div>
                 </a>
                 
                 <a href="tel:+962799261490" class="contact-button">
@@ -403,7 +390,7 @@
                         <div class="contact-name">عبدالله القيسي</div>
                         <div class="contact-role">مسؤول</div>
                     </div>
-                    <div class="contact-number">+962799261490</div>
+                    <div class="contact-type">اتصال</div>
                 </a>
                 
                 <a href="tel:+962795830276" class="contact-button">
@@ -414,7 +401,7 @@
                         <div class="contact-name">عماد الدرباشي</div>
                         <div class="contact-role">مبيعات</div>
                     </div>
-                    <div class="contact-number">+962795830276</div>
+                    <div class="contact-type">اتصال</div>
                 </a>
             </div>
         </div>
@@ -461,5 +448,45 @@
         <p>Future's Journey Programming Institution</p>
         <p>مؤسسة رحلة المستقبل للبرمجة</p>
     </div>
+
+    <script>
+        // إضافة تأثيرات تفاعلية إضافية
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأثير النقر على الأزرار
+            const buttons = document.querySelectorAll('.contact-button, .social-button, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // تأثير النقر
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // تأثير التمرير على البطاقات
+            const sections = document.querySelectorAll('.section, .social-section');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
