@@ -1,163 +1,291 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بطاقة رحلة المستقبل للبرمجة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: #f6f7f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      width: 340px;
-      text-align: center;
-      padding: 25px 20px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #e5e5e5;
-      margin-bottom: 10px;
-    }
-
-    .company-name {
-      font-weight: 700;
-      font-size: 22px;
-      color: #333;
-    }
-
-    .company-tag {
-      color: #777;
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .social-icons a {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 20px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp { background-color: #25d366; }
-    .facebook { background-color: #1877f2; }
-    .instagram {
-      background: radial-gradient(circle at 30% 30%, #ffdc80, #e1306c, #c13584, #833ab4);
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.1);
-      opacity: 0.9;
-    }
-
-    .contacts {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-box {
-      background-color: #f3f4f6;
-      border-radius: 12px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-    }
-
-    .contact-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .contact-number {
-      display: block;
-      color: #007bff;
-      font-weight: 700;
-      text-decoration: none;
-      margin-top: 5px;
-      direction: ltr;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background-color: #007bff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عصام الحسنات - بطاقة الاتصال</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .business-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(33, 150, 243, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+            padding: 40px 30px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .card-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #64b5f6, #bbdefb, #64b5f6);
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            opacity: 0.95;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .contact-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2196f3;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+        
+        .section-title i {
+            font-size: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: #f8fdff;
+            border-radius: 12px;
+            border: 1px solid #e1f5fe;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: #e3f2fd;
+            transform: translateX(-5px);
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-size: 14px;
+            color: #78909c;
+            margin-bottom: 3px;
+        }
+        
+        .contact-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #37474f;
+            direction: ltr;
+            text-align: right;
+        }
+        
+        .address {
+            font-size: 15px;
+            color: #546e7a;
+            line-height: 1.5;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+        }
+        
+        .action-button:hover {
+            background: linear-gradient(135deg, #2196f3 0%, #1e88e5 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(33, 150, 243, 0.4);
+        }
+        
+        .action-button i {
+            font-size: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .business-card {
+                max-width: 100%;
+            }
+            
+            .card-header {
+                padding: 30px 20px 25px;
+            }
+            
+            .card-body {
+                padding: 25px 20px;
+            }
+            
+            .avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 35px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .company {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://i.imgur.com/C4YoUxn.jpeg" class="logo" alt="Logo">
-    <div class="company-name">Future’s Journey</div>
-    <div class="company-tag">مؤسسة رحلة المستقبل للبرمجة</div>
-
-    <div class="social-icons">
-      <a href="https://wa.me/962798457949" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/futures_journey?igsh=MXUwNG9lNWE5ZWIwcg%3D%3D&utm_source=qr" class="instagram"><i class="fab fa-instagram"></i></a>
+    <div class="business-card">
+        <div class="card-header">
+            <div class="avatar">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h1 class="name">عصام الحسنات</h1>
+            <div class="company">مؤسسة عصام الحسنات للستلابي</div>
+            <div class="subtitle">عصام ابوسبف الحسنات (مؤسسة عصام الحسنات)</div>
+        </div>
+        
+        <div class="card-body">
+            <div class="contact-section">
+                <h3 class="section-title">
+                    <i class="fas fa-mobile-alt"></i>
+                    أرقام الاتصال
+                </h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">هاتف رئيسي</div>
+                            <div class="contact-value">0795409894 / 0770162615</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">هاتف بديل</div>
+                            <div class="contact-value">0795409894 / 0770162615</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">العنوان</div>
+                            <div class="contact-value address">الجبهة- طلوع البلدية</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="action-button">
+                <i class="fas fa-download"></i>
+                حفظ جهة الاتصال
+            </a>
+        </div>
     </div>
-
-    <div class="contacts">
-      <div class="contact-box">
-        <div class="contact-name">عبدالملك الشريف</div>
-        <a href="https://wa.me/962798457949" class="contact-number">+962798457949</a>
-      </div>
-      <div class="contact-box">
-        <div class="contact-name">عبدالله القيسي</div>
-        <a href="https://wa.me/962799261490" class="contact-number">+962799261490</a>
-      </div>
-      <div class="contact-box">
-        <div class="contact-name">عماد الدرباشي</div>
-        <a href="https://wa.me/962795830276" class="contact-number">+962795830276</a>
-      </div>
-    </div>
-
-    <a href="VCF/Future.vcf" class="btn" download><i class="fas fa-download"></i> حفظ جهة الاتصال</a>
-  </div>
 </body>
 </html>
