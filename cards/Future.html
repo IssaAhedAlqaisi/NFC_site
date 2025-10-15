@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عصام الحسنات - بطاقة الاتصال</title>
+    <title>Future's Journey - بطاقة الشركة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
@@ -55,29 +55,24 @@
             background: linear-gradient(90deg, #64b5f6, #bbdefb, #64b5f6);
         }
         
-        .avatar {
+        .logo {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 5px solid rgba(255, 255, 255, 0.9);
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: white;
+            object-fit: cover;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
         
-        .name {
+        .company-name {
             font-size: 28px;
             font-weight: 800;
             margin-bottom: 8px;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
-        .company {
+        .company-type {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 5px;
@@ -147,6 +142,7 @@
             color: white;
             font-size: 18px;
             flex-shrink: 0;
+            text-decoration: none;
         }
         
         .contact-text {
@@ -167,10 +163,22 @@
             text-align: right;
         }
         
-        .address {
-            font-size: 15px;
-            color: #546e7a;
-            line-height: 1.5;
+        .person-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2196f3;
+            margin-bottom: 2px;
+        }
+        
+        .person-role {
+            font-size: 14px;
+            color: #78909c;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
         
         .action-button {
@@ -198,8 +206,45 @@
             box-shadow: 0 12px 25px rgba(33, 150, 243, 0.4);
         }
         
+        .action-button.save {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+        }
+        
+        .action-button.save:hover {
+            background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+            box-shadow: 0 12px 25px rgba(76, 175, 80, 0.4);
+        }
+        
         .action-button i {
             font-size: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2196f3;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #2196f3;
+            color: white;
+            transform: translateY(-3px);
         }
         
         @media (max-width: 480px) {
@@ -215,17 +260,16 @@
                 padding: 25px 20px;
             }
             
-            .avatar {
+            .logo {
                 width: 100px;
                 height: 100px;
-                font-size: 35px;
             }
             
-            .name {
+            .company-name {
                 font-size: 24px;
             }
             
-            .company {
+            .company-type {
                 font-size: 16px;
             }
         }
@@ -234,57 +278,117 @@
 <body>
     <div class="business-card">
         <div class="card-header">
-            <div class="avatar">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <h1 class="name">عصام الحسنات</h1>
-            <div class="company">مؤسسة عصام الحسنات للستلابي</div>
-            <div class="subtitle">عصام ابوسبف الحسنات (مؤسسة عصام الحسنات)</div>
+            <img src="https://i.imgur.com/C4YoUxn.jpeg" alt="Future's Journey" class="logo">
+            <h1 class="company-name">Future's Journey</h1>
+            <div class="company-type">مؤسسة رحلة المستقبل للبرمجة</div>
+            <div class="subtitle">Future’s Journey Programming Institution</div>
         </div>
         
         <div class="card-body">
             <div class="contact-section">
                 <h3 class="section-title">
-                    <i class="fas fa-mobile-alt"></i>
-                    أرقام الاتصال
+                    <i class="fab fa-whatsapp"></i>
+                    واتساب للتواصل
                 </h3>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
+                        <a href="https://wa.me/962798457949" class="contact-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <div class="contact-text">
+                            <div class="person-name">عبدالملك الشريف</div>
+                            <div class="person-role">مسؤول</div>
+                        </div>
+                        <div class="contact-value">+962798457949</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <a href="https://wa.me/962799261490" class="contact-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <div class="contact-text">
+                            <div class="person-name">عبدالله القيسي</div>
+                            <div class="person-role">مسؤول</div>
+                        </div>
+                        <div class="contact-value">+962799261490</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <a href="https://wa.me/962795830276" class="contact-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <div class="contact-text">
+                            <div class="person-name">عماد الدرباشي</div>
+                            <div class="person-role">مبيعات</div>
+                        </div>
+                        <div class="contact-value">+962795830276</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h3 class="section-title">
+                    <i class="fas fa-phone-alt"></i>
+                    اتصال مباشر
+                </h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="tel:+962798457949" class="contact-icon">
                             <i class="fas fa-phone"></i>
-                        </div>
+                        </a>
                         <div class="contact-text">
-                            <div class="contact-label">هاتف رئيسي</div>
-                            <div class="contact-value">0795409894 / 0770162615</div>
+                            <div class="person-name">عبدالملك الشريف</div>
+                            <div class="person-role">مسؤول</div>
                         </div>
+                        <div class="contact-value">+962798457949</div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <a href="tel:+962799261490" class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </a>
                         <div class="contact-text">
-                            <div class="contact-label">هاتف بديل</div>
-                            <div class="contact-value">0795409894 / 0770162615</div>
+                            <div class="person-name">عبدالله القيسي</div>
+                            <div class="person-role">مسؤول</div>
                         </div>
+                        <div class="contact-value">+962799261490</div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <a href="tel:+962795830276" class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </a>
                         <div class="contact-text">
-                            <div class="contact-label">العنوان</div>
-                            <div class="contact-value address">الجبهة- طلوع البلدية</div>
+                            <div class="person-name">عماد الدرباشي</div>
+                            <div class="person-role">مبيعات</div>
                         </div>
+                        <div class="contact-value">+962795830276</div>
                     </div>
                 </div>
             </div>
             
-            <a href="#" class="action-button">
-                <i class="fas fa-download"></i>
-                حفظ جهة الاتصال
-            </a>
+            <div class="action-buttons">
+                <a href="VCF/Future.vcf" class="action-button save" download>
+                    <i class="fas fa-download"></i>
+                    حفظ جهة الاتصال
+                </a>
+                <a href="tel:+962798457949" class="action-button">
+                    <i class="fas fa-phone"></i>
+                    اتصال فوري
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/futures_journey?igsh=MXUwNG9lNWE5ZWIwcg%3D%3D&utm_source=qr" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/962798457949" class="social-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
         </div>
     </div>
 </body>
