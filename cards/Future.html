@@ -1,269 +1,163 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بطاقة رحلة المستقبل للبرمجة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --black: #0f0f0f;
-      --gold: #d4af37;
-      --gray: #f5f5f5;
-      --dark-gray: #1c1c1c;
-      --text: #eaeaea;
-    }
-
-    * {
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f6f7f9;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Tajawal', sans-serif;
-    }
-
-    body {
-      background: radial-gradient(circle at center, #1c1c1c 0%, #000 100%);
-      color: var(--text);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      padding: 20px;
     }
 
     .card {
-      width: 100%;
-      max-width: 800px;
-      background: var(--dark-gray);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    .header {
-      background: linear-gradient(135deg, var(--black), #292929);
-      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      width: 340px;
       text-align: center;
-      border-bottom: 2px solid var(--gold);
+      padding: 25px 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .logo {
-      width: 120px;
-      height: 120px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      border: 3px solid var(--gold);
       object-fit: cover;
-      margin-bottom: 15px;
+      border: 2px solid #e5e5e5;
+      margin-bottom: 10px;
     }
 
     .company-name {
-      font-size: 30px;
-      color: var(--gold);
       font-weight: 700;
+      font-size: 22px;
+      color: #333;
     }
 
     .company-tag {
-      color: #ddd;
-      font-size: 18px;
-      margin-top: 5px;
-    }
-
-    .section {
-      padding: 25px 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .section:last-child {
-      border-bottom: none;
-    }
-
-    .section h2 {
-      color: var(--gold);
-      font-size: 22px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .contact-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .contact-item:last-child {
-      border: none;
-    }
-
-    .contact-name {
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .contact-role {
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .contact-number {
-      direction: ltr;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    .social {
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    .social h2 {
-      color: var(--gold);
-      font-size: 22px;
+      color: #777;
+      font-size: 15px;
       margin-bottom: 20px;
     }
 
-    .social-links {
+    .social-icons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
-    .social-links a {
-      width: 55px;
-      height: 55px;
+    .social-icons a {
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 22px;
+      font-size: 20px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
-    .facebook { background: #3b5998; }
-    .instagram { background: linear-gradient(135deg, #e1306c, #fd1d1d); }
-    .whatsapp { background: #25d366; }
-
-    .social-links a:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    .whatsapp { background-color: #25d366; }
+    .facebook { background-color: #1877f2; }
+    .instagram {
+      background: radial-gradient(circle at 30% 30%, #ffdc80, #e1306c, #c13584, #833ab4);
     }
 
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 30px;
+    .social-icons a:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+
+    .contacts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-box {
+      background-color: #f3f4f6;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .contact-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .contact-number {
+      display: block;
+      color: #007bff;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 5px;
+      direction: ltr;
     }
 
     .btn {
-      background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      border: none;
+      display: inline-block;
+      margin-top: 25px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
       border-radius: 10px;
-      padding: 15px 25px;
       text-decoration: none;
-      font-size: 16px;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #c19e34;
-      transform: translateY(-3px);
-    }
-
-    @media (max-width: 600px) {
-      .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="header">
-      <img src="https://i.imgur.com/C4YoUxn.jpeg" class="logo" alt="Logo" />
-      <div class="company-name">Future’s Journey</div>
-      <div class="company-tag">مؤسسة رحلة المستقبل للبرمجة</div>
+    <img src="https://i.imgur.com/C4YoUxn.jpeg" class="logo" alt="Logo">
+    <div class="company-name">Future’s Journey</div>
+    <div class="company-tag">مؤسسة رحلة المستقبل للبرمجة</div>
+
+    <div class="social-icons">
+      <a href="https://wa.me/962798457949" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/futures_journey?igsh=MXUwNG9lNWE5ZWIwcg%3D%3D&utm_source=qr" class="instagram"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <div class="section">
-      <h2><i class="fab fa-whatsapp"></i> واتساب للتواصل</h2>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عبدالملك الشريف</div>
-          <div class="contact-role">مسؤول</div>
-        </div>
+    <div class="contacts">
+      <div class="contact-box">
+        <div class="contact-name">عبدالملك الشريف</div>
         <a href="https://wa.me/962798457949" class="contact-number">+962798457949</a>
       </div>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عبدالله القيسي</div>
-          <div class="contact-role">مسؤول</div>
-        </div>
+      <div class="contact-box">
+        <div class="contact-name">عبدالله القيسي</div>
         <a href="https://wa.me/962799261490" class="contact-number">+962799261490</a>
       </div>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عماد الدرباشي</div>
-          <div class="contact-role">مبيعات</div>
-        </div>
+      <div class="contact-box">
+        <div class="contact-name">عماد الدرباشي</div>
         <a href="https://wa.me/962795830276" class="contact-number">+962795830276</a>
       </div>
     </div>
 
-    <div class="section">
-      <h2><i class="fas fa-phone-alt"></i> اتصال مباشر</h2>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عبدالملك الشريف</div>
-          <div class="contact-role">مسؤول</div>
-        </div>
-        <a href="tel:+962798457949" class="contact-number">+962798457949</a>
-      </div>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عبدالله القيسي</div>
-          <div class="contact-role">مسؤول</div>
-        </div>
-        <a href="tel:+962799261490" class="contact-number">+962799261490</a>
-      </div>
-      <div class="contact-item">
-        <div>
-          <div class="contact-name">عماد الدرباشي</div>
-          <div class="contact-role">مبيعات</div>
-        </div>
-        <a href="tel:+962795830276" class="contact-number">+962795830276</a>
-      </div>
-    </div>
-
-    <div class="social">
-      <h2>وسائل التواصل الاجتماعي</h2>
-      <div class="social-links">
-        <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/futures_journey?igsh=MXUwNG9lNWE5ZWIwcg%3D%3D&utm_source=qr" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/962798457949" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <div class="actions">
-      <a href="VCF/Future.vcf" class="btn" download><i class="fas fa-download"></i> حفظ جهة الاتصال</a>
-      <a href="tel:+962798457949" class="btn"><i class="fas fa-phone"></i> اتصال فوري</a>
-    </div>
+    <a href="VCF/Future.vcf" class="btn" download><i class="fas fa-download"></i> حفظ جهة الاتصال</a>
   </div>
 </body>
 </html>
