@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future's Journey - بطاقة الشركة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4a6fa5;
-            --secondary: #6b8cbc;
-            --accent: #5d8bd8;
-            --light: #ffffff;
-            --background: #f8fafc;
-            --text: #2d3748;
-            --muted: #718096;
-            --success: #48bb78;
-            --card-bg: rgba(255, 255, 255, 0.9);
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --gold: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --muted: #64748b;
+            --success: #10b981;
+            --card-bg: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
@@ -40,93 +45,134 @@
             width: 100%;
             max-width: 900px;
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.8);
-            transition: transform 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
         }
         
         .company-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
         
         .card-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 40px 30px;
+            background: var(--gradient);
+            padding: 50px 40px 40px;
             text-align: center;
             position: relative;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
         }
         
         .logo-container {
             margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
         }
         
         .logo {
-            width: 180px;
-            height: auto;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-            background: transparent;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            background: white;
         }
         
         .logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         
         .company-name {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
             color: white;
             letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
         }
         
         .company-tagline {
-            font-size: 18px;
+            font-size: 20px;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
+            position: relative;
+            z-index: 2;
         }
         
         .card-body {
-            padding: 40px 30px;
-            background: var(--background);
+            padding: 50px 40px;
+            background: var(--light);
         }
         
         .sections-container {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
         .section {
             flex: 1;
             min-width: 300px;
             background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
         
         .section-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
             color: var(--primary);
-            padding-bottom: 12px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.08);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
         .section-title i {
-            font-size: 24px;
+            font-size: 26px;
+            color: var(--gold);
         }
         
         .contact-list {
@@ -136,16 +182,16 @@
         .contact-item {
             display: flex;
             align-items: center;
-            padding: 15px 0;
+            padding: 18px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            transition: background 0.2s ease;
+            transition: all 0.3s ease;
         }
         
         .contact-item:hover {
-            background: rgba(0, 0, 0, 0.02);
-            border-radius: 8px;
-            padding-left: 10px;
-            padding-right: 10px;
+            background: rgba(59, 130, 246, 0.05);
+            border-radius: 12px;
+            padding: 18px 12px;
+            transform: translateX(5px);
         }
         
         .contact-item:last-child {
@@ -153,23 +199,25 @@
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            background: var(--accent);
+            background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 15px;
             flex-shrink: 0;
-            font-size: 20px;
+            font-size: 22px;
             color: white;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
         }
         
         .contact-item:hover .contact-icon {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
         
         .contact-details {
@@ -177,67 +225,109 @@
         }
         
         .contact-name {
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 5px;
-            font-size: 17px;
-            color: var(--text);
+            font-size: 18px;
+            color: var(--dark);
         }
         
         .contact-role {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--muted);
+            font-weight: 500;
         }
         
         .contact-number {
             direction: ltr;
-            font-family: monospace;
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text);
+            font-family: 'Courier New', monospace;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
         
         .social-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .social-section::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .social-title {
+            display: inline-block;
+            background: var(--light);
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
         }
         
         .social-links {
             display: flex;
             justify-content: center;
             gap: 25px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         
         .social-link {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
-            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             color: white;
-            font-size: 24px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 26px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover::before {
+            transform: translateY(0);
         }
         
         .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-5px) scale(1.1);
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .social-link.facebook {
-            background: #3b5998;
+            background: linear-gradient(135deg, #3b5998, #4a69a4);
         }
         
         .social-link.instagram {
-            background: #e1306c;
+            background: linear-gradient(135deg, #e1306c, #fd1d1d);
         }
         
         .social-link.whatsapp {
-            background: #25d366;
+            background: linear-gradient(135deg, #25d366, #128c7e);
         }
         
         .action-buttons {
@@ -248,43 +338,61 @@
         }
         
         .action-btn {
-            padding: 15px 30px;
-            background: var(--accent);
+            padding: 18px 35px;
+            background: var(--gradient);
             color: white;
             border: none;
-            border-radius: 10px;
-            font-weight: 600;
+            border-radius: 14px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            gap: 12px;
+            font-size: 18px;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .action-btn:hover::before {
+            transform: translateX(0);
         }
         
         .action-btn:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
         }
         
         .action-btn.save {
-            background: var(--success);
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
         }
         
         .action-btn.save:hover {
-            background: #38a169;
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
         }
         
         .action-btn i {
-            font-size: 18px;
+            font-size: 20px;
         }
         
         @media (max-width: 768px) {
             .card-header, .card-body {
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
             
             .sections-container {
@@ -303,7 +411,7 @@
             
             .contact-icon {
                 margin-left: 0;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             
             .action-buttons {
@@ -315,11 +423,12 @@
             }
             
             .company-name {
-                font-size: 26px;
+                font-size: 28px;
             }
             
             .logo {
-                width: 150px;
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -328,10 +437,9 @@
     <div class="company-card">
         <div class="card-header">
             <div class="logo-container">
-                <!-- سيتم استبدال هذا الرابط بالرابط الحقيقي للشعار -->
-                <img src="https://i.imgur.com/YK5cIsI.png" alt="شعار Future's Journey" class="logo">
+                <img src="https://i.imgur.com/C4YoUxn.jpeg" alt="شعار Future's Journey" class="logo">
             </div>
-            <h1 class="company-name">Future’s Journey Programming Institution</h1>
+            <h1 class="company-name">Future’s Journey</h1>
             <p class="company-tagline">مؤسسة رحلة المستقبل للبرمجة</p>
         </div>
         
@@ -364,14 +472,14 @@
                             <div class="contact-number">+962799261490</div>
                         </li>
                         <li class="contact-item">
-                            <a href="https://wa.me/962795830279" class="contact-icon" target="_blank">
+                            <a href="https://wa.me/962795830276" class="contact-icon" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                             <div class="contact-details">
                                 <div class="contact-name">عماد الدرباشي</div>
                                 <div class="contact-role">مبيعات</div>
                             </div>
-                            <div class="contact-number">+962795830279</div>
+                            <div class="contact-number">+962795830276</div>
                         </li>
                     </ul>
                 </div>
@@ -397,30 +505,27 @@
                                 <i class="fas fa-phone"></i>
                             </a>
                             <div class="contact-details">
-                                <div class="contact-name">عبدالله القيسi</div>
+                                <div class="contact-name">عبدالله القيسي</div>
                                 <div class="contact-role">مسؤول</div>
                             </div>
                             <div class="contact-number">+962799261490</div>
                         </li>
                         <li class="contact-item">
-                            <a href="tel:+962795830279" class="contact-icon">
+                            <a href="tel:+962795830276" class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </a>
                             <div class="contact-details">
                                 <div class="contact-name">عماد الدرباشي</div>
                                 <div class="contact-role">مبيعات</div>
                             </div>
-                            <div class="contact-number">+962795830279</div>
+                            <div class="contact-number">+962795830276</div>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="social-section">
-                <h2 class="section-title" style="justify-content: center;">
-                    <i class="fas fa-hashtag"></i>
-                    وسائل التواصل الاجتماعي
-                </h2>
+                <h2 class="social-title">وسائل التواصل الاجتماعي</h2>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1BWTUNcunN/?mibextid=wwXIfr" class="social-link facebook" target="_blank" title="فيسبوك">
                         <i class="fab fa-facebook-f"></i>
