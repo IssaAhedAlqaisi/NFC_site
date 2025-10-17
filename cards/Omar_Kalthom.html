@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omar Kalthom - Professional Profile</title>
+    <title>Omar Kalthom - Marketing Supervisor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #6b7280;
@@ -21,7 +21,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
         
         body {
@@ -29,6 +28,7 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            font-family: 'Inter', sans-serif;
         }
         
         .container {
@@ -73,17 +73,21 @@
         }
         
         .profile-name {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: white;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
         }
         
         .profile-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             opacity: 0.9;
             font-weight: 400;
             color: var(--light);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
         }
         
         /* Social Icons Section */
@@ -97,6 +101,7 @@
             font-weight: 600;
             margin-bottom: 30px;
             color: var(--light);
+            font-family: 'Playfair Display', serif;
         }
         
         .social-icons-grid {
@@ -165,7 +170,7 @@
         .about-section {
             background: rgba(255, 255, 255, 0.05);
             margin: 30px auto;
-            padding: 30px;
+            padding: 40px;
             border-radius: 15px;
             max-width: 600px;
             text-align: center;
@@ -174,10 +179,22 @@
         }
         
         .about-text {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             line-height: 1.8;
             color: var(--light);
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        
+        .position-title {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-style: italic;
         }
         
         /* Action Buttons */
@@ -205,6 +222,7 @@
             text-decoration: none;
             box-shadow: var(--shadow);
             backdrop-filter: blur(10px);
+            font-family: 'Inter', sans-serif;
         }
         
         .action-button:hover {
@@ -240,6 +258,7 @@
         .footer-text {
             font-size: 0.9rem;
             color: var(--gray);
+            font-family: 'Inter', sans-serif;
         }
         
         /* Animations */
@@ -265,11 +284,11 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-name {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .profile-title {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .profile-image {
@@ -289,6 +308,10 @@
             
             .social-icons-grid {
                 gap: 15px;
+            }
+            
+            .about-text {
+                font-size: 1.2rem;
             }
             
             .action-buttons {
@@ -314,7 +337,7 @@
             }
             
             .profile-name {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
             
             .social-icons-grid {
@@ -325,6 +348,10 @@
                 width: 55px;
                 height: 55px;
                 font-size: 1.4rem;
+            }
+            
+            .about-text {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -338,7 +365,7 @@
                 <img src="https://i.imgur.com/NTkN20f.jpeg" alt="Omar Kalthom" class="profile-image">
             </div>
             <h1 class="profile-name">Omar Kalthom</h1>
-            <p class="profile-title">Professional Profile</p>
+            <p class="profile-title">Marketing Field Supervisor</p>
         </div>
     </header>
 
@@ -347,7 +374,10 @@
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
             <div class="about-text">
-                Connect with me through various social platforms
+                Supervisor of Field Marketing Department
+            </div>
+            <div class="position-title">
+                Leading marketing initiatives and field operations
             </div>
         </div>
 
@@ -397,7 +427,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2024 Omar Kalthom. All rights reserved.</p>
+            <p class="footer-text">Omar Kalthom. All rights reserved.</p>
         </div>
     </footer>
 
