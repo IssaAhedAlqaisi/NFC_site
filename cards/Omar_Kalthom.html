@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Kalthom - Professional Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --accent: #c4b5fd;
+            --dark: #0f0f23;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --card-bg: #1e1b4b;
+            --shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%);
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Luxury Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 40px;
+            text-align: center;
+            margin-top: -100px;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--dark);
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+            background: var(--dark);
+        }
+        
+        .profile-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .profile-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .social-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--light);
+            position: relative;
+        }
+        
+        .social-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .social-icon:hover::before {
+            left: 100%;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.5);
+            border-color: var(--accent);
+        }
+        
+        .social-icon.instagram:hover {
+            background: linear-gradient(135deg, #e1306c, #fd1d1d, #f77737);
+        }
+        
+        .social-icon.facebook:hover {
+            background: linear-gradient(135deg, #3b5998, #4a69a4);
+        }
+        
+        .social-icon.snapchat:hover {
+            background: linear-gradient(135deg, #fffc00, #fff175);
+            color: #000;
+        }
+        
+        .social-icon.whatsapp:hover {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        
+        .social-icon.phone:hover {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .social-icon.email:hover {
+            background: linear-gradient(135deg, #ea4335, #d93025);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.8), rgba(139, 92, 246, 0.1));
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+        }
+        
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--light);
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .action-button:hover::before {
+            left: 100%;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.6);
+            border-color: var(--accent);
+        }
+        
+        .action-button.save {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .action-button.save:hover {
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.6);
+        }
+        
+        .action-button i {
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.5), rgba(139, 92, 246, 0.1));
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .cover-photo {
+                height: 280px;
+            }
+            
+            .social-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+                border-radius: 15px;
+            }
+            
+            .social-icons-grid {
+                gap: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-button {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .cover-photo {
+                height: 220px;
+            }
+            
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section - Luxury Style -->
+    <header class="profile-header fade-in">
+        <img src="https://i.imgur.com/qUjoljp.jpeg" alt="Cover Photo" class="cover-photo">
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/NTkN20f.jpeg" alt="Omar Kalthom" class="profile-image">
+            </div>
+            <h1 class="profile-name">Omar Kalthom</h1>
+            <p class="profile-title">Professional Profile</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <div class="about-text">
+                Connect with me through various social platforms
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-2">
+            <h2 class="social-title">Connect With Me</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.instagram.com/omar.kalthoom" class="social-icon instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/share/15e7j62LRr/" class="social-icon facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <a href="https://snapchat.com/t/c95QUida" class="social-icon snapchat" target="_blank">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                
+                <a href="https://wa.me/962789583229" class="social-icon whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                
+                <a href="tel:+962789583229" class="social-icon phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <a href="mailto:omarkalthoom9@icloud.com" class="social-icon email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <a href="VCF/omar.vcf" class="action-button save" download>
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+            <a href="tel:+962789583229" class="action-button call">
+                <i class="fas fa-phone"></i>
+                Call Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Omar Kalthom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
