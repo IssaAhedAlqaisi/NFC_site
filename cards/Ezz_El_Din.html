@@ -157,18 +157,18 @@
             border-color: rgba(52, 211, 153, 0.4);
         }
         
-        /* Bank Button */
-        .bank-section {
+        /* Instagram Card Button */
+        .instagram-card {
             text-align: center;
             margin: 30px 0;
         }
         
-        .bank-button {
+        .instagram-button {
             display: inline-flex;
             align-items: center;
             gap: 15px;
             padding: 20px 30px;
-            background: linear-gradient(135deg, #2d5aa0, #1e3a8a);
+            background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
             color: white;
             border: none;
             border-radius: 15px;
@@ -176,36 +176,35 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(45, 90, 160, 0.3);
-            border: 2px solid #3b82f6;
+            box-shadow: 0 8px 20px rgba(195, 42, 163, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             cursor: pointer;
         }
         
-        .bank-button:hover {
+        .instagram-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(45, 90, 160, 0.4);
-            background: linear-gradient(135deg, #1e3a8a, #2d5aa0);
+            box-shadow: 0 15px 30px rgba(195, 42, 163, 0.4);
+            background: linear-gradient(135deg, #FFDC80, #FCAF45, #F77737, #F56040, #FD1D1D, #E1306C, #C13584, #833AB4);
         }
         
-        .bank-icon {
+        .instagram-icon {
             font-size: 2rem;
-            color: #3b82f6;
+            color: white;
         }
         
-        .bank-info {
+        .instagram-info {
             text-align: left;
         }
         
-        .bank-name {
+        .instagram-text {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
         
-        .bank-number {
+        .instagram-username {
             font-size: 1rem;
-            font-family: 'Courier New', monospace;
-            direction: ltr;
+            opacity: 0.9;
         }
         
         /* About Section */
@@ -338,7 +337,7 @@
                 gap: 15px;
             }
             
-            .bank-button {
+            .instagram-button {
                 padding: 15px 25px;
                 font-size: 1rem;
             }
@@ -379,7 +378,7 @@
                 font-size: 1.4rem;
             }
             
-            .bank-button {
+            .instagram-button {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
@@ -409,15 +408,15 @@
             </div>
         </div>
 
-        <!-- Bank Button -->
-        <div class="bank-section fade-in delay-2">
-            <div class="bank-button" id="bankButton">
-                <i class="fas fa-university bank-icon"></i>
-                <div class="bank-info">
-                    <div class="bank-name">Bank Account Number</div>
-                    <div class="bank-number">0789004455</div>
+        <!-- Instagram Card Button -->
+        <div class="instagram-card fade-in delay-2">
+            <a href="https://www.instagram.com/ezzeldinshlas?igsh=MWJrMTJob2VuZW5pNA==" class="instagram-button" target="_blank">
+                <i class="fab fa-instagram instagram-icon"></i>
+                <div class="instagram-info">
+                    <div class="instagram-text">Order Business Card</div>
+                    <div class="instagram-username">@ezzeldinshlas</div>
                 </div>
-            </div>
+            </a>
         </div>
 
         <!-- Social Icons -->
@@ -462,7 +461,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2024 Ezzeldin Car Rental. All rights reserved.</p>
+            <p class="footer-text"> Ezzeldin Car Rental. All rights reserved.</p>
         </div>
     </footer>
 
@@ -470,27 +469,13 @@
         // Add smooth animations
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button, .bank-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .instagram-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
                     setTimeout(() => {
                         this.style.transform = '';
                     }, 150);
-                });
-            });
-
-            // Copy bank number to clipboard
-            const bankButton = document.querySelector('.bank-button');
-            bankButton.addEventListener('click', function() {
-                const bankNumber = '0789004455';
-                navigator.clipboard.writeText(bankNumber).then(() => {
-                    // Show copied message
-                    const originalText = this.querySelector('.bank-number').textContent;
-                    this.querySelector('.bank-number').textContent = 'Copied!';
-                    setTimeout(() => {
-                        this.querySelector('.bank-number').textContent = originalText;
-                    }, 2000);
                 });
             });
         });
