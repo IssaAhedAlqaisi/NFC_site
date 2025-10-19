@@ -157,56 +157,6 @@
             border-color: rgba(52, 211, 153, 0.4);
         }
         
-        /* Instagram Card Button */
-        .instagram-card {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .instagram-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
-            color: white;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(195, 42, 163, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-        }
-        
-        .instagram-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(195, 42, 163, 0.4);
-            background: linear-gradient(135deg, #FFDC80, #FCAF45, #F77737, #F56040, #FD1D1D, #E1306C, #C13584, #833AB4);
-        }
-        
-        .instagram-icon {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .instagram-info {
-            text-align: left;
-        }
-        
-        .instagram-text {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .instagram-username {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
         /* About Section */
         .about-section {
             background: rgba(255, 255, 255, 0.05);
@@ -268,6 +218,11 @@
         .action-button.call:hover {
             background: rgba(37, 99, 235, 0.2);
             border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        .action-button.nfc:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.4);
         }
         
         .action-button i {
@@ -337,11 +292,6 @@
                 gap: 15px;
             }
             
-            .instagram-button {
-                padding: 15px 25px;
-                font-size: 1rem;
-            }
-            
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -377,12 +327,6 @@
                 height: 55px;
                 font-size: 1.4rem;
             }
-            
-            .instagram-button {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -406,17 +350,6 @@
             <div class="about-text">
                 عز الدين لتأجير السيارات السياحية - نقدم لكم أفضل خدمة تأجير سيارات للرحلات والمناسبات
             </div>
-        </div>
-
-        <!-- Instagram Card Button -->
-        <div class="instagram-card fade-in delay-2">
-            <a href="https://www.instagram.com/ezzeldinshlas?igsh=MWJrMTJob2VuZW5pNA==" class="instagram-button" target="_blank">
-                <i class="fab fa-instagram instagram-icon"></i>
-                <div class="instagram-info">
-                    <div class="instagram-text">Order Business Card</div>
-                    <div class="instagram-username">@ezzeldinshlas</div>
-                </div>
-            </a>
         </div>
 
         <!-- Social Icons -->
@@ -455,6 +388,10 @@
                 <i class="fas fa-phone"></i>
                 Call Now
             </a>
+            <a href="https://www.instagram.com/ezzeldinshlas?igsh=MWJrMTJob2VuZW5pNA==" class="action-button nfc" target="_blank">
+                <i class="fas fa-id-card"></i>
+                NFC Card Request
+            </a>
         </div>
     </div>
 
@@ -469,7 +406,7 @@
         // Add smooth animations
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button, .instagram-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
