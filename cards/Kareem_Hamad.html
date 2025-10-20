@@ -146,23 +146,36 @@
             border-color: rgba(255, 252, 0, 0.4);
         }
         
-        .social-icon.email:hover {
-            background: rgba(219, 68, 55, 0.2);
-            border-color: rgba(219, 68, 55, 0.4);
+        .social-icon.whatsapp:hover {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: rgba(37, 211, 102, 0.4);
         }
         
-        /* Email Section */
-        .email-section {
+        .social-icon.phone:hover {
+            background: rgba(52, 211, 153, 0.2);
+            border-color: rgba(52, 211, 153, 0.4);
+        }
+        
+        /* Contact Buttons Section */
+        .contact-section {
             text-align: center;
             margin: 30px 0;
         }
         
-        .email-button {
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-button {
             display: inline-flex;
             align-items: center;
             gap: 15px;
             padding: 20px 30px;
-            background: linear-gradient(135deg, #d9534f, #c9302c);
             color: white;
             border: none;
             border-radius: 15px;
@@ -170,32 +183,49 @@
             font-weight: 700;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(217, 83, 79, 0.3);
-            border: 2px solid #d9534f;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid;
         }
         
-        .email-button:hover {
+        .contact-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(217, 83, 79, 0.4);
-            background: linear-gradient(135deg, #c9302c, #d9534f);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
         
-        .email-icon {
+        .contact-button.phone {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            border-color: #3b82f6;
+        }
+        
+        .contact-button.phone:hover {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+        }
+        
+        .contact-button.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-color: #25D366;
+        }
+        
+        .contact-button.whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+        }
+        
+        .contact-icon {
             font-size: 2rem;
             color: white;
         }
         
-        .email-info {
+        .contact-info {
             text-align: left;
         }
         
-        .email-name {
+        .contact-name {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
         
-        .email-address {
+        .contact-number {
             font-size: 1rem;
             font-family: 'Courier New', monospace;
             direction: ltr;
@@ -259,9 +289,9 @@
             border-color: rgba(16, 185, 129, 0.4);
         }
         
-        .action-button.email:hover {
-            background: rgba(219, 68, 55, 0.2);
-            border-color: rgba(219, 68, 55, 0.4);
+        .action-button.call:hover {
+            background: rgba(37, 99, 235, 0.2);
+            border-color: rgba(37, 99, 235, 0.4);
         }
         
         .action-button i {
@@ -331,9 +361,14 @@
                 gap: 15px;
             }
             
-            .email-button {
+            .contact-button {
                 padding: 15px 25px;
                 font-size: 1rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
             .action-buttons {
@@ -372,7 +407,7 @@
                 font-size: 1.4rem;
             }
             
-            .email-button {
+            .contact-button {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
@@ -383,7 +418,7 @@
 <body>
     <!-- Header Section - Facebook Style -->
     <header class="profile-header fade-in">
-        <img src="https://i.imgur.com/4sztsii.jpeg" alt="Cover Photo" class="cover-photo">
+        <img src="https://i.imgur.com/KDZSRGW.jpeg" alt="Cover Photo" class="cover-photo">
         <div class="profile-info">
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/Mn9CkyF.jpeg" alt="Kareem Hamad" class="profile-image">
@@ -402,15 +437,25 @@
             </div>
         </div>
 
-        <!-- Email Button -->
-        <div class="email-section fade-in delay-2">
-            <a href="mailto:karemhamad96@icloud.com" class="email-button">
-                <i class="fas fa-envelope email-icon"></i>
-                <div class="email-info">
-                    <div class="email-name">Email Me</div>
-                    <div class="email-address">karemhamad96@icloud.com</div>
-                </div>
-            </a>
+        <!-- Contact Buttons -->
+        <div class="contact-section fade-in delay-2">
+            <div class="contact-buttons">
+                <a href="tel:+962792836069" class="contact-button phone">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-name">Call Me</div>
+                        <div class="contact-number">+962 7 9283 6069</div>
+                    </div>
+                </a>
+                
+                <a href="https://wa.me/962792836069" class="contact-button whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <div class="contact-info">
+                        <div class="contact-name">WhatsApp</div>
+                        <div class="contact-number">+962 7 9283 6069</div>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <!-- Social Icons -->
@@ -429,8 +474,12 @@
                     <i class="fab fa-snapchat-ghost"></i>
                 </a>
                 
-                <a href="mailto:karemhamad96@icloud.com" class="social-icon email">
-                    <i class="fas fa-envelope"></i>
+                <a href="tel:+962792836069" class="social-icon phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <a href="https://wa.me/962792836069" class="social-icon whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>
@@ -441,9 +490,9 @@
                 <i class="fas fa-download"></i>
                 Save Contact
             </a>
-            <a href="mailto:karemhamad96@icloud.com" class="action-button email">
-                <i class="fas fa-envelope"></i>
-                Send Email
+            <a href="tel:+962792836069" class="action-button call">
+                <i class="fas fa-phone"></i>
+                Call Now
             </a>
         </div>
     </div>
@@ -459,7 +508,7 @@
         // Add smooth animations
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button, .email-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .contact-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
@@ -469,22 +518,24 @@
                 });
             });
 
-            // Copy email to clipboard
-            const emailButton = document.querySelector('.email-button');
-            emailButton.addEventListener('click', function(e) {
-                // Only copy if Ctrl key is pressed or on mobile
-                if (e.ctrlKey || window.innerWidth < 768) {
-                    e.preventDefault();
-                    const emailAddress = 'karemhamad96@icloud.com';
-                    navigator.clipboard.writeText(emailAddress).then(() => {
-                        // Show copied message
-                        const originalText = this.querySelector('.email-address').textContent;
-                        this.querySelector('.email-address').textContent = 'Copied!';
-                        setTimeout(() => {
-                            this.querySelector('.email-address').textContent = originalText;
-                        }, 2000);
-                    });
-                }
+            // Copy phone number to clipboard
+            const contactButtons = document.querySelectorAll('.contact-button');
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Only copy if Ctrl key is pressed or on mobile
+                    if (e.ctrlKey || window.innerWidth < 768) {
+                        e.preventDefault();
+                        const phoneNumber = '+962792836069';
+                        navigator.clipboard.writeText(phoneNumber).then(() => {
+                            // Show copied message
+                            const originalText = this.querySelector('.contact-number').textContent;
+                            this.querySelector('.contact-number').textContent = 'Copied!';
+                            setTimeout(() => {
+                                this.querySelector('.contact-number').textContent = originalText;
+                            }, 2000);
+                        });
+                    }
+                });
             });
         });
     </script>
