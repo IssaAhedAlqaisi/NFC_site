@@ -1,9 +1,10 @@
 BEGIN:VCARD
 VERSION:3.0
 FN:Kareem Hamad
-EMAIL:karemhamad96@icloud.com
+TEL;TYPE=CELL,VOICE:+962792836069
 URL;TYPE=Facebook:https://www.facebook.com/share/1BPqrG7JfD/?mibextid=wwXIfr
 URL;TYPE=Instagram:https://www.instagram.com/karem.hamad.718?igsh=MTI2YzhrMTczMnNxZA%3D%3D&utm_source=qr
 URL;TYPE=Snapchat:https://snapchat.com/t/neA1Mm3x
-NOTE:Connect with me on social media
+URL;TYPE=WhatsApp:https://wa.me/962792836069
+NOTE:Welcome to my personal profile! Feel free to connect with me on any of my social media platforms.
 END:VCARD
