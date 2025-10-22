@@ -10,14 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --light-bg: #f8fafc;
-            --light-card: #ffffff;
-            --dark-text: #1e293b;
-            --gray-text: #64748b;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --border: 1px solid #e2e8f0;
+            --primary: #3b82f6;
+            --primary-light: #93c5fd;
+            --light-bg: #ffffff;
+            --light-card: #fefefe;
+            --dark-text: #374151;
+            --gray-text: #6b7280;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            --border: 1px solid #f1f5f9;
+            --orange-bg: #fff7ed;
         }
         
         * {
@@ -127,44 +128,53 @@
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
             border: var(--border);
+            opacity: 0.85;
         }
         
         .social-icon:hover {
-            transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            opacity: 1;
         }
         
         .social-icon.instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            background: linear-gradient(45deg, #fdf2f8, #fbcfe8, #f9a8d4);
+            color: #db2777;
         }
         
         .social-icon.facebook {
-            background: #1877F2;
+            background: #dbeafe;
+            color: #1d4ed8;
         }
         
         .social-icon.tiktok {
-            background: #000000;
+            background: #f3f4f6;
+            color: #000000;
         }
         
         .social-icon.whatsapp {
-            background: #25D366;
+            background: #dcfce7;
+            color: #16a34a;
         }
         
         .social-icon.phone {
-            background: #10B981;
+            background: #f0f9ff;
+            color: #0369a1;
         }
         
         .social-icon.email {
-            background: #EA4335;
+            background: #fef2f2;
+            color: #dc2626;
         }
         
         .social-icon.location {
-            background: #8B5CF6;
+            background: #faf5ff;
+            color: #7c3aed;
         }
         
         /* About Section */
         .about-section {
-            background: var(--light-card);
+            background: var(--orange-bg);
             margin: 30px auto;
             padding: 30px;
             border-radius: 20px;
@@ -184,68 +194,20 @@
         .business-name {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
+            color: #ea580c;
             margin-bottom: 15px;
             font-family: 'Tajawal', sans-serif;
         }
         
         .business-description {
             font-size: 1.1rem;
-            color: var(--gray-text);
+            color: #7c2d12;
             margin-top: 20px;
             text-align: right;
             line-height: 1.9;
             font-family: 'Noto Naskh Arabic', serif;
             font-weight: 500;
             letter-spacing: -0.2px;
-        }
-        
-        /* Contact Buttons */
-        .contact-section {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .contact-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 30px;
-            color: white;
-            border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-        
-        .contact-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .contact-button.phone {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-        }
-        
-        .contact-button.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-            color: white;
         }
         
         /* Action Buttons */
@@ -275,9 +237,9 @@
         }
         
         .action-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            background: var(--primary-light);
             color: white;
         }
         
@@ -292,7 +254,7 @@
             text-align: center;
             margin-top: 50px;
             border-top: var(--border);
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.02);
         }
         
         .footer-text {
@@ -347,11 +309,6 @@
             
             .social-icons-grid {
                 gap: 15px;
-            }
-            
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
             }
             
             .action-buttons {
@@ -428,8 +385,6 @@
             </div>
         </div>
 
-    
-
         <!-- Social Icons -->
         <div class="social-section fade-in delay-2">
             <h2 class="social-title">Connect With Us</h2>
@@ -470,17 +425,13 @@
                 <i class="fas fa-download"></i>
                 Save Contact
             </a>
-            <a href="tel:+962798704201" class="action-button call">
-                <i class="fas fa-phone"></i>
-                Call Now
-            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text"> Rawaa Al Hadatha - Industrial Tools Store. All rights reserved.</p>
+            <p class="footer-text">Rawaa Al Hadatha - Industrial Tools Store. All rights reserved.</p>
         </div>
     </footer>
 
@@ -488,7 +439,7 @@
         // Add smooth animations
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .contact-button, .action-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
