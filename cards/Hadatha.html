@@ -12,13 +12,13 @@
         :root {
             --primary: #6b7280;
             --primary-light: #9ca3af;
-            --light-bg: #f8fafc;
-            --light-card: #f1f5f9;
+            --light-bg: #f1f5f9;
+            --light-card: #e2e8f0;
             --dark-text: #374151;
             --gray-text: #6b7280;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-            --border: 1px solid #e2e8f0;
-            --orange-bg: #fff7ed;
+            --border: 1px solid #cbd5e1;
+            --orange-bg: #fed7aa;
             --social-color: #6b7280;
         }
         
@@ -143,38 +143,31 @@
         .about-section {
             background: var(--orange-bg);
             margin: 30px auto;
-            padding: 30px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 15px;
             max-width: 800px;
             text-align: center;
             box-shadow: var(--shadow);
             border: var(--border);
         }
         
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--dark-text);
-            text-align: center;
-        }
-        
-        .business-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ea580c;
-            margin-bottom: 15px;
-            font-family: 'Tajawal', sans-serif;
-        }
-        
         .business-description {
             font-size: 1.1rem;
             color: #7c2d12;
-            margin-top: 20px;
             text-align: right;
-            line-height: 1.9;
+            line-height: 1.8;
             font-family: 'Noto Naskh Arabic', serif;
             font-weight: 500;
-            letter-spacing: -0.2px;
+            direction: rtl;
+        }
+        
+        .description-line {
+            margin-bottom: 15px;
+            padding: 8px 0;
+        }
+        
+        .description-line:last-child {
+            margin-bottom: 0;
         }
         
         /* Action Buttons */
@@ -288,11 +281,6 @@
                 max-width: 300px;
                 justify-content: center;
             }
-            
-            .business-description {
-                font-size: 1rem;
-                line-height: 1.8;
-            }
         }
         
         @media (max-width: 480px) {
@@ -318,11 +306,6 @@
                 height: 55px;
                 font-size: 1.4rem;
             }
-            
-            .business-description {
-                font-size: 0.95rem;
-                line-height: 1.7;
-            }
         }
     </style>
 </head>
@@ -343,12 +326,10 @@
     <div class="container">
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
-            <div class="business-name">روعة الحداثة - متجر العدد الصناعية</div>
-            <div class="about-text">
-                🛠️🪓🧱🔩 تحت سقف واحد عددك الصناعيه
-            </div>
             <div class="business-description">
-                بيع وتركيب ومزج جميع أنواع الدهانات بحرفيه عاليه وماكينات عالية الجودة والدقة والوازم البناء ولوازم النجارين ولوزم الصحي ولوازم الحدادين وخراطة المفاتيح والعديد العديد من مسلتزمات البناء والانارة والمنزل و العدد اليدويه والصناعيه والحرفيه مع روعة الحداثة لمواء البناء والإنارة 👨‍🏭، 🔩🔨🔧كل قطعة بتحكي جودة، وكل تفصيلة معمولة لتخدمك سنين!🔧 وصل الجديد…!▪ خدمات ما بتعرف التعب▪ وأسعار… بتحكي لحالها!🎯 مش بس هيك راح تلمس الفرق بنفسك.
+                <div class="description-line">🛠️ تحت سقف واحد جميع العدد الصناعية والمواد الإنشائية</div>
+                <div class="description-line">🎯 جودة عالية وأسعار تنافسية مع خدمة متكاملة</div>
+                <div class="description-line">📞 تواصل معنا الآن للحصول على أفضل العروض والخدمات</div>
             </div>
         </div>
 
@@ -398,7 +379,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Rawaa Al Hadatha - Industrial Tools Store. All rights reserved.</p>
+            <p class="footer-text">© 2024 Rawaa Al Hadatha - Industrial Tools Store. All rights reserved.</p>
         </div>
     </footer>
 
