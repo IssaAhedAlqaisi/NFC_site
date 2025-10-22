@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>روعة الحداثة - متجر العدد الصناعية</title>
+    <title>Rawaa Al Hadatha - Industrial Tools Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Arabic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -80,6 +82,7 @@
             font-weight: 800;
             margin-bottom: 10px;
             color: var(--dark-text);
+            font-family: 'Tajawal', sans-serif;
         }
         
         .profile-title {
@@ -107,7 +110,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
@@ -123,7 +126,6 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
-            background: var(--primary);
             border: var(--border);
         }
         
@@ -156,6 +158,10 @@
             background: #EA4335;
         }
         
+        .social-icon.location {
+            background: #8B5CF6;
+        }
+        
         /* About Section */
         .about-section {
             background: var(--light-card);
@@ -180,6 +186,7 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
+            font-family: 'Tajawal', sans-serif;
         }
         
         .business-description {
@@ -187,7 +194,10 @@
             color: var(--gray-text);
             margin-top: 20px;
             text-align: right;
-            line-height: 1.8;
+            line-height: 1.9;
+            font-family: 'Noto Naskh Arabic', serif;
+            font-weight: 500;
+            letter-spacing: -0.2px;
         }
         
         /* Contact Buttons */
@@ -354,6 +364,11 @@
                 max-width: 300px;
                 justify-content: center;
             }
+            
+            .business-description {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
         }
         
         @media (max-width: 480px) {
@@ -379,6 +394,11 @@
                 height: 55px;
                 font-size: 1.4rem;
             }
+            
+            .business-description {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
         }
     </style>
 </head>
@@ -391,7 +411,7 @@
                 <img src="https://i.imgur.com/Bdjrdho.jpeg" alt="روعة الحداثة" class="profile-image">
             </div>
             <h1 class="profile-name">روعة الحداثة</h1>
-            <p class="profile-title">متجر العدد الصناعية ومواد البناء</p>
+            <p class="profile-title">Industrial Tools & Building Materials Store</p>
         </div>
     </header>
 
@@ -409,23 +429,11 @@
         </div>
 
         <!-- Contact Buttons -->
-        <div class="contact-section fade-in delay-2">
-            <div class="contact-buttons">
-                <a href="tel:+962798704201" class="contact-button phone">
-                    <i class="fas fa-phone-alt contact-icon"></i>
-                    <span>اتصال</span>
-                </a>
-                
-                <a href="https://wa.me/962798704201" class="contact-button whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp contact-icon"></i>
-                    <span>واتساب</span>
-                </a>
-            </div>
-        </div>
+
 
         <!-- Social Icons -->
         <div class="social-section fade-in delay-2">
-            <h2 class="social-title">تواصل معنا</h2>
+            <h2 class="social-title">Connect With Us</h2>
             <div class="social-icons-grid">
                 <a href="https://www.instagram.com/rwlhdth?igsh=eGx6OTByZzVqOHhj&utm_source=qr" class="social-icon instagram" target="_blank">
                     <i class="fab fa-instagram"></i>
@@ -450,6 +458,10 @@
                 <a href="mailto:roaatalhadatha@gmail.com" class="social-icon email">
                     <i class="fas fa-envelope"></i>
                 </a>
+                
+                <a href="https://maps.app.goo.gl/JfBVH8xramq42AbW7" class="social-icon location" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
             </div>
         </div>
 
@@ -457,11 +469,11 @@
         <div class="action-buttons fade-in delay-3">
             <a href="VCF/rw3a.vcf" class="action-button save" download>
                 <i class="fas fa-download"></i>
-                حفظ جهة الاتصال
+                Save Contact
             </a>
             <a href="tel:+962798704201" class="action-button call">
                 <i class="fas fa-phone"></i>
-                اتصل الآن
+                Call Now
             </a>
         </div>
     </div>
@@ -469,7 +481,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2024 روعة الحداثة - متجر العدد الصناعية. جميع الحقوق محفوظة.</p>
+            <p class="footer-text"> Rawaa Al Hadatha - Industrial Tools Store. All rights reserved.</p>
         </div>
     </footer>
 
