@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future's Journey Programming Institution</title>
+    <title>Clouds - Premium Smoke Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
+            --primary: #1a365d;
+            --primary-dark: #0f1f3d;
+            --accent: #2d3748;
             --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
-            --card-bg: #ffffff;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --card-bg: #1e293b;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
         * {
@@ -25,7 +26,7 @@
         }
         
         body {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
@@ -37,7 +38,7 @@
             padding: 0 20px;
         }
         
-        /* Header - Facebook Style */
+        /* Header - Modern Style */
         .profile-header {
             width: 100%;
             position: relative;
@@ -48,6 +49,7 @@
             width: 100%;
             height: 300px;
             object-fit: cover;
+            filter: brightness(0.8);
         }
         
         .profile-info {
@@ -66,17 +68,18 @@
         .profile-image {
             width: 160px;
             height: 160px;
-            border-radius: 50%;
-            border: 5px solid var(--dark);
+            border-radius: 20px;
+            border: 4px solid var(--card-bg);
             object-fit: cover;
             box-shadow: var(--shadow);
         }
         
         .profile-name {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 10px;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .profile-title {
@@ -84,6 +87,32 @@
             opacity: 0.9;
             font-weight: 500;
             color: var(--light);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--card-bg);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 15px;
         }
         
         /* Gallery Section */
@@ -106,7 +135,7 @@
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
         .gallery-slider {
@@ -186,7 +215,7 @@
         }
         
         .gallery-dot.active {
-            background: var(--primary);
+            background: #60a5fa;
             transform: scale(1.2);
         }
         
@@ -208,7 +237,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
         
@@ -223,7 +252,7 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -231,18 +260,8 @@
         
         .social-icon:hover {
             transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .social-icon.threads:hover {
-            background: rgba(0, 0, 0, 0.2);
-            border-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        .social-icon.facebook:hover {
-            background: rgba(59, 89, 152, 0.2);
-            border-color: rgba(59, 89, 152, 0.4);
         }
         
         .social-icon.instagram:hover {
@@ -260,44 +279,9 @@
             border-color: rgba(52, 211, 153, 0.4);
         }
         
-        .social-icon.email:hover {
-            background: rgba(234, 67, 53, 0.2);
-            border-color: rgba(234, 67, 53, 0.4);
-        }
-        
         .social-icon.google:hover {
             background: rgba(66, 133, 244, 0.2);
             border-color: rgba(66, 133, 244, 0.4);
-        }
-        
-        /* About Section */
-        .about-section {
-            background: rgba(255, 255, 255, 0.05);
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 600px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--light);
-            text-align: center;
-        }
-        
-        .services-list {
-            text-align: left;
-            margin-top: 20px;
-            padding-left: 20px;
-        }
-        
-        .services-list li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
         }
         
         /* Action Buttons */
@@ -323,13 +307,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
         }
         
         .action-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.15);
             border-color: rgba(255, 255, 255, 0.3);
         }
@@ -385,7 +369,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-name {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .profile-title {
@@ -438,7 +422,7 @@
             }
             
             .profile-name {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .gallery-slider {
@@ -464,15 +448,15 @@
     </style>
 </head>
 <body>
-    <!-- Header Section - Facebook Style -->
+    <!-- Header Section -->
     <header class="profile-header fade-in">
         <img src="https://i.imgur.com/tVCqNHc.jpeg" alt="Cover Photo" class="cover-photo">
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/tVCqNHc.jpeg" alt="Future's Journey" class="profile-image">
+                <img src="https://i.imgur.com/tVCqNHc.jpeg" alt="Clouds" class="profile-image">
             </div>
-            <h1 class="profile-name">Future's Journey</h1>
-            <p class="profile-title">Programming Institution</p>
+            <h1 class="profile-name">Clouds</h1>
+            <p class="profile-title">Premium Smoke Shop</p>
         </div>
     </header>
 
@@ -480,40 +464,35 @@
     <div class="container">
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
+            <div class="tagline">Experience the Ultimate Smoke</div>
             <div class="about-text">
-                Future's Journey Programming Institution - Your partner in digital transformation
+                Your premium destination for quality smoke products and accessories. 
+                We offer the finest selection to enhance your smoking experience.
             </div>
-            <ul class="services-list">
-                <li>🌐 Websites Development</li>
-                <li>📱 Mobile Applications</li>
-                <li>📇 NFC Stands & Cards</li>
-                <li>💳 Digital Business Cards</li>
-                <li>🚀 Complete Programming Solutions</li>
-            </ul>
         </div>
 
         <!-- Gallery Section -->
         <div class="gallery-section fade-in delay-2">
-            <h2 class="gallery-title">Our Work Gallery</h2>
+            <h2 class="gallery-title">Our Products</h2>
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="gallery-slide active">
-                        <img src="https://i.imgur.com/ZCcM9eV.jpeg" alt="Project 1" class="gallery-image">
+                        <img src="https://i.imgur.com/ZCcM9eV.jpeg" alt="Product 1" class="gallery-image">
                     </div>
                     <div class="gallery-slide">
-                        <img src="https://i.imgur.com/VWQz4iX.jpeg" alt="Project 2" class="gallery-image">
+                        <img src="https://i.imgur.com/VWQz4iX.jpeg" alt="Product 2" class="gallery-image">
                     </div>
                     <div class="gallery-slide">
-                        <img src="https://i.imgur.com/BroaHZP.jpeg" alt="Project 3" class="gallery-image">
+                        <img src="https://i.imgur.com/BroaHZP.jpeg" alt="Product 3" class="gallery-image">
                     </div>
                     <div class="gallery-slide">
-                        <img src="https://i.imgur.com/yhmjrPs.jpeg" alt="Project 4" class="gallery-image">
+                        <img src="https://i.imgur.com/yhmjrPs.jpeg" alt="Product 4" class="gallery-image">
                     </div>
                     <div class="gallery-slide">
-                        <img src="https://i.imgur.com/43dkETZ.jpeg" alt="Project 5" class="gallery-image">
+                        <img src="https://i.imgur.com/43dkETZ.jpeg" alt="Product 5" class="gallery-image">
                     </div>
                     <div class="gallery-slide">
-                        <img src="https://i.imgur.com/7fD6PMi.jpeg" alt="Project 6" class="gallery-image">
+                        <img src="https://i.imgur.com/7fD6PMi.jpeg" alt="Product 6" class="gallery-image">
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -559,7 +538,7 @@
 
         <!-- Action Buttons -->
         <div class="action-buttons fade-in delay-3">
-            <a href="VCF/futures_journey.vcf" class="action-button save" download>
+            <a href="VCF/clouds.vcf" class="action-button save" download>
                 <i class="fas fa-download"></i>
                 Save Contact
             </a>
@@ -567,14 +546,17 @@
                 <i class="fas fa-phone"></i>
                 Call Now
             </a>
-      
+            <a href="https://wa.me/00962776303004" class="action-button whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Future's Journey Programming Institution. All rights reserved.</p>
+            <p class="footer-text">Clouds Premium Smoke Shop. All rights reserved.</p>
         </div>
     </footer>
 
