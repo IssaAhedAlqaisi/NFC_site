@@ -19,6 +19,7 @@
             --dark-text: #1e293b;
             --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             --border: 1px solid #fde68a;
+            --social-color: #6b7280;
         }
         
         * {
@@ -227,84 +228,48 @@
             transform: scale(1.2);
         }
         
-        /* Contact Section */
-        .contact-section {
+        /* Social Icons Section */
+        .social-section {
             text-align: center;
-            margin: 40px 0;
-            padding: 30px 20px;
-            background: var(--light-card);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 50px 0 30px;
         }
         
-        .contact-title {
-            font-size: 1.8rem;
+        .social-title {
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 30px;
-            color: var(--primary-dark);
-            font-family: 'Tajawal', sans-serif;
+            color: var(--dark-text);
         }
         
-        .contact-buttons {
+        .social-icons-grid {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
-        .contact-button {
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 25px 20px;
+            font-size: 1.8rem;
             color: white;
-            border: none;
-            border-radius: 18px;
-            font-size: 1rem;
-            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
-            width: 140px;
-            height: 140px;
-            text-align: center;
+            border: var(--border);
+            background: var(--social-color);
         }
         
-        .contact-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .contact-button.call {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        }
-        
-        .contact-button.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
-        
-        .contact-button.instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-        
-        .contact-button.facebook {
-            background: linear-gradient(135deg, #1877F2, #0d6efd);
-        }
-        
-        .contact-icon {
-            font-size: 2.2rem;
-        }
-        
-        .contact-label {
-            font-size: 1rem;
-            font-weight: 600;
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            background: var(--primary);
         }
         
         /* Action Buttons */
@@ -401,38 +366,19 @@
                 height: 350px;
             }
             
-            .contact-button {
-                width: 130px;
-                height: 130px;
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
             }
             
-            .contact-icon {
-                font-size: 2rem;
+            .social-icons-grid {
+                gap: 15px;
             }
             
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .contact-buttons {
-                gap: 15px;
-            }
-            
-            .contact-button {
-                width: 120px;
-                height: 120px;
-                padding: 20px 15px;
-            }
-            
-            .contact-icon {
-                font-size: 1.8rem;
-            }
-            
-            .contact-label {
-                font-size: 0.9rem;
             }
         }
         
@@ -460,42 +406,14 @@
                 font-size: 1rem;
             }
             
-            .contact-buttons {
+            .social-icons-grid {
                 gap: 12px;
             }
             
-            .contact-button {
-                width: 110px;
-                height: 110px;
-                padding: 18px 12px;
-            }
-            
-            .contact-icon {
-                font-size: 1.6rem;
-            }
-            
-            .contact-label {
-                font-size: 0.85rem;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .contact-buttons {
-                gap: 10px;
-            }
-            
-            .contact-button {
-                width: 100px;
-                height: 100px;
-                padding: 15px 10px;
-            }
-            
-            .contact-icon {
-                font-size: 1.5rem;
-            }
-            
-            .contact-label {
-                font-size: 0.8rem;
+            .social-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -526,7 +444,7 @@
 
         <!-- Gallery Section -->
         <div class="gallery-section fade-in delay-2">
-            <h2 class="gallery-title">معرض منتجاتنا</h2>
+            <h2 class="gallery-title">Our Products Gallery</h2>
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="gallery-slide active">
@@ -575,28 +493,32 @@
             </div>
         </div>
 
-        <!-- Contact Section -->
-        <div class="contact-section fade-in delay-3">
-            <h2 class="contact-title">Contact Us</h2>
-            <div class="contact-buttons">
-                <a href="tel:+962796611459" class="contact-button call">
-                    <i class="fas fa-phone-alt contact-icon"></i>
-                    <span class="contact-label">اتصال</span>
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">Connect With Us</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.instagram.com/alandalus2026?igsh=c3o1YWwzdXoycHcy" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
                 </a>
                 
-                <a href="https://wa.me/962796611459" class="contact-button whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp contact-icon"></i>
-                    <span class="contact-label">واتساب</span>
+                <a href="https://www.facebook.com/share/17G4rxHPro/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
                 
-                <a href="https://www.instagram.com/alandalus2026?igsh=c3o1YWwzdXoycHcy" class="contact-button instagram" target="_blank">
-                    <i class="fab fa-instagram contact-icon"></i>
-                    <span class="contact-label">إنستغرام</span>
+                <a href="https://wa.me/962796611459" class="social-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
                 
-                <a href="https://www.facebook.com/share/17G4rxHPro/" class="contact-button facebook" target="_blank">
-                    <i class="fab fa-facebook-f contact-icon"></i>
-                    <span class="contact-label">فيسبوك</span>
+                <a href="tel:+962796611459" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <a href="mailto:alandalus@example.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                <a href="https://maps.app.goo.gl/" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
                 </a>
             </div>
         </div>
@@ -617,7 +539,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text"> Al Andalus - Lighting & Electrical Solutions. All rights reserved.</p>
+            <p class="footer-text">Al Andalus - Lighting & Electrical Solutions. All rights reserved.</p>
         </div>
     </footer>
 
@@ -666,7 +588,7 @@
             setInterval(nextSlide, 5000);
 
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.contact-button, .action-button, .gallery-btn');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
