@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -227,42 +227,62 @@
             transform: scale(1.2);
         }
         
-        /* Contact Buttons */
+        /* Contact Section */
         .contact-section {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            padding: 30px 20px;
+            background: var(--light-card);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            font-family: 'Tajawal', sans-serif;
         }
         
         .contact-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
         
         .contact-button {
-            display: inline-flex;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            padding: 16px 28px;
+            justify-content: center;
+            gap: 12px;
+            padding: 25px 20px;
             color: white;
             border: none;
-            border-radius: 15px;
+            border-radius: 18px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
+            width: 140px;
+            height: 140px;
+            text-align: center;
         }
         
         .contact-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        .contact-button.primary {
+        .contact-button.call {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
         }
         
@@ -270,59 +290,21 @@
             background: linear-gradient(135deg, #25D366, #128C7E);
         }
         
-        .contact-icon {
-            font-size: 1.2rem;
-        }
-        
-        /* Social Icons Section */
-        .social-section {
-            text-align: center;
-            padding: 40px 0 20px;
-        }
-        
-        .social-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--primary-dark);
-        }
-        
-        .social-icons-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            background: var(--primary);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            background: var(--primary-dark);
-        }
-        
-        .social-icon.instagram {
+        .contact-button.instagram {
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
         }
         
-        .social-icon.facebook {
+        .contact-button.facebook {
             background: linear-gradient(135deg, #1877F2, #0d6efd);
+        }
+        
+        .contact-icon {
+            font-size: 2.2rem;
+        }
+        
+        .contact-label {
+            font-size: 1rem;
+            font-weight: 600;
         }
         
         /* Action Buttons */
@@ -419,20 +401,38 @@
                 height: 350px;
             }
             
-            .social-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
+            .contact-button {
+                width: 130px;
+                height: 130px;
             }
             
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
+            .contact-icon {
+                font-size: 2rem;
             }
             
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .contact-buttons {
+                gap: 15px;
+            }
+            
+            .contact-button {
+                width: 120px;
+                height: 120px;
+                padding: 20px 15px;
+            }
+            
+            .contact-icon {
+                font-size: 1.8rem;
+            }
+            
+            .contact-label {
+                font-size: 0.9rem;
             }
         }
         
@@ -460,14 +460,42 @@
                 font-size: 1rem;
             }
             
-            .social-icons-grid {
+            .contact-buttons {
+                gap: 12px;
+            }
+            
+            .contact-button {
+                width: 110px;
+                height: 110px;
+                padding: 18px 12px;
+            }
+            
+            .contact-icon {
+                font-size: 1.6rem;
+            }
+            
+            .contact-label {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .contact-buttons {
                 gap: 10px;
             }
             
-            .social-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+            .contact-button {
+                width: 100px;
+                height: 100px;
+                padding: 15px 10px;
+            }
+            
+            .contact-icon {
+                font-size: 1.5rem;
+            }
+            
+            .contact-label {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -498,7 +526,7 @@
 
         <!-- Gallery Section -->
         <div class="gallery-section fade-in delay-2">
-            <h2 class="gallery-title">Our Products Gallery</h2>
+            <h2 class="gallery-title">معرض منتجاتنا</h2>
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="gallery-slide active">
@@ -528,10 +556,10 @@
                 </div>
                 <div class="gallery-nav">
                     <button class="gallery-btn prev-btn">
-                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                     <button class="gallery-btn next-btn">
-                        <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-left"></i>
                     </button>
                 </div>
                 <div class="gallery-dots">
@@ -547,31 +575,28 @@
             </div>
         </div>
 
-        <!-- Contact Buttons -->
-        <div class="contact-section fade-in delay-2">
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="contact-title">Contact Us</h2>
             <div class="contact-buttons">
-                <a href="tel:+962796611459" class="contact-button primary">
+                <a href="tel:+962796611459" class="contact-button call">
                     <i class="fas fa-phone-alt contact-icon"></i>
-                    <span>Call Now</span>
+                    <span class="contact-label">اتصال</span>
                 </a>
                 
                 <a href="https://wa.me/962796611459" class="contact-button whatsapp" target="_blank">
                     <i class="fab fa-whatsapp contact-icon"></i>
-                    <span>WhatsApp</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Social Icons -->
-        <div class="social-section fade-in delay-3">
-            <h3 class="social-title">Follow Us</h3>
-            <div class="social-icons-grid">
-                <a href="https://www.instagram.com/alandalus2026?igsh=c3o1YWwzdXoycHcy" class="social-icon instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
+                    <span class="contact-label">واتساب</span>
                 </a>
                 
-                <a href="https://www.facebook.com/share/17G4rxHPro/" class="social-icon facebook" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.instagram.com/alandalus2026?igsh=c3o1YWwzdXoycHcy" class="contact-button instagram" target="_blank">
+                    <i class="fab fa-instagram contact-icon"></i>
+                    <span class="contact-label">إنستغرام</span>
+                </a>
+                
+                <a href="https://www.facebook.com/share/17G4rxHPro/" class="contact-button facebook" target="_blank">
+                    <i class="fab fa-facebook-f contact-icon"></i>
+                    <span class="contact-label">فيسبوك</span>
                 </a>
             </div>
         </div>
@@ -641,7 +666,7 @@
             setInterval(nextSlide, 5000);
 
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .contact-button, .action-button, .gallery-btn');
+            const buttons = document.querySelectorAll('.contact-button, .action-button, .gallery-btn');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
