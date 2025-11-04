@@ -63,19 +63,31 @@
             margin-top: -70px;
         }
         
+        .profile-images-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
         .profile-image-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 20px;
         }
         
         .profile-image {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             border-radius: 20px;
             border: 4px solid var(--light-card);
             object-fit: cover;
             box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
         }
         
         .profile-name {
@@ -390,8 +402,8 @@
             }
             
             .profile-image {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
             
             .cover-photo {
@@ -424,8 +436,8 @@
         
         @media (max-width: 480px) {
             .profile-image {
-                width: 100px;
-                height: 100px;
+                width: 80px;
+                height: 80px;
             }
             
             .cover-photo {
@@ -467,8 +479,16 @@
     <header class="profile-header fade-in">
         <img src="https://i.imgur.com/ZAywVCO.png" alt="Cover Photo" class="cover-photo">
         <div class="profile-info">
-            <div class="profile-image-container">
-                <img src="https://i.imgur.com/ZAywVCO.png" alt="Flooring Mart" class="profile-image">
+            <div class="profile-images-container">
+                <div class="profile-image-container">
+                    <img src="https://i.imgur.com/ZAywVCO.png" alt="Flooring Mart Project 1" class="profile-image">
+                </div>
+                <div class="profile-image-container">
+                    <img src="https://i.imgur.com/umxt8fb.png" alt="Flooring Mart Project 2" class="profile-image">
+                </div>
+                <div class="profile-image-container">
+                    <img src="https://i.imgur.com/3a7gq5N.jpeg" alt="Flooring Mart Project 3" class="profile-image">
+                </div>
             </div>
             <h1 class="profile-name">Flooring Mart</h1>
             <p class="profile-title">Premium Flooring Solutions by OSOOL</p>
@@ -642,7 +662,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2024 Flooring Mart by OSOOL - Premium Flooring Solutions. All rights reserved.</p>
+            <p class="footer-text">OSOOL - Premium Flooring Solutions. All rights reserved.</p>
         </div>
     </footer>
 
