@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flooring Mart by OSOOL - Premium Flooring Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b4513;
+            --primary-light: #a0522d;
+            --primary-dark: #654321;
+            --accent: #cd853f;
+            --light-bg: #f5f5f5;
+            --light-card: #ffffff;
+            --dark-text: #333333;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            --border: 1px solid #d2b48c;
+            --social-color: #8b4513;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #f0f0f0 100%);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Modern Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 30px 30px;
+            box-shadow: var(--shadow);
+            background: var(--light-card);
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 30px;
+            text-align: center;
+            margin-top: -70px;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            border: 4px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+        
+        .profile-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--dark-text);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+        
+        .gallery-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+        }
+        
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .gallery-slide.active {
+            opacity: 1;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            z-index: 10;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--primary);
+            color: var(--primary-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(139, 69, 19, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+        
+        .video-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+        
+        .social-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: var(--social-color);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            background: var(--primary);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: var(--border);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            background: var(--primary);
+            color: white;
+        }
+        
+        .action-button i {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--light-card);
+            padding: 25px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: var(--border);
+        }
+        
+        .footer-text {
+            font-size: 0.85rem;
+            color: var(--dark-text);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-title {
+                font-size: 1rem;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-photo {
+                height: 220px;
+            }
+            
+            .gallery-slider {
+                height: 400px;
+            }
+            
+            .video-iframe {
+                height: 300px;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .cover-photo {
+                height: 180px;
+            }
+            
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-slider {
+                height: 350px;
+            }
+            
+            .gallery-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .social-icons-grid {
+                gap: 12px;
+            }
+            
+            .social-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+            
+            .video-iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <img src="https://i.imgur.com/ZAywVCO.png" alt="Cover Photo" class="cover-photo">
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/ZAywVCO.png" alt="Flooring Mart" class="profile-image">
+            </div>
+            <h1 class="profile-name">Flooring Mart</h1>
+            <p class="profile-title">Premium Flooring Solutions by OSOOL</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <div class="tagline">🏠 Transform Your Space with Premium Flooring 🏠</div>
+            <div class="about-text">
+                Welcome to Flooring Mart by OSOOL, your premier destination for high-quality flooring solutions. 
+                We specialize in parquet, kitchen flooring, bedroom solutions, closets, cladding, and TV units. 
+                With our Egger flooring collection and expert installation services, we bring elegance and durability to every space.
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in delay-2">
+            <h2 class="gallery-title">Our Projects Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-slider">
+                    <div class="gallery-slide active">
+                        <img src="https://i.imgur.com/OJeG0CS.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/DIBkeMB.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/Z5YOMaa.jpeg" alt="Bedroom Flooring" class="gallery-image">
+                        <div class="slide-caption">Bedroom Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/oJ2xvhM.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/SGtlODg.jpeg" alt="Kitchen Flooring" class="gallery-image">
+                        <div class="slide-caption">Kitchen Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/43W4h5q.jpeg" alt="Kitchen Flooring" class="gallery-image">
+                        <div class="slide-caption">Kitchen Flooring</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/fiF301K.jpeg" alt="Closet Solutions" class="gallery-image">
+                        <div class="slide-caption">Closet Solutions</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/Sp561qs.jpeg" alt="Cladding" class="gallery-image">
+                        <div class="slide-caption">Cladding</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/cT5hGe2.jpeg" alt="TV Unit" class="gallery-image">
+                        <div class="slide-caption">TV Unit</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/Rr3jLkM.jpeg" alt="Main Office" class="gallery-image">
+                        <div class="slide-caption">Main Office</div>
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="gallery-dots">
+                    <div class="gallery-dot active" data-index="0"></div>
+                    <div class="gallery-dot" data-index="1"></div>
+                    <div class="gallery-dot" data-index="2"></div>
+                    <div class="gallery-dot" data-index="3"></div>
+                    <div class="gallery-dot" data-index="4"></div>
+                    <div class="gallery-dot" data-index="5"></div>
+                    <div class="gallery-dot" data-index="6"></div>
+                    <div class="gallery-dot" data-index="7"></div>
+                    <div class="gallery-dot" data-index="8"></div>
+                    <div class="gallery-dot" data-index="9"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section fade-in delay-2">
+            <h2 class="video-title">Our Work Showcase</h2>
+            <div class="video-container">
+                <iframe class="video-iframe" src="https://www.youtube.com/embed/3bVo9v3v5vg" title="Flooring Mart Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">Connect With Us</h2>
+            <div class="social-icons-grid">
+                <!-- OSOOL Accounts -->
+                <a href="https://www.instagram.com/osool_jo" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/share/16etkavTBy/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <!-- Flooring Mart Accounts -->
+                <a href="https://www.instagram.com/flooring_mart.jo" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/share/1Jd5Qr1cNt/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <!-- Egger Accounts -->
+                <a href="https://www.instagram.com/egger_flooring_jordan" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/share/1Z6dxkNez1/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <!-- Unified Accounts -->
+                <a href="https://maps.app.goo.gl/UhohoeCRPXRx5R8A8" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                
+                <a href="https://youtube.com/@flooringmartbyosool" class="social-icon" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+                <a href="https://www.tiktok.com/@flooring_mart" class="social-icon" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                <a href="https://x.com/flooring_martjo" class="social-icon" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                
+                <a href="tel:+962791195756" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <a href="https://wa.me/962791195756" class="social-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <a href="VCF/flooringmart.vcf" class="action-button save" download>
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+            <a href="tel:+962791195756" class="action-button call">
+                <i class="fas fa-phone"></i>
+                Call Now
+            </a>
+            <a href="https://maps.app.goo.gl/UhohoeCRPXRx5R8A8" class="action-button location" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+                Visit Us
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Flooring Mart by OSOOL - Premium Flooring Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show current slide
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= slides.length) next = 0;
+                showSlide(next);
+            }
+
+            function prevSlide() {
+                let prev = currentSlide - 1;
+                if (prev < 0) prev = slides.length - 1;
+                showSlide(prev);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Dot click events
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
