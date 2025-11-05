@@ -52,22 +52,23 @@
         
         .cover-photo {
             width: 100%;
-            height: 320px;
+            height: 400px;
             object-fit: cover;
+            object-position: center 30%;
         }
         
         .profile-info {
             position: relative;
-            padding: 0 20px 40px;
+            padding: 0 20px 50px;
             text-align: center;
-            margin-top: -50px;
+            margin-top: -30px;
         }
         
         .profile-images-container {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
         
@@ -130,7 +131,7 @@
             margin-bottom: 15px;
         }
         
-        /* Gallery Section */
+        /* Gallery Sections */
         .gallery-section {
             text-align: center;
             margin: 40px 0;
@@ -246,6 +247,30 @@
         .gallery-dot.active {
             background: var(--primary);
             transform: scale(1.2);
+        }
+
+        /* Parquet Gallery Section */
+        .parquet-gallery-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 0 20px;
+        }
+
+        .parquet-gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .parquet-gallery-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
         }
         
         /* Video Section */
@@ -438,10 +463,10 @@
             }
             
             .cover-photo {
-                height: 250px;
+                height: 300px;
             }
             
-            .gallery-slider {
+            .gallery-slider, .parquet-gallery-slider {
                 height: 400px;
             }
             
@@ -477,14 +502,14 @@
             }
             
             .cover-photo {
-                height: 200px;
+                height: 250px;
             }
             
             .profile-name {
                 font-size: 1.8rem;
             }
             
-            .gallery-slider {
+            .gallery-slider, .parquet-gallery-slider {
                 height: 350px;
             }
             
@@ -544,26 +569,14 @@
             </div>
         </div>
 
-        <!-- Gallery Section -->
+        <!-- Projects Gallery Section -->
         <div class="gallery-section fade-in delay-2">
             <h2 class="gallery-title">Our Projects Gallery</h2>
             <div class="gallery-container">
                 <div class="gallery-slider">
                     <div class="gallery-slide active">
-                        <img src="https://i.imgur.com/OJeG0CS.jpeg" alt="Parquet Flooring" class="gallery-image">
-                        <div class="slide-caption">Parquet</div>
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/DIBkeMB.jpeg" alt="Parquet Flooring" class="gallery-image">
-                        <div class="slide-caption">Parquet</div>
-                    </div>
-                    <div class="gallery-slide">
                         <img src="https://i.imgur.com/Z5YOMaa.jpeg" alt="Bedroom Flooring" class="gallery-image">
                         <div class="slide-caption">Bedroom</div>
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/oJ2xvhM.jpeg" alt="Parquet Flooring" class="gallery-image">
-                        <div class="slide-caption">Parquet</div>
                     </div>
                     <div class="gallery-slide">
                         <img src="https://i.imgur.com/SGtlODg.jpeg" alt="Kitchen Flooring" class="gallery-image">
@@ -606,9 +619,40 @@
                     <div class="gallery-dot" data-index="4"></div>
                     <div class="gallery-dot" data-index="5"></div>
                     <div class="gallery-dot" data-index="6"></div>
-                    <div class="gallery-dot" data-index="7"></div>
-                    <div class="gallery-dot" data-index="8"></div>
-                    <div class="gallery-dot" data-index="9"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parquet Gallery Section -->
+        <div class="parquet-gallery-section fade-in delay-2">
+            <h2 class="gallery-title">Parquet Collection</h2>
+            <div class="parquet-gallery-container">
+                <div class="parquet-gallery-slider">
+                    <div class="gallery-slide active">
+                        <img src="https://i.imgur.com/OJeG0CS.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Design 1</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/DIBkeMB.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Design 2</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/oJ2xvhM.jpeg" alt="Parquet Flooring" class="gallery-image">
+                        <div class="slide-caption">Parquet Design 3</div>
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn prev-btn-parquet">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn next-btn-parquet">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="gallery-dots">
+                    <div class="gallery-dot active" data-index-parquet="0"></div>
+                    <div class="gallery-dot" data-index-parquet="1"></div>
+                    <div class="gallery-dot" data-index-parquet="2"></div>
                 </div>
             </div>
         </div>
@@ -629,12 +673,12 @@
                 <div class="social-icons-grid">
                     <a href="https://www.instagram.com/osool_jo" class="social-icon" target="_blank">
                         <i class="fab fa-instagram"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">OSOOL Instagram</span>
                     </a>
                     
                     <a href="https://www.facebook.com/share/16etkavTBy/" class="social-icon" target="_blank">
                         <i class="fab fa-facebook-f"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">OSOOL Facebook</span>
                     </a>
                 </div>
             </div>
@@ -645,12 +689,12 @@
                 <div class="social-icons-grid">
                     <a href="https://www.instagram.com/flooring_mart.jo" class="social-icon" target="_blank">
                         <i class="fab fa-instagram"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">Flooring Mart Instagram</span>
                     </a>
                     
                     <a href="https://www.facebook.com/share/1Jd5Qr1cNt/" class="social-icon" target="_blank">
                         <i class="fab fa-facebook-f"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">Flooring Mart Facebook</span>
                     </a>
                 </div>
             </div>
@@ -661,12 +705,12 @@
                 <div class="social-icons-grid">
                     <a href="https://www.instagram.com/egger_flooring_jordan" class="social-icon" target="_blank">
                         <i class="fab fa-instagram"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">Egger Instagram</span>
                     </a>
                     
                     <a href="https://www.facebook.com/share/1Z6dxkNez1/" class="social-icon" target="_blank">
                         <i class="fab fa-facebook-f"></i>
-                        <span class="social-icon-label"></span>
+                        <span class="social-icon-label">Egger Facebook</span>
                     </a>
                 </div>
             </div>
@@ -735,13 +779,21 @@
     <script>
         // Gallery Slider Functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.gallery-slide');
-            const dots = document.querySelectorAll('.gallery-dot');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
+            // Main Projects Gallery
+            const slides = document.querySelectorAll('.gallery-section .gallery-slide');
+            const dots = document.querySelectorAll('.gallery-section .gallery-dot');
+            const prevBtn = document.querySelector('.gallery-section .prev-btn');
+            const nextBtn = document.querySelector('.gallery-section .next-btn');
             let currentSlide = 0;
 
-            function showSlide(index) {
+            // Parquet Gallery
+            const parquetSlides = document.querySelectorAll('.parquet-gallery-section .gallery-slide');
+            const parquetDots = document.querySelectorAll('.parquet-gallery-section .gallery-dot');
+            const prevBtnParquet = document.querySelector('.parquet-gallery-section .prev-btn-parquet');
+            const nextBtnParquet = document.querySelector('.parquet-gallery-section .next-btn-parquet');
+            let currentParquetSlide = 0;
+
+            function showSlide(index, slides, dots) {
                 // Hide all slides
                 slides.forEach(slide => slide.classList.remove('active'));
                 dots.forEach(dot => dot.classList.remove('active'));
@@ -749,32 +801,59 @@
                 // Show current slide
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
-                currentSlide = index;
+                return index;
             }
 
-            function nextSlide() {
-                let next = currentSlide + 1;
+            function nextSlide(slides, dots, currentIndex) {
+                let next = currentIndex + 1;
                 if (next >= slides.length) next = 0;
-                showSlide(next);
+                return showSlide(next, slides, dots);
             }
 
-            function prevSlide() {
-                let prev = currentSlide - 1;
+            function prevSlide(slides, dots, currentIndex) {
+                let prev = currentIndex - 1;
                 if (prev < 0) prev = slides.length - 1;
-                showSlide(prev);
+                return showSlide(prev, slides, dots);
             }
 
-            // Event listeners
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-
-            // Dot click events
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => showSlide(index));
+            // Event listeners for main gallery
+            nextBtn.addEventListener('click', () => {
+                currentSlide = nextSlide(slides, dots, currentSlide);
+            });
+            prevBtn.addEventListener('click', () => {
+                currentSlide = prevSlide(slides, dots, currentSlide);
             });
 
-            // Auto slide every 5 seconds
-            setInterval(nextSlide, 5000);
+            // Event listeners for parquet gallery
+            nextBtnParquet.addEventListener('click', () => {
+                currentParquetSlide = nextSlide(parquetSlides, parquetDots, currentParquetSlide);
+            });
+            prevBtnParquet.addEventListener('click', () => {
+                currentParquetSlide = prevSlide(parquetSlides, parquetDots, currentParquetSlide);
+            });
+
+            // Dot click events for main gallery
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = showSlide(index, slides, dots);
+                });
+            });
+
+            // Dot click events for parquet gallery
+            parquetDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentParquetSlide = showSlide(index, parquetSlides, parquetDots);
+                });
+            });
+
+            // Auto slide every 5 seconds for both galleries
+            setInterval(() => {
+                currentSlide = nextSlide(slides, dots, currentSlide);
+            }, 5000);
+
+            setInterval(() => {
+                currentParquetSlide = nextSlide(parquetSlides, parquetDots, currentParquetSlide);
+            }, 5000);
 
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
