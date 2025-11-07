@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff6b8b;
-            --primary-light: #ff9eb5;
-            --primary-dark: #e8436d;
-            --accent: #ff9eb5;
-            --light-bg: #fff5f7;
+            --primary: #4a90e2;
+            --primary-light: #6ba8e9;
+            --primary-dark: #357abd;
+            --accent: #5a9ae0;
+            --light-bg: #f8fbff;
             --light-card: #ffffff;
-            --dark-text: #4a2c40;
-            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            --border: 1px solid #ffe4ec;
-            --social-color: #d17a94;
+            --dark-text: #2c3e50;
+            --shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+            --border: 1px solid #e1eef9;
+            --social-color: #5d7a9c;
         }
         
         * {
@@ -29,7 +29,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, var(--light-bg) 0%, #ffeef3 100%);
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
             color: var(--dark-text);
             min-height: 100vh;
             line-height: 1.6;
@@ -116,7 +116,7 @@
         
         .click-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(74, 144, 226, 0.2);
         }
         
         .click-card:active {
@@ -188,42 +188,25 @@
             margin: 30px auto;
             padding: 30px;
             border-radius: 20px;
-            max-width: 700px;
+            max-width: 800px;
             text-align: center;
             box-shadow: var(--shadow);
             border: var(--border);
         }
         
         .menu-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--dark-text);
         }
         
         .menu-image {
             width: 100%;
-            max-width: 500px;
+            max-width: 700px;
             border-radius: 15px;
             box-shadow: var(--shadow);
-            margin-bottom: 20px;
-        }
-        
-        .products-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .product-item {
-            background: var(--light-bg);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            border: 1px solid var(--primary-light);
+            margin-bottom: 15px;
         }
         
         /* Social Icons Section */
@@ -298,7 +281,7 @@
         
         .action-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 25px rgba(74, 144, 226, 0.2);
             background: var(--primary);
             color: white;
         }
@@ -379,6 +362,14 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .menu-section {
+                max-width: 90%;
+            }
+            
+            .menu-image {
+                max-width: 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -411,6 +402,10 @@
                 width: 55px;
                 height: 55px;
                 font-size: 1.4rem;
+            }
+            
+            .menu-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -454,13 +449,6 @@
         <div class="menu-section fade-in delay-3">
             <h2 class="menu-title">Our Menu</h2>
             <img src="https://i.imgur.com/o0ocFwc.jpeg" alt="Skoop Menu" class="menu-image">
-            <div class="products-list">
-                <div class="product-item">Cake</div>
-                <div class="product-item">Ice Cream</div>
-                <div class="product-item">Slush Drink</div>
-                <div class="product-item">Strawberry Cup</div>
-                <div class="product-item">Waffle</div>
-            </div>
         </div>
 
         <!-- Social Icons -->
