@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Laser Clinic - Professional Laser Treatments</title>
+    <title>Angel Laser Clinic - Professional Laser Hair Removal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -93,68 +93,6 @@
             color: var(--dark-text);
         }
         
-        /* Click to Copy Card */
-        .click-card-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 0 20px;
-        }
-        
-        .click-card {
-            background: var(--light-card);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--primary);
-            max-width: 500px;
-            margin: 0 auto;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .click-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .click-card:active {
-            transform: scale(0.98);
-        }
-        
-        .click-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-        
-        .click-label {
-            font-size: 1rem;
-            color: var(--dark-text);
-            opacity: 0.8;
-        }
-        
-        .copy-notification {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .copy-notification.show {
-            opacity: 1;
-        }
-        
         /* About Section */
         .about-section {
             background: var(--light-card);
@@ -180,6 +118,103 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .gallery-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+        }
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            height: 400px;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 15px;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--primary-dark);
+            transform: scale(1.2);
         }
         
         /* Services Section */
@@ -392,10 +427,6 @@
                 height: 220px;
             }
             
-            .click-text {
-                font-size: 1.5rem;
-            }
-            
             .social-icon {
                 width: 60px;
                 height: 60px;
@@ -409,6 +440,10 @@
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .gallery-slide {
+                height: 300px;
             }
         }
         
@@ -426,14 +461,6 @@
                 font-size: 1.8rem;
             }
             
-            .click-text {
-                font-size: 1.3rem;
-            }
-            
-            .click-card {
-                padding: 20px;
-            }
-            
             .social-icons-grid {
                 gap: 12px;
             }
@@ -442,6 +469,10 @@
                 width: 55px;
                 height: 55px;
                 font-size: 1.4rem;
+            }
+            
+            .gallery-slide {
+                height: 250px;
             }
         }
     </style>
@@ -455,28 +486,50 @@
                 <img src="https://i.imgur.com/vhrLenE.png" alt="Angel Laser Clinic" class="profile-image">
             </div>
             <h1 class="profile-name">Angel Laser Clinic</h1>
-            <p class="profile-title">Professional Laser Treatments</p>
+            <p class="profile-title">Professional Laser Hair Removal for Men & Women</p>
         </div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Click to Copy Card -->
-        <div class="click-card-section fade-in delay-1">
-            <div class="click-card" id="clickCard">
-                <div class="click-text" id="clickText">+962792849193</div>
-                <div class="click-label">Click to copy phone number</div>
-                <div class="copy-notification" id="copyNotification">Copied! ✅</div>
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <div class="tagline">✨ Your Beauty Is Our Priority ✨</div>
+            <div class="about-text">
+                Welcome to Angel Laser Clinic, where we provide professional and advanced laser hair removal 
+                treatments for both men and women. Our experienced team uses state-of-the-art technology 
+                to deliver safe and effective results for face and body treatments.
             </div>
         </div>
 
-        <!-- About Section -->
-        <div class="about-section fade-in delay-2">
-            <div class="tagline">✨ Your Beauty Is Our Priority ✨</div>
-            <div class="about-text">
-                Welcome to Angel Laser Clinic, where we provide professional and advanced laser treatments 
-                to enhance your natural beauty. Our experienced team uses state-of-the-art technology 
-                to deliver safe and effective results for all your aesthetic needs.
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in delay-2">
+            <h2 class="gallery-title">Our Work</h2>
+            <div class="gallery-container">
+                <div class="gallery-slides">
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/DlyM7fW.jpeg" alt="Laser Treatment 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/rajpqEk.jpeg" alt="Laser Treatment 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/8wKjdud.jpeg" alt="Laser Treatment 3">
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="gallery-dots">
+                <div class="gallery-dot active" data-index="0"></div>
+                <div class="gallery-dot" data-index="1"></div>
+                <div class="gallery-dot" data-index="2"></div>
             </div>
         </div>
 
@@ -485,11 +538,11 @@
             <h2 class="services-title">Our Services</h2>
             <div class="services-list">
                 <div class="service-item">Laser Hair Removal</div>
+                <div class="service-item">Face Treatments</div>
+                <div class="service-item">Body Treatments</div>
+                <div class="service-item">For Men & Women</div>
                 <div class="service-item">Skin Rejuvenation</div>
-                <div class="service-item">Acne Treatment</div>
-                <div class="service-item">Tattoo Removal</div>
-                <div class="service-item">Pigmentation Treatment</div>
-                <div class="service-item">Wrinkle Reduction</div>
+                <div class="service-item">Professional Care</div>
             </div>
         </div>
 
@@ -554,30 +607,56 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Angel Laser Clinic - Professional Laser Treatments. All rights reserved.</p>
+            <p class="footer-text">Angel Laser Clinic - Professional Laser Hair Removal. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Click to Copy Functionality
+        // Gallery Functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const clickCard = document.getElementById('clickCard');
-            const clickText = document.getElementById('clickText');
-            const copyNotification = document.getElementById('copyNotification');
+            const slides = document.querySelector('.gallery-slides');
+            const slidesCount = document.querySelectorAll('.gallery-slide').length;
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dots = document.querySelectorAll('.gallery-dot');
             
-            clickCard.addEventListener('click', function() {
-                // Copy text to clipboard
-                const textToCopy = clickText.textContent;
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Show notification
-                    copyNotification.classList.add('show');
-                    setTimeout(() => {
-                        copyNotification.classList.remove('show');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
+            let currentSlide = 0;
+            
+            // Update slide position
+            function updateSlide() {
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Next slide
+            nextBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            });
+            
+            // Previous slide
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+                updateSlide();
+            });
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentSlide = index;
+                    updateSlide();
                 });
             });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            }, 5000);
             
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button');
