@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Laser Clinic - Professional Laser Treatments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --primary-light: #e6c75a;
+            --primary-dark: #b8941f;
+            --accent: #c19b53;
+            --light-bg: #fffbf0;
+            --light-card: #ffffff;
+            --dark-text: #5d4037;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            --border: 1px solid #f0e6d2;
+            --social-color: #8d6e63;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #fff8e1 100%);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.6;
+            direction: ltr;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Modern Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 30px 30px;
+            box-shadow: var(--shadow);
+            background: var(--light-card);
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 30px;
+            text-align: center;
+            margin-top: -70px;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            border: 4px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+        
+        .profile-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--dark-text);
+        }
+        
+        /* Click to Copy Card */
+        .click-card-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+        
+        .click-card {
+            background: var(--light-card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary);
+            max-width: 500px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .click-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .click-card:active {
+            transform: scale(0.98);
+        }
+        
+        .click-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .click-label {
+            font-size: 1rem;
+            color: var(--dark-text);
+            opacity: 0.8;
+        }
+        
+        .copy-notification {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .copy-notification.show {
+            opacity: 1;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .services-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .service-item {
+            background: var(--light-bg);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-light);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+        
+        .social-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: var(--social-color);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            background: var(--primary);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: var(--border);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            background: var(--primary);
+            color: white;
+        }
+        
+        .action-button i {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--light-card);
+            padding: 25px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: var(--border);
+        }
+        
+        .footer-text {
+            font-size: 0.85rem;
+            color: var(--dark-text);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-title {
+                font-size: 1rem;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-photo {
+                height: 220px;
+            }
+            
+            .click-text {
+                font-size: 1.5rem;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .cover-photo {
+                height: 180px;
+            }
+            
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            
+            .click-text {
+                font-size: 1.3rem;
+            }
+            
+            .click-card {
+                padding: 20px;
+            }
+            
+            .social-icons-grid {
+                gap: 12px;
+            }
+            
+            .social-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <img src="https://i.imgur.com/vhrLenE.png" alt="Cover Photo" class="cover-photo">
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/vhrLenE.png" alt="Angel Laser Clinic" class="profile-image">
+            </div>
+            <h1 class="profile-name">Angel Laser Clinic</h1>
+            <p class="profile-title">Professional Laser Treatments</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Click to Copy Card -->
+        <div class="click-card-section fade-in delay-1">
+            <div class="click-card" id="clickCard">
+                <div class="click-text" id="clickText">+962792849193</div>
+                <div class="click-label">Click to copy phone number</div>
+                <div class="copy-notification" id="copyNotification">Copied! ✅</div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section fade-in delay-2">
+            <div class="tagline">✨ Your Beauty Is Our Priority ✨</div>
+            <div class="about-text">
+                Welcome to Angel Laser Clinic, where we provide professional and advanced laser treatments 
+                to enhance your natural beauty. Our experienced team uses state-of-the-art technology 
+                to deliver safe and effective results for all your aesthetic needs.
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-3">
+            <h2 class="services-title">Our Services</h2>
+            <div class="services-list">
+                <div class="service-item">Laser Hair Removal</div>
+                <div class="service-item">Skin Rejuvenation</div>
+                <div class="service-item">Acne Treatment</div>
+                <div class="service-item">Tattoo Removal</div>
+                <div class="service-item">Pigmentation Treatment</div>
+                <div class="service-item">Wrinkle Reduction</div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="contact-title">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+962792849193</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+962786017661</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Al Rabieh, Amman - Opposite Specialty Hospital, 6th Floor, Al Kandi Medical Complex</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-4">
+            <h2 class="social-title">Connect With Us</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.facebook.com/share/16wpNH22Et/?mibextid=wwXIfr" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <a href="https://maps.app.goo.gl/ba9jDwpRyeQGT9dZ8?g_st=iw" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                
+                <a href="https://wa.me/962792849193" class="social-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-4">
+            <a href="VCF/angel-laser-clinic.vcf" class="action-button save" download>
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+            <a href="https://maps.app.goo.gl/ba9jDwpRyeQGT9dZ8?g_st=iw" class="action-button location" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+                Visit Clinic
+            </a>
+            <a href="https://wa.me/962792849193" class="action-button whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp Us
+            </a>
+            <a href="https://www.facebook.com/share/16wpNH22Et/?mibextid=wwXIfr" class="action-button facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                Follow on Facebook
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Angel Laser Clinic - Professional Laser Treatments. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Click to Copy Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const clickCard = document.getElementById('clickCard');
+            const clickText = document.getElementById('clickText');
+            const copyNotification = document.getElementById('copyNotification');
+            
+            clickCard.addEventListener('click', function() {
+                // Copy text to clipboard
+                const textToCopy = clickText.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Show notification
+                    copyNotification.classList.add('show');
+                    setTimeout(() => {
+                        copyNotification.classList.remove('show');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+            
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
