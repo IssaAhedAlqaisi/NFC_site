@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hossam Zallom - Skin Care Specialist</title>
+    <title>Dr. Hossam Zallom - Owner of Angel Laser Clinic</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,16 +55,29 @@
         
         .cover-photo {
             width: 100%;
-            height: 320px;
+            height: 400px;
             object-fit: cover;
             display: block;
+            transform: scale(1.1);
+            transition: transform 0.8s ease;
+        }
+        
+        .cover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+            border-radius: 0 0 30px 30px;
         }
         
         .profile-info {
             position: relative;
             padding: 0 20px 40px;
             text-align: center;
-            margin-top: -80px;
+            margin-top: -100px;
+            z-index: 2;
         }
         
         .profile-image-container {
@@ -74,8 +87,8 @@
         }
         
         .profile-image {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 5px solid var(--light-card);
             object-fit: cover;
@@ -148,6 +161,42 @@
             color: var(--dark-text);
             text-align: center;
             margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .highlight-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+        
+        /* Clinic Section */
+        .clinic-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .clinic-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: var(--shadow);
         }
         
         /* Services Section */
@@ -243,6 +292,14 @@
             color: var(--primary);
             font-size: 1.3rem;
             width: 30px;
+        }
+        
+        .address {
+            font-size: 1rem;
+            color: var(--light-text);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         /* Social Icons Section */
@@ -391,12 +448,12 @@
             }
             
             .profile-image {
-                width: 140px;
-                height: 140px;
+                width: 150px;
+                height: 150px;
             }
             
             .cover-photo {
-                height: 250px;
+                height: 300px;
             }
             
             .social-icon {
@@ -417,12 +474,12 @@
         
         @media (max-width: 480px) {
             .profile-image {
-                width: 120px;
-                height: 120px;
+                width: 130px;
+                height: 130px;
             }
             
             .cover-photo {
-                height: 200px;
+                height: 250px;
             }
             
             .profile-name {
@@ -449,13 +506,14 @@
     <!-- Header Section -->
     <header class="profile-header fade-in">
         <img src="https://i.imgur.com/zCTVou2.png" alt="Cover Photo" class="cover-photo">
+        <div class="cover-overlay"></div>
         <div class="profile-info">
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/A7csShw.png" alt="Dr. Hossam Zallom" class="profile-image">
             </div>
             <h1 class="profile-name">Dr. Hossam Zallom</h1>
-            <p class="profile-title">Skin Care Specialist</p>
-            <div class="profile-badge">Professional Dermatology</div>
+            <p class="profile-title">Founder & Medical Director of Angel Laser Clinic</p>
+            <div class="profile-badge">Dermatology & Laser Specialist</div>
         </div>
     </header>
 
@@ -463,55 +521,87 @@
     <div class="container">
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">Professional Profile</h2>
             <div class="about-text">
-                Welcome to my professional practice. As a dedicated skin care specialist with years of experience, 
-                I am committed to providing the highest quality dermatological care. My approach combines 
-                medical expertise with personalized treatment plans to help you achieve healthy, radiant skin.
+                Dr. Hossam Zallom is a renowned dermatology and laser specialist with over 12 years of experience 
+                in cosmetic and medical dermatology. As the founder and medical director of Angel Laser Clinic, 
+                he has established one of Jordan's leading centers for advanced laser treatments and skin care.
             </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">Education & Credentials</div>
+                <div class="about-text">
+                    • Board Certified Dermatologist<br>
+                    • Master's Degree in Laser Medicine<br>
+                    • International training in Europe and the United States<br>
+                    • Member of International Society of Dermatology
+                </div>
+            </div>
+            
             <div class="about-text">
-                I believe in a comprehensive approach to skin health, focusing on both treatment and prevention 
-                to ensure long-lasting results for all my patients.
+                Dr. Zallom is passionate about combining medical expertise with the latest technological advancements 
+                to provide safe, effective, and personalized treatments for all his patients.
+            </div>
+        </div>
+
+        <!-- Clinic Section -->
+        <div class="clinic-section fade-in delay-2">
+            <h2 class="section-title">Angel Laser Clinic</h2>
+            <img src="https://i.imgur.com/vhrLenE.png" alt="Angel Laser Clinic" class="clinic-logo">
+            <div class="about-text">
+                Founded by Dr. Hossam Zallom, Angel Laser Clinic has been serving the community since 2015, 
+                providing state-of-the-art laser treatments and comprehensive skin care solutions.
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-title">Clinic Specializations</div>
+                <div class="about-text">
+                    • Laser Hair Removal for Men & Women<br>
+                    • Facial & Body Rejuvenation<br>
+                    • Acne & Scar Treatments<br>
+                    • Pigmentation Solutions<br>
+                    • Anti-Aging Procedures<br>
+                    • Medical Dermatology
+                </div>
             </div>
         </div>
 
         <!-- Services Section -->
-        <div class="services-section fade-in delay-2">
-            <h2 class="section-title">My Services</h2>
+        <div class="services-section fade-in delay-3">
+            <h2 class="section-title">Specialized Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-spa"></i>
+                        <i class="fas fa-laser"></i>
                     </div>
-                    <h3 class="service-title">Skin Consultation</h3>
-                    <p class="service-desc">Comprehensive skin analysis and personalized treatment recommendations</p>
+                    <h3 class="service-title">Laser Hair Removal</h3>
+                    <p class="service-desc">Advanced laser technology for permanent hair reduction for both men and women</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-allergies"></i>
+                        <i class="fas fa-face"></i>
                     </div>
-                    <h3 class="service-title">Acne Treatment</h3>
-                    <p class="service-desc">Advanced solutions for acne and post-acne marks</p>
+                    <h3 class="service-title">Facial Treatments</h3>
+                    <p class="service-desc">Comprehensive facial rejuvenation and skin revitalization procedures</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
-                    <h3 class="service-title">Anti-Aging</h3>
-                    <p class="service-desc">Revitalizing treatments to reduce signs of aging</p>
+                    <h3 class="service-title">Medical Dermatology</h3>
+                    <p class="service-desc">Diagnosis and treatment of various skin conditions and diseases</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-spa"></i>
                     </div>
-                    <h3 class="service-title">Pigmentation</h3>
-                    <p class="service-desc">Treatment for hyperpigmentation and sun damage</p>
+                    <h3 class="service-title">Skin Rejuvenation</h3>
+                    <p class="service-desc">Advanced treatments to restore youthfulness and vitality to your skin</p>
                 </div>
             </div>
         </div>
 
         <!-- Contact Section -->
-        <div class="contact-section fade-in delay-3">
+        <div class="contact-section fade-in delay-4">
             <h2 class="section-title">Contact Information</h2>
             <div class="contact-info">
                 <div class="contact-item">
@@ -521,6 +611,10 @@
                 <div class="contact-item">
                     <i class="fab fa-whatsapp"></i>
                     <span>+962788765180</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="address">Al Rabieh, Amman - Opposite Specialty Hospital<br>6th Floor, Al Kandi Medical Complex</span>
                 </div>
             </div>
         </div>
@@ -552,11 +646,11 @@
             </a>
             <a href="https://wa.me/962788765180" class="action-button" target="_blank">
                 <i class="fab fa-whatsapp"></i>
-                WhatsApp
+                Book Consultation
             </a>
             <a href="tel:+962788765180" class="action-button">
                 <i class="fas fa-phone"></i>
-                Call Now
+                Call Clinic
             </a>
         </div>
     </div>
@@ -564,13 +658,17 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Dr. Hossam Zallom - Skin Care Specialist</p>
-            <p class="footer-text">Professional Dermatology Services</p>
+            <p class="footer-text">Dr. Hossam Zallom - Founder & Medical Director</p>
+            <p class="footer-text">Angel Laser Clinic • Professional Dermatology & Laser Treatments</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Add zoom effect to cover photo
+            const coverPhoto = document.querySelector('.cover-photo');
+            coverPhoto.style.transform = 'scale(1)';
+            
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button');
             buttons.forEach(button => {
