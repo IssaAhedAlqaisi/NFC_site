@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nader Dolaar - Influencer & Brand Ambassador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --primary-light: #333333;
+            --primary-dark: #000000;
+            --accent: #ffd700;
+            --gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            --gradient-accent: linear-gradient(135deg, #1a1a1a 0%, #ffd700 100%);
+            --light-bg: #0a0a0a;
+            --light-card: #1a1a1a;
+            --dark-text: #ffffff;
+            --light-text: #b0b0b0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+            --border: 1px solid #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Luxury Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-card);
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.8);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 50px;
+            text-align: center;
+            margin-top: -100px;
+            z-index: 2;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            display: block;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 2px solid var(--light-card);
+        }
+        
+        .profile-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .profile-username {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        /* Brands Section */
+        .brands-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .brand-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border);
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .brand-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .brand-role {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.3rem;
+            width: 30px;
+        }
+        
+        .business-contact {
+            background: var(--gradient-accent);
+            color: var(--primary-dark);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .business-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .business-number {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+        
+        .social-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: var(--accent);
+            position: relative;
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+        
+        .social-icon.snapchat {
+            background: #FFFC00;
+            color: #000;
+        }
+        
+        .social-icon.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .social-icon.phone {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+        
+        .social-icon.youtube {
+            background: #FF0000;
+            color: white;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 32px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: var(--border);
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient-accent);
+            color: var(--primary-dark);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-button i {
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            color: var(--light-text);
+            border-top: 1px solid #333;
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.2rem;
+            }
+            
+            .profile-username {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .cover-photo {
+                height: 350px;
+            }
+            
+            .social-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-photo {
+                height: 280px;
+            }
+            
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            
+            .stats-container {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <img src="https://i.imgur.com/OUHXSyC.png" alt="Cover Photo" class="cover-photo">
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/qz9L14L.jpeg" alt="Nader Dolaar" class="profile-image">
+                <div class="verified-badge">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">Nader Dolaar</h1>
+            <div class="profile-username">@nader_dolaar</div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">174</span>
+                    <span class="stat-label">Posts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1M</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">885</span>
+                    <span class="stat-label">Following</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <h2 class="section-title">Personal Blog</h2>
+            <div class="about-text">
+                Influencer • Content Creator • Brand Ambassador
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">About Me</div>
+                <div class="about-text">
+                    The Godfather • Barcelona 💙❤️ • Personal Blog
+                    <br>Owner: @solo91.jordan
+                    <br>Jordan 🇯🇴
+                </div>
+            </div>
+            
+            <div class="about-text">
+                Creating premium content and building meaningful connections with a global audience.
+                Passionate about fashion, lifestyle, and authentic storytelling.
+            </div>
+        </div>
+
+        <!-- Brands Section -->
+        <div class="brands-section fade-in delay-2">
+            <h2 class="section-title">Brand Partnerships</h2>
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <div class="brand-icon">S</div>
+                    <h3 class="brand-name">Shalmoneh</h3>
+                    <p class="brand-role">Brand Ambassador</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">A</div>
+                    <h3 class="brand-name">Alamal TT</h3>
+                    <p class="brand-role">Brand Ambassador</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-icon">A</div>
+                    <h3 class="brand-name">Abu Albsheer</h3>
+                    <p class="brand-role">Brand Ambassador</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+962791822223</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0791822223</span>
+                </div>
+            </div>
+            
+            <div class="business-contact">
+                <div class="business-title">Business Inquiries</div>
+                <div class="business-number">00962797122376</div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">Connect With Me</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.instagram.com/nader_dolaar?igsh=djk2cTJrdmh3NDBm" class="social-icon instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://snapchat.com/t/E2fSA6Lm" class="social-icon snapchat" target="_blank">
+                    <i class="fab fa-snapchat"></i>
+                </a>
+                <a href="https://wa.me/962791822223" class="social-icon whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="tel:+962791822223" class="social-icon phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://youtube.com/@ftoorm3mashhour?si=1tVW2vQwlXYFqgDi" class="social-icon youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <a href="VCF/nader-dolaar.vcf" class="action-button primary" download>
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+            <a href="https://wa.me/962791822223" class="action-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+            <a href="tel:+962791822223" class="action-button">
+                <i class="fas fa-phone"></i>
+                Call Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Nader Dolaar - Influencer & Brand Ambassador</p>
+            <p class="footer-text">Personal Blog • Content Creator • Business Collaborations</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
