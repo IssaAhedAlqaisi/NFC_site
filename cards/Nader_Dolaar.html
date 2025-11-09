@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,23 @@
             font-family: 'Inter', sans-serif;
         }
         
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+        
         body {
             background: var(--light-bg);
             color: var(--dark-text);
             min-height: 100vh;
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
         }
         
         .container {
@@ -53,9 +64,16 @@
             background: var(--light-card);
         }
         
-        .cover-photo {
+        .cover-container {
             width: 100%;
             height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
             filter: brightness(0.8);
@@ -301,6 +319,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             transition: all 0.3s ease;
+            color: var(--dark-text);
         }
         
         .contact-item:hover {
@@ -334,7 +353,7 @@
             font-weight: 800;
         }
         
-        /* Social Icons Section - UPDATED STYLES */
+        /* Social Icons Section */
         .social-section {
             text-align: center;
             padding: 50px 0 30px;
@@ -372,6 +391,7 @@
             background: transparent;
             position: relative;
             border: 2px solid var(--accent);
+            -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3);
         }
         
         .social-icon:hover {
@@ -405,6 +425,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             box-shadow: var(--shadow);
+            -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3);
         }
         
         .action-button.primary {
@@ -456,6 +477,22 @@
         .delay-2 { animation-delay: 0.4s; opacity: 0; }
         .delay-3 { animation-delay: 0.6s; opacity: 0; }
         
+        /* iOS Safari specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .cover-container {
+                height: 60vh;
+                max-height: 600px;
+            }
+            
+            .cover-photo {
+                object-position: center 30%;
+            }
+            
+            .social-icon, .action-button {
+                -webkit-appearance: none;
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .profile-name {
@@ -471,8 +508,12 @@
                 height: 150px;
             }
             
+            .cover-container {
+                height: 400px;
+            }
+            
             .cover-photo {
-                height: 350px;
+                object-position: center 25%;
             }
             
             .social-icon {
@@ -493,6 +534,11 @@
             .stats-container {
                 gap: 25px;
             }
+            
+            .about-section, .brands-section, .contact-section {
+                padding: 30px 20px;
+                margin: 30px auto;
+            }
         }
         
         @media (max-width: 480px) {
@@ -501,8 +547,8 @@
                 height: 120px;
             }
             
-            .cover-photo {
-                height: 280px;
+            .cover-container {
+                height: 350px;
             }
             
             .profile-name {
@@ -526,13 +572,33 @@
             .stat-number {
                 font-size: 1.5rem;
             }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .about-text {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Fix for iOS link colors */
+        a, .contact-item, .action-button {
+            -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Prevent blue highlight on tap for iOS */
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="profile-header fade-in">
-        <img src="https://i.imgur.com/OUHXSyC.png" alt="Cover Photo" class="cover-photo">
+        <div class="cover-container">
+            <img src="https://i.imgur.com/OUHXSyC.png" alt="Cover Photo" class="cover-photo">
+        </div>
         <div class="profile-info">
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/qz9L14L.jpeg" alt="Nader Dolaar" class="profile-image">
@@ -626,7 +692,7 @@
             </div>
         </div>
 
-        <!-- Social Icons - UPDATED -->
+        <!-- Social Icons -->
         <div class="social-section fade-in delay-3">
             <h2 class="social-title">Connect With Me</h2>
             <div class="social-icons-grid">
@@ -645,6 +711,9 @@
                 <a href="https://youtube.com/@ftoorm3mashhour?si=1tVW2vQwlXYFqgDi" class="social-icon" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="https://30s.pages.dev" style="color: var(--accent); font-size: 1.2rem; font-weight: 600;" target="_blank">30s.pages.dev</a>
             </div>
         </div>
 
@@ -684,7 +753,25 @@
                         this.style.transform = '';
                     }, 150);
                 });
+                
+                // Prevent default blue highlight on iOS
+                button.addEventListener('touchstart', function() {
+                    this.classList.add('tapping');
+                });
+                
+                button.addEventListener('touchend', function() {
+                    this.classList.remove('tapping');
+                });
             });
+            
+            // Fix for iOS viewport height issue
+            function setVH() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setVH();
+            window.addEventListener('resize', setVH);
         });
     </script>
 </body>
