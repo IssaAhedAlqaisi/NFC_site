@@ -31,6 +31,11 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            -webkit-text-size-adjust: 100%;
         }
         
         body {
@@ -39,6 +44,7 @@
             min-height: 100vh;
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
@@ -104,8 +110,8 @@
         
         .verified-badge {
             position: absolute;
-            bottom: 15px;
-            right: 15px;
+            bottom: 5px; /* تم خفض الموقع لتجنب تغطية الصورة */
+            right: 5px;
             background: var(--accent);
             color: var(--primary-dark);
             width: 40px;
@@ -282,6 +288,7 @@
             position: relative;
             border: 2px solid var(--accent);
             overflow: hidden;
+            -webkit-tap-highlight-color: rgba(255, 107, 107, 0.3);
         }
         
         .social-icon:before {
@@ -336,6 +343,7 @@
             border-radius: 15px;
             transition: all 0.3s ease;
             color: var(--dark-text);
+            -webkit-tap-highlight-color: rgba(255, 107, 107, 0.3);
         }
         
         .contact-item:hover {
@@ -396,6 +404,7 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            -webkit-tap-highlight-color: rgba(255, 107, 107, 0.3);
         }
         
         .action-button.primary {
@@ -469,6 +478,34 @@
         .delay-1 { animation-delay: 0.2s; opacity: 0; }
         .delay-2 { animation-delay: 0.4s; opacity: 0; }
         .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* iOS Safari specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            .contact-item, .action-button, .social-icon {
+                -webkit-appearance: none;
+            }
+            
+            a, .contact-item {
+                -webkit-tap-highlight-color: rgba(255, 107, 107, 0.3);
+            }
+            
+            /* إزالة الخط الأزرق تحت النصوص في iOS */
+            a, .contact-item, .action-button {
+                -webkit-tap-highlight-color: rgba(255, 107, 107, 0.3);
+                text-decoration: none;
+            }
+            
+            /* إصلاح مشكلة اللون الأزرق للروابط */
+            .contact-item span, .action-button span {
+                color: var(--dark-text);
+            }
+        }
+        
+        /* إزالة الخط الأزرق تحت النصوص في جميع المتصفحات */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -548,6 +585,14 @@
             
             .about-text {
                 font-size: 1rem;
+            }
+            
+            .verified-badge {
+                bottom: 3px;
+                right: 3px;
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -681,7 +726,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .contact-item');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
