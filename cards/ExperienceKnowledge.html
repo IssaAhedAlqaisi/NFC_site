@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c5530;
-            --primary-light: #4a7856;
-            --primary-dark: #1e3a23;
+            --primary: #6b7280;
+            --primary-light: #9ca3af;
+            --primary-dark: #4b5563;
             --accent: #8b7355;
-            --gradient: linear-gradient(135deg, #2c5530 0%, #4a7856 100%);
+            --gradient: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
             --light-bg: #ffffff;
             --light-card: #ffffff;
             --dark-text: #1e293b;
@@ -158,46 +158,6 @@
         
         .copy-notification.show {
             opacity: 1;
-        }
-        
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .action-button {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 28px;
-            background: var(--light-card);
-            color: var(--dark-text);
-            border: var(--border);
-            border-radius: 15px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: var(--shadow);
-        }
-        
-        .action-button.primary {
-            background: var(--gradient);
-            color: white;
-        }
-        
-        .action-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .action-button i {
-            font-size: 1.2rem;
         }
         
         /* About Section */
@@ -414,12 +374,58 @@
             color: white;
         }
         
+        /* Action Buttons - Bottom Section */
+        .action-section {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 20px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: var(--border);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .action-button i {
+            font-size: 1.2rem;
+        }
+        
         /* Footer */
         footer {
             background: var(--light-card);
             padding: 30px 0;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
             border-top: var(--border);
             color: var(--light-text);
         }
@@ -528,25 +534,9 @@
         <div class="click-card-section fade-in delay-1">
             <div class="click-card" id="clickCard">
                 <div class="click-text" id="clickText">TASNIM1707</div>
-                <div class="click-label">Click to copy bank username</div>
+                <div class="click-label">Click to copy bank CliQ</div>
                 <div class="copy-notification" id="copyNotification">Copied! ✅</div>
             </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="action-buttons fade-in delay-1">
-            <a href="VCF/experience-knowledge.vcf" class="action-button primary" download>
-                <i class="fas fa-download"></i>
-                Save Contact
-            </a>
-            <a href="https://wa.me/962795824938" class="action-button" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp
-            </a>
-            <a href="tel:+962795824938" class="action-button">
-                <i class="fas fa-phone"></i>
-                Call Now
-            </a>
         </div>
 
         <!-- About Section -->
@@ -641,6 +631,24 @@
                 </a>
                 <a href="https://maps.google.com/maps/search/Kayan%20Pharmacy/@31.892553329467773,35.83781051635742,17z?hl=ar" class="social-icon" target="_blank">
                     <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons - Bottom Section -->
+        <div class="action-section fade-in delay-3">
+            <div class="action-buttons">
+                <a href="VCF/experience-knowledge.vcf" class="action-button primary" download>
+                    <i class="fas fa-download"></i>
+                    Save Contact
+                </a>
+                <a href="https://wa.me/962795824938" class="action-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <a href="tel:+962795824938" class="action-button">
+                    <i class="fas fa-phone"></i>
+                    Call Now
                 </a>
             </div>
         </div>
