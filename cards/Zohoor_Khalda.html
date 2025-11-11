@@ -267,13 +267,14 @@
         .gallery-dots {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .gallery-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: var(--primary-light);
             cursor: pointer;
@@ -518,6 +519,15 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
+            
+            .gallery-dots {
+                gap: 6px;
+            }
+            
+            .gallery-dot {
+                width: 8px;
+                height: 8px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -560,6 +570,15 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.1rem;
+            }
+            
+            .gallery-dots {
+                gap: 5px;
+            }
+            
+            .gallery-dot {
+                width: 7px;
+                height: 7px;
             }
         }
     </style>
@@ -621,6 +640,28 @@
                         <div class="gallery-slide">
                             <img src="https://i.imgur.com/HyJg5nv.png" alt="Zohoor Khalda Store">
                         </div>
+                        <!-- الصور الجديدة المضافة -->
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/SgFNx89.jpeg" alt="Zohoor Khalda Product 1">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/hH9HqlT.png" alt="Zohoor Khalda Product 2">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/ry0q9Qs.jpeg" alt="Zohoor Khalda Product 3">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/9k1OU4P.jpeg" alt="Zohoor Khalda Product 4">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/Acuea8F.jpeg" alt="Zohoor Khalda Product 5">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/NOj8OpC.jpeg" alt="Zohoor Khalda Product 6">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/JykCPDc.jpeg" alt="Zohoor Khalda Product 7">
+                        </div>
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -638,6 +679,13 @@
                 <div class="gallery-dot" data-index="2"></div>
                 <div class="gallery-dot" data-index="3"></div>
                 <div class="gallery-dot" data-index="4"></div>
+                <div class="gallery-dot" data-index="5"></div>
+                <div class="gallery-dot" data-index="6"></div>
+                <div class="gallery-dot" data-index="7"></div>
+                <div class="gallery-dot" data-index="8"></div>
+                <div class="gallery-dot" data-index="9"></div>
+                <div class="gallery-dot" data-index="10"></div>
+                <div class="gallery-dot" data-index="11"></div>
             </div>
         </div>
 
