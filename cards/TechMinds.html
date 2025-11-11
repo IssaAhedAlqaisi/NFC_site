@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta_title">Tech minds solutions — أنظمة وبرمجيات احترافية</title>
+  <meta name="description" data-i18n-attr="content:meta_description" content="منصة إعلانات واتساب، أنظمة ERP، إدارة المبيعات والعيادات والدراي كلين، إدارة محلات الذهب، وتصميم مواقع وتطبيقات بسرعة وجودة عالية." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta property="og:title" data-i18n-attr="content:og_title" content="Tech minds solutions — أنظمة وبرمجيات" />
+  <meta property="og:description" data-i18n-attr="content:og_description" content="حلول برمجية ترفع كفاءة أعمالك: واتساب، ERP، POS، عيادات، دراي كلين، ذهب، مواقع وتطبيقات." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap RTL (switches on language toggle) -->
+  <link id="bs-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+  <style>
+    :root{ --primary:#0ea5e9; --primary-dark:#0b7db0; --ink:#0f172a; --muted:#94a3b8; --bg:#0b1324; --card:#0f172acc; --ring:#1f2a44; }
+    *{box-sizing:border-box}
+    body{font-family:"Cairo","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(1200px 600px at 0% 0%,#0e1a33 0%, var(--bg) 60%);color:#e5eefc;}
+    a{text-decoration:none}
+    .navbar{background:rgba(10,15,30,.65);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .brand{font-weight:800;background:linear-gradient(135deg,#7dd3fc, #22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav-link{color:#cbd5e1}
+    .nav-link:hover{color:#fff}
+    .hero{position:relative;isolation:isolate;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-20% -10% auto auto;width:600px;height:600px;border-radius:50%;background:radial-gradient(closest-side,rgba(34,211,238,.25),transparent 70%);filter:blur(20px);z-index:-1}
+    .kpis .kpi{border:1px solid var(--ring);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border-radius:16px}
+    .kpi .value{display:inline-flex;align-items:baseline;gap:.15rem}
+    .kpi .value .unit{opacity:.85;font-size:.9em}
+    .gradient-text{background:linear-gradient(135deg,#e0f2fe,#7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .btn-primary{background:var(--primary);border-color:var(--primary);font-weight:800;border-radius:14px}
+    .btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+    .btn-ghost{border:1px solid var(--ring);color:#e5eefc;border-radius:14px}
+    section{scroll-margin-top:90px}
+    .section-title{font-weight:800}
+    .section-lead{color:#c7d2fe}
+    .card{border:1px solid var(--ring);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#e5eefc;box-shadow:0 24px 60px rgba(5,10,30,.25)}
+    .serv-icon{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:#081225;border:1px solid var(--ring);color:#7dd3fc;font-size:22px}
+    .timeline{position:relative}
+    .timeline:before{content:"";position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;background:linear-gradient(#22d3ee,#7dd3fc)}
+    .t-item{position:relative}
+    .t-dot{position:absolute;left:calc(50% - 8px);top:12px;width:16px;height:16px;border-radius:50%;background:#22d3ee;box-shadow:0 0 0 6px rgba(34,211,238,.15)}
+    .accordion-button{background:#0e1930;color:#e5eefc}
+    .accordion-item{border:1px solid var(--ring)}
+    footer{border-top:1px solid rgba(255,255,255,.06);background:#0a1223}
+    html{scroll-behavior:smooth}
+    .lang-btn{border:1px solid var(--ring);border-radius:12px;padding:.35rem .7rem;color:#e5eefc}
+    .lang-btn .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin:0 .25rem;background:#22d3ee}
+    /* Mobile tweaks */
+    @media (max-width: 576px){
+      .display-5{font-size:1.8rem}
+      .hero .kpis .kpi{padding:.75rem}
+      .navbar .btn{padding:.35rem .6rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <i class="fa-solid fa-circle-nodes text-info"></i>
+        <span class="brand">Tech minds solutions</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" data-i18n="nav_services" href="#services">الخدمات</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav_story" href="#story">قصتنا</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav_results" href="#work">نتائج</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav_faq" href="#faq">الأسئلة</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav_contact" href="#contact">تواصل</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <button id="langToggle" class="lang-btn" type="button"><span class="dot"></span><span id="langLabel">العربية</span> / EN</button>
+          <a class="btn btn-sm btn-ghost" href="https://wa.me/962781179190" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-1"></i> <span data-i18n="cta_whatsapp">واتساب</span></a>
+          <a class="btn btn-sm btn-primary" href="tel:+962781179190"><i class="fa-solid fa-phone me-1"></i> <span data-i18n="cta_call">اتصال</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero py-5 py-lg-6">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7" data-aos="fade-up">
+          <h1 class="display-5 fw-bold mb-3" data-i18n="hero_title">نصنع برمجيات <span class="gradient-text">تُسرِّع نموّك</span> وتبسِّط التشغيل</h1>
+          <p class="lead section-lead mb-4" data-i18n="hero_lead">منصة إعلانات واتساب، أنظمة ERP وPOS، إدارة العيادات والدراي كلين، إدارة الذهب، وتصميم مواقع وتطبيقات — تنفيذ سريع، جودة عالية، ودعم مستمر.</p>
+          <div class="d-flex gap-2">
+            <a href="#services" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket-launch ms-1 me-1"></i> <span data-i18n="hero_cta_primary">ابدأ الآن</span></a>
+            <a href="#story" class="btn btn-ghost btn-lg"><span data-i18n="hero_cta_secondary">كيف ننجز مشروعك؟</span></a>
+          </div>
+          <div class="kpis row row-cols-2 row-cols-md-4 g-3 mt-4">
+            <div class="col"><div class="kpi p-3 text-center">
+              <div class="h4 fw-bold value"><span data-counter="12">0</span></div>
+              <small class="text-info" data-i18n="kpi_active">مشروع نشِط</small></div></div>
+            <div class="col"><div class="kpi p-3 text-center">
+              <div class="h4 fw-bold value"><span data-counter="50">0</span></div>
+              <small class="text-info" data-i18n="kpi_features">حلول منفّذة</small></div></div>
+            <div class="col"><div class="kpi p-3 text-center">
+              <div class="h4 fw-bold value"><span data-counter="99">0</span><span class="unit">%</span></div>
+              <small class="text-info" data-i18n="kpi_csat">رضا العملاء</small></div></div>
+            <div class="col"><div class="kpi p-3 text-center">
+              <div class="h4 fw-bold value"><span data-counter="24">0</span></div>
+              <small class="text-info" data-i18n="kpi_support">ساعات دعم</small></div></div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+          <div class="card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="serv-icon me-2"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div class="fw-bold" data-i18n="hero_card1_t">منصة إعلانات واتساب</div>
+                <small class="text-secondary" data-i18n="hero_card1_d">حملات مستهدفة + تتبع وقياس</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="serv-icon me-2"><i class="fa-solid fa-diagram-project"></i></div>
+              <div>
+                <div class="fw-bold" data-i18n="hero_card2_t">أنظمة ERP</div>
+                <small class="text-secondary" data-i18n="hero_card2_d">مخزون ومحاسبة وموارد بشرية</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="serv-icon me-2"><i class="fa-solid fa-gem"></i></div>
+              <div>
+                <div class="fw-bold" data-i18n="hero_card3_t">إدارة محلات الذهب</div>
+                <small class="text-secondary" data-i18n="hero_card3_d">تسعير وأوزان وتقارير دقيقة</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="section-title" data-i18n="services_title">الخدمات والمنتجات</h2>
+        <p class="section-lead" data-i18n="services_lead">حلول عملية وسريعة التنفيذ تلائم احتياجك</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-brands fa-whatsapp"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s1_t">منصة إعلانات واتساب</h5>
+            <p class="text-secondary mb-0" data-i18n="s1_d">قوائم أرقام، حملات، تتبّع، تقارير أداء ولوحة تحكم.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="50">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-diagram-project"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s2_t">أنظمة ERP</h5>
+            <p class="text-secondary mb-0" data-i18n="s2_d">مشتريات، مخزون، مبيعات، محاسبة، موارد بشرية — تخصيص كامل.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-cash-register"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s3_t">المبيعات وPOS</h5>
+            <p class="text-secondary mb-0" data-i18n="s3_d">نقاط بيع سريعة، باركود، تقارير لحظية وربط مع المخزون.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-stethoscope"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s4_t">إدارة العيادات</h5>
+            <p class="text-secondary mb-0" data-i18n="s4_d">حجوزات، ملفات مرضى، وصفات، تقارير مالية ورسائل تذكير.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="50">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-shirt"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s5_t">إدارة الدراي كلين</h5>
+            <p class="text-secondary mb-0" data-i18n="s5_d">إيصالات، حالات الطلبات، إشعارات جاهزية، حسابات وتقارير.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s6_t">تصميم وتطوير التطبيقات</h5>
+            <p class="text-secondary mb-0" data-i18n="s6_d">Android/iOS أصلية أو هجينة بواجهات عصرية وتجربة سلسة.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-globe"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s7_t">تصميم وتطوير الويب</h5>
+            <p class="text-secondary mb-0" data-i18n="s7_d">مواقع سريعة على GitHub/Cloudflare مع SEO وأداء ممتاز.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="50">
+          <div class="card h-100 p-4">
+            <div class="serv-icon mb-3"><i class="fa-solid fa-gem"></i></div>
+            <h5 class="fw-bold mb-2" data-i18n="s8_t">إدارة محلات الذهب</h5>
+            <p class="text-secondary mb-0" data-i18n="s8_d">أوزان، دمغات، تسعير تلقائي، تقارير احترافية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story / Process -->
+  <section id="story" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="section-title" data-i18n="story_title">قصتنا وطريقتنا</h2>
+        <p class="section-lead" data-i18n="story_lead">حكاية فريق تقوده الخبرة، وخطوات تنفيذ واضحة من أول مكالمة حتى الإطلاق</p>
+      </div>
+      <div class="timeline row g-4">
+        <div class="col-md-6 t-item" data-aos="fade-up">
+          <span class="t-dot"></span>
+          <div class="card p-4 h-100">
+            <h6 class="text-info mb-1" data-i18n="step1_k">الخطوة 1</h6>
+            <h5 class="fw-bold" data-i18n="step1_t">فهم الفكرة وتحديد الهدف</h5>
+            <p class="text-secondary mb-0" data-i18n="step1_d">جلسة سريعة لتحديد المطلوب بدقة، الجمهور المستهدف، ومؤشرات النجاح.</p>
+          </div>
+        </div>
+        <div class="col-md-6 t-item" data-aos="fade-up" data-aos-delay="60">
+          <span class="t-dot"></span>
+          <div class="card p-4 h-100">
+            <h6 class="text-info mb-1" data-i18n="step2_k">الخطوة 2</h6>
+            <h5 class="fw-bold" data-i18n="step2_t">تصميم التجربة والواجهات</h5>
+            <p class="text-secondary mb-0" data-i18n="step2_d">واجهات بسيطة وسريعة، قصص استخدام واضحة، وهوية بصرية مناسبة.</p>
+          </div>
+        </div>
+        <div class="col-md-6 t-item" data-aos="fade-up" data-aos-delay="120">
+          <span class="t-dot"></span>
+          <div class="card p-4 h-100">
+            <h6 class="text-info mb-1" data-i18n="step3_k">الخطوة 3</h6>
+            <h5 class="fw-bold" data-i18n="step3_t">التطوير والتكامل</h5>
+            <p class="text-secondary mb-0" data-i18n="step3_d">برمجة نظيفة، تكامل مع واتساب وواجهات الدفع وAPIs وقواعد البيانات.</p>
+          </div>
+        </div>
+        <div class="col-md-6 t-item" data-aos="fade-up" data-aos-delay="180">
+          <span class="t-dot"></span>
+          <div class="card p-4 h-100">
+            <h6 class="text-info mb-1" data-i18n="step4_k">الخطوة 4</h6>
+            <h5 class="fw-bold" data-i18n="step4_t">الإطلاق والتحسين المستمر</h5>
+            <p class="text-secondary mb-0" data-i18n="step4_d">نشر سريع على GitHub/Cloudflare، قياس الأداء، وتحسينات مستمرة.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Social proof -->
+  <section id="work" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="section-title" data-i18n="results_title">نتائج ملموسة</h2>
+        <p class="section-lead" data-i18n="results_lead">أرقام تحكي — سرعة إنجاز، استقرار، وتجربة مستخدم مريحة</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="card p-4 h-100 text-center">
+            <i class="fa-solid fa-gauge-high fa-2x text-info mb-2"></i>
+            <h5 class="fw-bold" data-i18n="r1_t">أداء عالي</h5>
+            <p class="text-secondary mb-0" data-i18n="r1_d">نتائج Lighthouse خضراء، تحميل سريع، وتحسين الصور والكاشينغ.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="60">
+          <div class="card p-4 h-100 text-center">
+            <i class="fa-solid fa-shield fa-2x text-info mb-2"></i>
+            <h5 class="fw-bold" data-i18n="r2_t">أمان وموثوقية</h5>
+            <p class="text-secondary mb-0" data-i18n="r2_d">أفضل ممارسات الأمان والنسخ الاحتياطي وتتبُّع الأخطاء.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="120">
+          <div class="card p-4 h-100 text-center">
+            <i class="fa-solid fa-puzzle-piece fa-2x text-info mb-2"></i>
+            <h5 class="fw-bold" data-i18n="r3_t">تكامل سلس</h5>
+            <p class="text-secondary mb-0" data-i18n="r3_d">APIs، واتساب، بوابات دفع، وفاتورة إلكترونية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="section-title" data-i18n="faq_title">الأسئلة الشائعة</h2>
+        <p class="section-lead" data-i18n="faq_lead">معلومات سريعة قبل ما نبدأ</p>
+      </div>
+      <div class="accordion" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" data-i18n="faq_q1">كم المدة المتوقعة لتنفيذ المشروع؟</button>
+          </h2>
+          <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body" data-i18n="faq_a1">بين 2 إلى 6 أسابيع حسب حجم المتطلبات وسرعة الموافقات.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" data-i18n="faq_q2">هل تدعمون ما بعد الإطلاق؟</button>
+          </h2>
+          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body" data-i18n="faq_a2">نعم — دعم فني وتحسينات دورية وخطط تطوير حسب التوسّع.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" data-i18n="faq_q3">هل هناك تكامل مع أنظمة خارجية؟</button>
+          </h2>
+          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body" data-i18n="faq_a3">نعم — واتساب، بوابات دفع، أنظمة محاسبية، وAPIs مختلفة.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <h2 class="section-title" data-i18n="contact_title">تواصل معنا</h2>
+        <p class="section-lead" data-i18n="contact_lead">احكِ لنا عن مشروعك — ونبدأ التنفيذ</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-3" data-i18n="contact_details">البيانات</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="fa-solid fa-user me-2 ms-2 text-info"></i> <span data-i18n="c_issa">م. عيسى القيسي</span> — <a href="tel:+962781179190" class="link-info">+962 78 117 9190</a></li>
+              <li class="mb-2"><i class="fa-brands fa-whatsapp me-2 ms-2 text-success"></i> <a href="https://wa.me/962781179190" target="_blank" rel="noopener" class="link-success" data-i18n="c_whatsapp">واتساب مباشر</a></li>
+              <li class="mb-2"><i class="fa-solid fa-user-gear me-2 ms-2 text-info"></i> <span data-i18n="c_saqr">م. صقر</span> — <a href="tel:+962770531134" class="link-info">+962 77 053 1134</a></li>
+              <li class="mb-2"><i class="fa-solid fa-envelope me-2 ms-2"></i> <a href="mailto:techmindssolutions1@gmail.com" class="link-light">techmindssolutions1@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card p-4 h-100">
+            <h5 class="fw-bold mb-3" data-i18n="contact_form">نموذج سريع</h5>
+            <form onsubmit="handleSubmit(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="f_name">الاسم</label>
+                  <input class="form-control bg-transparent text-light border-secondary" required data-i18n-attr="placeholder:f_name_ph" placeholder=""/>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="f_phone">الهاتف</label>
+                  <input class="form-control bg-transparent text-light border-secondary" type="tel" required data-i18n-attr="placeholder:f_phone_ph" placeholder=""/>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" data-i18n="f_summary">وصف مختصر للمشروع</label>
+                  <textarea class="form-control bg-transparent text-light border-secondary" rows="3" required data-i18n-attr="placeholder:f_summary_ph" placeholder=""></textarea>
+                </div>
+                <div class="col-12 d-flex gap-2">
+                  <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane me-1 ms-1"></i> <span data-i18n="f_send">إرسال</span></button>
+                  <a class="btn btn-ghost" href="https://wa.me/962781179190" target="_blank" rel="noopener" data-i18n="f_send_whatsapp">أرسل على واتساب</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-secondary">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+      <div>© <span id="y"></span> Tech minds solutions — <span data-i18n="rights">كل الحقوق محفوظة</span></div>
+      <div class="small" data-i18n="foot_line">مصمم للنشر على GitHub Pages | أداء وأمان عاليان</div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Tech minds solutions","url":"https://example.com","contactPoint":[{"@type":"ContactPoint","telephone":"+962781179190","contactType":"customer service","areaServed":"JO","availableLanguage":["ar","en"]}]}
+  </script>
+
+  <script>
+    // Init AOS
+    window.addEventListener('DOMContentLoaded', ()=>{ AOS.init({ once:true, duration:700, offset:80 }); });
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Counters
+    const counters = document.querySelectorAll('[data-counter]');
+    const runCounter = el => { const end = +el.getAttribute('data-counter'); let cur=0; const step = Math.max(1, Math.round(end/60)); const tick = ()=>{ cur+=step; if(cur>=end){ el.textContent=end; } else { el.textContent=cur; requestAnimationFrame(tick);} }; tick(); };
+    const io = new IntersectionObserver((ents)=>{ ents.forEach(e=>{ if(e.isIntersecting){ runCounter(e.target); io.unobserve(e.target);} }) },{threshold:.7});
+    counters.forEach(c=>io.observe(c));
+
+    // Fake submit
+    function handleSubmit(e){ e.preventDefault(); alert(currentLang==='ar' ? 'تم الاستلام ✅ — سنعاود الاتصال بك قريبًا' : 'Received ✅ — we will contact you shortly'); }
+    window.handleSubmit = handleSubmit;
+
+    // --- i18n ---
+    const dict = {
+      ar: { meta_title:'Tech minds solutions — أنظمة وبرمجيات احترافية', meta_description:'منصة إعلانات واتساب، أنظمة ERP، إدارة المبيعات والعيادات والدراي كلين، إدارة محلات الذهب، وتصميم مواقع وتطبيقات بسرعة وجودة عالية.', og_title:'Tech minds solutions — أنظمة وبرمجيات', og_description:'حلول برمجية ترفع كفاءة أعمالك: واتساب، ERP، POS، عيادات، دراي كلين، ذهب، مواقع وتطبيقات.', nav_services:'الخدمات', nav_story:'قصتنا', nav_results:'نتائج', nav_faq:'الأسئلة', nav_contact:'تواصل', cta_whatsapp:'واتساب', cta_call:'اتصال', hero_title:'نصنع برمجيات <span class="gradient-text">تُسرِّع نموّك</span> وتبسِّط التشغيل', hero_lead:'منصة إعلانات واتساب، أنظمة ERP وPOS، إدارة العيادات والدراي كلين، إدارة الذهب، وتصميم مواقع وتطبيقات — تنفيذ سريع، جودة عالية، ودعم مستمر.', hero_cta_primary:'ابدأ الآن', hero_cta_secondary:'كيف ننجز مشروعك؟', kpi_active:'مشروع نشِط', kpi_features:'حلول منفّذة', kpi_csat:'رضا العملاء', kpi_support:'ساعات دعم', hero_card1_t:'منصة إعلانات واتساب', hero_card1_d:'حملات مستهدفة + تتبع وقياس', hero_card2_t:'أنظمة ERP', hero_card2_d:'مخزون ومحاسبة وموارد بشرية', hero_card3_t:'إدارة محلات الذهب', hero_card3_d:'تسعير وأوزان وتقارير دقيقة', services_title:'الخدمات والمنتجات', services_lead:'حلول عملية وسريعة التنفيذ تلائم احتياجك', s1_t:'منصة إعلانات واتساب', s1_d:'قوائم أرقام، حملات، تتبّع، تقارير أداء ولوحة تحكم.', s2_t:'أنظمة ERP', s2_d:'مشتريات، مخزون، مبيعات، محاسبة، موارد بشرية — تخصيص كامل.', s3_t:'المبيعات وPOS', s3_d:'نقاط بيع سريعة، باركود، تقارير لحظية وربط مع المخزون.', s4_t:'إدارة العيادات', s4_d:'حجوزات، ملفات مرضى، وصفات، تقارير مالية ورسائل تذكير.', s5_t:'إدارة الدراي كلين', s5_d:'إيصالات، حالات الطلبات، إشعارات جاهزية، حسابات وتقارير.', s6_t:'تصميم وتطوير التطبيقات', s6_d:'Android/iOS أصلية أو هجينة بواجهات عصرية وتجربة سلسة.', s7_t:'تصميم وتطوير الويب', s7_d:'مواقع سريعة على GitHub/Cloudflare مع SEO وأداء ممتاز.', s8_t:'إدارة محلات الذهب', s8_d:'أوزان، دمغات، تسعير تلقائي، تقارير احترافية.', story_title:'قصتنا وطريقتنا', story_lead:'حكاية فريق تقوده الخبرة، وخطوات تنفيذ واضحة من أول مكالمة حتى الإطلاق', step1_k:'الخطوة 1', step1_t:'فهم الفكرة وتحديد الهدف', step1_d:'جلسة سريعة لتحديد المطلوب بدقة، الجمهور المستهدف، ومؤشرات النجاح.', step2_k:'الخطوة 2', step2_t:'تصميم التجربة والواجهات', step2_d:'واجهات بسيطة وسريعة، قصص استخدام واضحة، وهوية بصرية مناسبة.', step3_k:'الخطوة 3', step3_t:'التطوير والتكامل', step3_d:'برمجة نظيفة، تكامل مع واتساب وواجهات الدفع وAPIs وقواعد البيانات.', step4_k:'الخطوة 4', step4_t:'الإطلاق والتحسين المستمر', step4_d:'نشر سريع على GitHub/Cloudflare، قياس الأداء، وتحسينات مستمرة.', results_title:'نتائج ملموسة', results_lead:'أرقام تحكي — سرعة إنجاز، استقرار، وتجربة مستخدم مريحة', r1_t:'أداء عالي', r1_d:'نتائج Lighthouse خضراء، تحميل سريع، وتحسين الصور والكاشينغ.', r2_t:'أمان وموثوقية', r2_d:'أفضل ممارسات الأمان والنسخ الاحتياطي وتتبُّع الأخطاء.', r3_t:'تكامل سلس', r3_d:'APIs، واتساب، بوابات دفع، وفاتورة إلكترونية.', faq_title:'الأسئلة الشائعة', faq_lead:'معلومات سريعة قبل ما نبدأ', faq_q1:'كم المدة المتوقعة لتنفيذ المشروع؟', faq_a1:'بين 2 إلى 6 أسابيع حسب حجم المتطلبات وسرعة الموافقات.', faq_q2:'هل تدعمون ما بعد الإطلاق؟', faq_a2:'نعم — دعم فني وتحسينات دورية وخطط تطوير حسب التوسّع.', faq_q3:'هل هناك تكامل مع أنظمة خارجية؟', faq_a3:'نعم — واتساب، بوابات دفع، أنظمة محاسبية، وAPIs مختلفة.', contact_title:'تواصل معنا', contact_lead:'احكِ لنا عن مشروعك — ونبدأ التنفيذ', contact_details:'البيانات', contact_form:'نموذج سريع', f_name:'الاسم', f_phone:'الهاتف', f_summary:'وصف مختصر للمشروع', f_send:'إرسال', f_send_whatsapp:'أرسل على واتساب', f_name_ph:'مثال: محمد أحمد', f_phone_ph:'مثال: 078xxxxxxx', f_summary_ph:'أخبرنا باختصار عن مشروعك', c_issa:'م. عيسى القيسي', c_saqr:'م. صقر', rights:'كل الحقوق محفوظة', foot_line:'مصمم للنشر على GitHub Pages | أداء وأمان عاليان' },
+      en: { meta_title:'Tech minds solutions — Modern Software & Systems', meta_description:'WhatsApp advertising platform, ERP & POS systems, clinic & dry-clean management, gold retail, and fast, high-quality web & mobile app development.', og_title:'Tech minds solutions — Software & Systems', og_description:'Practical software that accelerates growth: WhatsApp campaigns, ERP, POS, clinics, dry clean, gold retail, websites & apps.', nav_services:'Services', nav_story:'Our Story', nav_results:'Results', nav_faq:'FAQ', nav_contact:'Contact', cta_whatsapp:'WhatsApp', cta_call:'Call', hero_title:'We build software that <span class="gradient-text">accelerates growth</span> and simplifies operations', hero_lead:'WhatsApp advertising, ERP & POS, clinic and dry‑clean systems, gold retail, and modern web & mobile apps — delivered fast with consistent quality and support.', hero_cta_primary:'Get Started', hero_cta_secondary:'How we deliver', kpi_active:'Active projects', kpi_features:'Features delivered', kpi_csat:'Customer satisfaction', kpi_support:'Support hours', hero_card1_t:'WhatsApp Ads Platform', hero_card1_d:'Targeted campaigns + tracking & analytics', hero_card2_t:'ERP Systems', hero_card2_d:'Inventory, accounting, HR', hero_card3_t:'Gold Retail Management', hero_card3_d:'Pricing, weights & precise reports', services_title:'Services & Products', services_lead:'Practical solutions, quickly delivered and tailored to your needs', s1_t:'WhatsApp Advertising', s1_d:'Contact lists, campaigns, tracking, analytics dashboard.', s2_t:'ERP Systems', s2_d:'Purchasing, inventory, sales, accounting, HR — fully customizable.', s3_t:'Sales & POS', s3_d:'Fast checkout, barcodes, real‑time reports, inventory sync.', s4_t:'Clinic Management', s4_d:'Appointments, patient records, prescriptions, reminders, finance.', s5_t:'Dry‑Clean Management', s5_d:'Receipts, order status, ready notifications, accounting & reports.', s6_t:'App Design & Development', s6_d:'Native or hybrid Android/iOS with modern UI & smooth UX.', s7_t:'Web Design & Development', s7_d:'Fast sites on GitHub/Cloudflare with solid SEO and performance.', s8_t:'Gold Shop Management', s8_d:'Weights & karats, smart pricing, accurate inventory & reports.', story_title:'Our Story & Process', story_lead:'Led by engineering experience — a clear path from first call to launch', step1_k:'Step 1', step1_t:'Discovery & Success Criteria', step1_d:'Define goals, target users, constraints, and the metrics that matter.', step2_k:'Step 2', step2_t:'Experience & Interface Design', step2_d:'Clear user journeys, modern UI, accessible components, strong identity.', step3_k:'Step 3', step3_t:'Engineering & Integrations', step3_d:'Clean code, APIs, WhatsApp, payments, data modeling and QA.', step4_k:'Step 4', step4_t:'Launch & Continuous Improvement', step4_d:'Fast deploy on GitHub/Cloudflare, monitoring, iterative upgrades.', results_title:'Proof in Numbers', results_lead:'Speed, stability, and a relaxed user experience — measured, not guessed', r1_t:'High Performance', r1_d:'Green Lighthouse scores, quick loads, smart caching & images.', r2_t:'Security & Reliability', r2_d:'Best‑practice hardening, backups, error tracking, observability.', r3_t:'Seamless Integrations', r3_d:'APIs, WhatsApp, payment gateways, e‑invoice & third‑party systems.', faq_title:'FAQ', faq_lead:'Quick answers before we begin', faq_q1:'What is the typical delivery time?', faq_a1:'Between 2–6 weeks depending on scope and approvals.', faq_q2:'Do you support after launch?', faq_a2:'Yes — support plans and iterative improvements as you grow.', faq_q3:'Can you integrate with external systems?', faq_a3:'Absolutely — WhatsApp, payment gateways, accounting, and custom APIs.', contact_title:'Contact Us', contact_lead:'Tell us about your project — we’ll get it moving', contact_details:'Details', contact_form:'Quick Form', f_name:'Name', f_phone:'Phone', f_summary:'Project summary', f_send:'Send', f_send_whatsapp:'Send via WhatsApp', f_name_ph:'e.g., John Doe', f_phone_ph:'e.g., +962 78 xxxxxx', f_summary_ph:'Briefly describe your project', c_issa:'Eng. Issa Al‑Qaisi', c_saqr:'Eng. Saqr', rights:'All rights reserved', foot_line:'Optimized for GitHub Pages | High performance & security' }
+    };
+
+    let currentLang = localStorage.getItem('tms_lang') || 'ar';
+
+    function applyLang(lang){
+      currentLang = lang; localStorage.setItem('tms_lang', lang);
+      const isAr = lang==='ar';
+      document.documentElement.lang = isAr ? 'ar' : 'en';
+      document.documentElement.dir  = isAr ? 'rtl' : 'ltr';
+      document.body.style.fontFamily = isAr ? 'Cairo, Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif' : 'Inter, Cairo, system-ui, -apple-system, "Segoe UI", Arial, sans-serif';
+      // swap bootstrap css for RTL/LTR
+      const bs = document.getElementById('bs-css');
+      const want = isAr ? 'bootstrap.rtl.min.css' : 'bootstrap.min.css';
+      if(!bs.href.includes(want)) bs.href = `https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/${want}`;
+      // update text
+      const map = dict[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if(map[k]!==undefined){ el.innerHTML = map[k]; }});
+      document.querySelectorAll('[data-i18n-attr]').forEach(el=>{ const spec = el.getAttribute('data-i18n-attr'); spec.split(',').forEach(pair=>{ const [attr,key] = pair.split(':'); if(map[key]!==undefined){ el.setAttribute(attr.trim(), map[key]); }}); });
+      // lang button label
+      const langLabel = document.getElementById('langLabel');
+      if(langLabel){ langLabel.textContent = isAr ? 'العربية' : 'EN'; }
+    }
+
+    document.getElementById('langToggle').addEventListener('click', ()=>{ applyLang(currentLang==='ar' ? 'en' : 'ar'); });
+
+    // initial
+    applyLang(currentLang);
+  </script>
+</body>
+</html>
