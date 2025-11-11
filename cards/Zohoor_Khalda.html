@@ -199,11 +199,16 @@
             color: var(--dark-text);
         }
         
-        .gallery-container {
+        .gallery-wrapper {
             position: relative;
             width: 100%;
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
             overflow: hidden;
             border-radius: 15px;
             box-shadow: var(--shadow);
@@ -233,27 +238,30 @@
             justify-content: space-between;
             transform: translateY(-50%);
             padding: 0 15px;
+            z-index: 10;
         }
         
         .gallery-btn {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--primary-dark);
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
+            border: 2px solid var(--primary);
         }
         
         .gallery-btn:hover {
             background: var(--primary);
             color: white;
+            transform: scale(1.1);
         }
         
         .gallery-dots {
@@ -504,6 +512,12 @@
             .gallery-slide {
                 height: 300px;
             }
+            
+            .gallery-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -540,6 +554,12 @@
             
             .gallery-slide {
                 height: 250px;
+            }
+            
+            .gallery-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -583,22 +603,24 @@
         <!-- Gallery Section -->
         <div class="gallery-section fade-in delay-3">
             <h2 class="gallery-title">Our Delicious Products</h2>
-            <div class="gallery-container">
-                <div class="gallery-slides">
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/OhAUkL4.jpeg" alt="Zohoor Khalda Pastries">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/hL1nA9b.jpeg" alt="Zohoor Khalda Manakeesh">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/94ijoGW.jpeg" alt="Zohoor Khalda Bakery">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/mXNoJSM.jpeg" alt="Zohoor Khalda Products">
-                    </div>
-                    <div class="gallery-slide">
-                        <img src="https://i.imgur.com/HyJg5nv.png" alt="Zohoor Khalda Store">
+            <div class="gallery-wrapper">
+                <div class="gallery-container">
+                    <div class="gallery-slides">
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/OhAUkL4.jpeg" alt="Zohoor Khalda Pastries">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/hL1nA9b.jpeg" alt="Zohoor Khalda Manakeesh">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/94ijoGW.jpeg" alt="Zohoor Khalda Bakery">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/mXNoJSM.jpeg" alt="Zohoor Khalda Products">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/HyJg5nv.png" alt="Zohoor Khalda Store">
+                        </div>
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -777,14 +799,8 @@
                 });
             });
             
-            // Auto slide every 5 seconds
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % slidesCount;
-                updateSlide();
-            }, 5000);
-            
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
