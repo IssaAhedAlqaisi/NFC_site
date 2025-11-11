@@ -180,6 +180,103 @@
             margin-bottom: 15px;
         }
         
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .gallery-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+        }
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            height: 400px;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 15px;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--primary-dark);
+            transform: scale(1.2);
+        }
+        
         /* Branches Section */
         .branches-section {
             background: var(--light-card);
@@ -360,6 +457,7 @@
         .delay-1 { animation-delay: 0.2s; opacity: 0; }
         .delay-2 { animation-delay: 0.4s; opacity: 0; }
         .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .delay-4 { animation-delay: 0.8s; opacity: 0; }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -402,6 +500,10 @@
             .branches-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .gallery-slide {
+                height: 300px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -434,6 +536,10 @@
                 width: 55px;
                 height: 55px;
                 font-size: 1.4rem;
+            }
+            
+            .gallery-slide {
+                height: 250px;
             }
         }
     </style>
@@ -474,8 +580,47 @@
             </div>
         </div>
 
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in delay-3">
+            <h2 class="gallery-title">Our Delicious Products</h2>
+            <div class="gallery-container">
+                <div class="gallery-slides">
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/OhAUkL4.jpeg" alt="Zohoor Khalda Pastries">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/hL1nA9b.jpeg" alt="Zohoor Khalda Manakeesh">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/94ijoGW.jpeg" alt="Zohoor Khalda Bakery">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/mXNoJSM.jpeg" alt="Zohoor Khalda Products">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/HyJg5nv.png" alt="Zohoor Khalda Store">
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="gallery-dots">
+                <div class="gallery-dot active" data-index="0"></div>
+                <div class="gallery-dot" data-index="1"></div>
+                <div class="gallery-dot" data-index="2"></div>
+                <div class="gallery-dot" data-index="3"></div>
+                <div class="gallery-dot" data-index="4"></div>
+            </div>
+        </div>
+
         <!-- Branches Section -->
-        <div class="branches-section fade-in delay-3">
+        <div class="branches-section fade-in delay-4">
             <h2 class="branches-title">Our Branches & Contact Numbers</h2>
             <div class="branches-grid">
                 <div class="branch-card">
@@ -531,7 +676,7 @@
         </div>
 
         <!-- Social Icons -->
-        <div class="social-section fade-in delay-3">
+        <div class="social-section fade-in delay-4">
             <h2 class="social-title">Follow Us</h2>
             <div class="social-icons-grid">
                 <a href="https://www.facebook.com/share/1A7g1CfhU2/" class="social-icon" target="_blank">
@@ -549,7 +694,7 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="action-buttons fade-in delay-3">
+        <div class="action-buttons fade-in delay-4">
             <a href="VCF/zohoor-khalda.vcf" class="action-button save" download>
                 <i class="fas fa-download"></i>
                 Save Contact
@@ -592,6 +737,51 @@
                     console.error('Failed to copy text: ', err);
                 });
             });
+            
+            // Gallery Functionality
+            const slides = document.querySelector('.gallery-slides');
+            const slidesCount = document.querySelectorAll('.gallery-slide').length;
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            let currentSlide = 0;
+            
+            // Update slide position
+            function updateSlide() {
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Next slide
+            nextBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            });
+            
+            // Previous slide
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+                updateSlide();
+            });
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentSlide = index;
+                    updateSlide();
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            }, 5000);
             
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button');
