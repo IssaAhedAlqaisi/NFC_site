@@ -76,13 +76,14 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transform: scale(1.3); /* زيادة التكبير */
+            /* تم تقليل التكبير من 1.3 إلى 1.0 */
+            transform: scale(1.0);
             filter: brightness(0.9);
             transition: transform 8s ease;
         }
         
         .cover-container:hover .cover-photo {
-            transform: scale(1.1); /* تكبير أقل عند التمرير */
+            transform: scale(1.05); /* تكبير طفيف عند التمرير */
         }
         
         .profile-info {
@@ -100,13 +101,17 @@
         }
         
         .profile-image {
-            width: 160px;
-            height: 160px;
+            /* تم تصغير الصورة الشخصية من 160px إلى 120px */
+            width: 120px;
+            height: 120px;
             border-radius: 25px;
             border: 4px solid var(--light-card);
             object-fit: cover;
             box-shadow: var(--shadow);
             display: block;
+            /* إضافة خاصية object-fit: contain لضمان ظهور الصورة كاملة */
+            object-fit: contain;
+            background-color: var(--light-bg);
         }
         
         .profile-name {
@@ -202,7 +207,9 @@
         .gallery-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            /* تغيير object-fit من cover إلى contain لضمان ظهور الصورة كاملة */
+            object-fit: contain;
+            background-color: var(--light-bg);
         }
         
         .gallery-nav {
@@ -501,8 +508,8 @@
             }
             
             .profile-image {
-                width: 130px;
-                height: 130px;
+                width: 100px; /* تم التعديل ليتناسب مع الشاشات المتوسطة */
+                height: 100px;
             }
             
             .cover-container {
@@ -510,7 +517,7 @@
             }
             
             .cover-photo {
-                transform: scale(1.4); /* تكبير أكبر للجوال */
+                transform: scale(1.0); /* تم إزالة التكبير للجوال */
             }
             
             .social-icon {
@@ -553,8 +560,8 @@
         
         @media (max-width: 480px) {
             .profile-image {
-                width: 110px;
-                height: 110px;
+                width: 90px; /* تم التعديل ليتناسب مع الشاشات الصغيرة */
+                height: 90px;
             }
             
             .cover-container {
@@ -562,7 +569,7 @@
             }
             
             .cover-photo {
-                transform: scale(1.5); /* تكبير أكبر للشاشات الصغيرة */
+                transform: scale(1.0); /* تم إزالة التكبير للشاشات الصغيرة */
             }
             
             .profile-name {
