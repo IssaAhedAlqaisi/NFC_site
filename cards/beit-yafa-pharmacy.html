@@ -26,7 +26,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
         
         body {
@@ -34,6 +33,17 @@
             color: var(--dark-text);
             min-height: 100vh;
             line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Sodfa Font for Arabic Text */
+        @font-face {
+            font-family: 'Sodfa';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+        }
+        
+        .arabic-text {
+            font-family: 'Noto Naskh Arabic', 'Tajawal', serif;
         }
         
         .container {
@@ -127,7 +137,6 @@
             color: var(--dark-text);
             text-align: center;
             margin-bottom: 20px;
-            font-family: 'Tajawal', sans-serif;
             direction: rtl;
         }
         
@@ -137,7 +146,6 @@
             margin-bottom: 20px;
             color: var(--primary);
             line-height: 1.5;
-            font-family: 'Tajawal', sans-serif;
             direction: rtl;
         }
         
@@ -581,14 +589,14 @@
     <!-- Header Section -->
     <header class="profile-header fade-in">
         <div class="cover-container">
-            <img src="https://i.imgur.com/E9DNawx.jpeg" alt="Beit Yafa Pharmacy" class="cover-photo">
+            <img src="https://i.imgur.com/YUmcEkB.jpeg" alt="Beit Yafa Pharmacy" class="cover-photo">
         </div>
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/E9DNawx.jpeg" alt="Beit Yafa Pharmacy" class="profile-image">
+                <img src="https://i.imgur.com/YUmcEkB.jpeg" alt="Beit Yafa Pharmacy" class="profile-image">
             </div>
             <h1 class="profile-name">Beit Yafa Pharmacy</h1>
-            <p class="profile-title">Trusted Healthcare Since 2014</p>
+            <p class="profile-title"></p>
         </div>
     </header>
 
@@ -596,13 +604,13 @@
     <div class="container">
         <!-- About Section - Arabic Text -->
         <div class="about-section fade-in delay-1">
-            <div class="tagline">
+            <div class="tagline arabic-text">
                 صيدلية بيت يافا، تأسست عام 2014، تقدم خدماتها لجميع أهالي منطقة بيت يافا والمناطق المجاورة
             </div>
-            <div class="about-text">
+            <div class="about-text arabic-text">
                 تُعد وجهة موثوقة للرعاية الدوائية والصحية. نحرص على توفير الأدوية الأصلية والاستشارات الصيدلانية بأعلى معايير الجودة، مع خدمة مميزة تشمل صرف الأدوية الموصوفة، تقديم النصائح الصحية، وتوفير المستلزمات الطبية وأجهزة القياس.
             </div>
-            <div class="about-text">
+            <div class="about-text arabic-text">
                 نلتزم بأن نكون الشريك الصحي الأقرب لثقتكم وعافيتكم.
             </div>
         </div>
@@ -614,7 +622,7 @@
                 <div class="gallery-container">
                     <div class="gallery-slides">
                         <div class="gallery-slide">
-                            <img src="https://i.imgur.com/E9DNawx.jpeg" alt="Beit Yafa Pharmacy">
+                            <img src="https://i.imgur.com/YUmcEkB.jpeg" alt="Beit Yafa Pharmacy">
                         </div>
                         <div class="gallery-slide">
                             <img src="https://i.imgur.com/AvjkbfH.jpeg" alt="Pharmacy Interior">
@@ -746,7 +754,7 @@
         <div class="container">
             <p class="footer-text">Beit Yafa Pharmacy - Trusted Healthcare Since 2014</p>
             <p class="footer-text">Serving Beit Yafa Community and Surrounding Areas</p>
-            <p class="footer-text">All Rights Reserved © 2014-2024</p>
+            <p class="footer-text"></p>
         </div>
     </footer>
 
