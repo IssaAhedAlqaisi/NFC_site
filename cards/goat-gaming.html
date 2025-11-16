@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT Gaming Center - Ultimate PlayStation Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --primary-light: #2575fc;
+            --primary-dark: #4a00e0;
+            --accent: #00ff88;
+            --gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            --gradient-accent: linear-gradient(135deg, #6a11cb 0%, #00ff88 100%);
+            --dark-bg: #0a0a1a;
+            --dark-card: #1a1a2e;
+            --light-text: #ffffff;
+            --light-accent: #b0b0d0;
+            --shadow: 0 10px 30px rgba(106, 17, 203, 0.3);
+            --shadow-lg: 0 20px 40px rgba(106, 17, 203, 0.5);
+            --border: 1px solid #2d2d4d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Gaming Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: var(--dark-card);
+        }
+        
+        .cover-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.6) contrast(1.2);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 50px;
+            text-align: center;
+            margin-top: -100px;
+            z-index: 2;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 25px;
+            border: 5px solid var(--dark-card);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            display: block;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+        
+        .verified-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--dark-bg);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            border: 3px solid var(--dark-card);
+            font-weight: bold;
+        }
+        
+        .profile-name {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--light-text);
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .profile-tagline {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--light-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--dark-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--light-text);
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--light-accent);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent);
+            text-align: right;
+            direction: rtl;
+        }
+        
+        .highlight-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        /* Features Section */
+        .features-section {
+            background: var(--dark-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(106, 17, 203, 0.2);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            background: rgba(106, 17, 203, 0.3);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--light-text);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient-accent);
+        }
+        
+        .feature-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--light-text);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--light-accent);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--dark-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            padding: 20px;
+            background: rgba(106, 17, 203, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            color: var(--light-text);
+            border: var(--border);
+        }
+        
+        .contact-item:hover {
+            background: rgba(106, 17, 203, 0.3);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            width: 40px;
+        }
+        
+        .click-to-call {
+            background: var(--gradient-accent);
+            color: var(--dark-bg);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-lg);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .click-to-call::before {
+            content: '⚡';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .click-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .click-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .social-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--light-text);
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: var(--gradient);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-accent);
+            color: var(--dark-bg);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 35px;
+            background: var(--dark-card);
+            color: var(--light-text);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient-accent);
+            color: var(--dark-bg);
+            border: 2px solid var(--accent);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-button i {
+            font-size: 1.4rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 80px;
+            color: var(--light-text);
+            border-top: 3px solid var(--accent);
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .cover-container {
+                height: 400px;
+            }
+            
+            .social-icon {
+                width: 75px;
+                height: 75px;
+                font-size: 1.8rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-container {
+                gap: 30px;
+            }
+            
+            .about-section, .features-section, .contact-section {
+                padding: 30px 20px;
+                margin: 30px auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-container {
+                height: 350px;
+            }
+            
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .social-icons-grid {
+                gap: 20px;
+            }
+            
+            .social-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.6rem;
+            }
+            
+            .stats-container {
+                gap: 25px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <div class="cover-container">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="GOAT Gaming Center" class="cover-photo">
+        </div>
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <div class="profile-image"></div>
+                <div class="verified-badge">
+                    <i class="fas fa-crown"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">GOAT GAMING</h1>
+            <div class="profile-tagline">Ultimate PlayStation Experience</div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">PS5</span>
+                    <span class="stat-label">Latest Consoles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">VIP</span>
+                    <span class="stat-label">Private Rooms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Gaming</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <h2 class="section-title">THE ULTIMATE GAMING EXPERIENCE</h2>
+            <div class="about-text">
+                GOAT - The largest and most modern PlayStation center in the region, combining luxury entertainment and competitive atmosphere in one place.
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">عن GOAT</div>
+                <div class="about-text">
+                    يُعد GOAT أكبر وأحدث محل بلايستيشن في المنطقة، حيث يجمع بين الترفيه الفاخر والأجواء التنافسية في مكان واحد.
+                    يقدّم GOAT تجربة لعب استثنائية لعشاق الألعاب الإلكترونية من جميع الأعمار، مع أحدث أجهزة PlayStation 5، وشاشات عالية الدقة، ومقاعد مريحة مصممة خصيصاً لجلسات اللعب الطويلة.
+
+                    يضم المحل غرف VIP لمحبي الخصوصية، ومنطقة مخصصة للمنافسات والتحديات الجماعية، بالإضافة إلى مقهى صغير يقدم مشروبات وسناك لذيذة تجعل التجربة أكثر متعة.
+
+                    في GOAT، لا يتعلق الأمر فقط باللعب، بل بخلق تجربة ترفيه متكاملة تجمع الأصدقاء وتطلق روح التحدي.
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section fade-in delay-2">
+            <h2 class="section-title">WHY CHOOSE GOAT?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fab fa-playstation"></i>
+                    </div>
+                    <h3 class="feature-name">PS5 PRO GAMING</h3>
+                    <p class="feature-desc">Latest PlayStation 5 consoles with premium gaming setups and 4K displays</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="feature-name">VIP ROOMS</h3>
+                    <p class="feature-desc">Private gaming rooms for ultimate comfort and exclusive experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="feature-name">TOURNAMENTS</h3>
+                    <p class="feature-desc">Regular gaming competitions and challenges with amazing prizes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="feature-name">GAMER CAFE</h3>
+                    <p class="feature-desc">Refreshments and snacks to keep you energized during gaming sessions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">CONTACT & LOCATION</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+962 7 8577 5515</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+962 7 8888 5914</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Goat Gaming Center - Largest PlayStation Center</span>
+                </div>
+            </div>
+            
+            <div class="click-to-call">
+                <div class="click-title">⚡ CLICK TO CALL NOW ⚡</div>
+                <div class="click-number">+962 7 8888 5914</div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">CONNECT WITH GOAT</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.instagram.com/goat_gaming_center?igsh=MTdqZXZ4MnZvNW1oZQ==" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/14FXpn6qGmg/" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://maps.google.com/maps/search/Goat%20Gaming%20Center/@32.100704193115234,36.09450149536133,17z?hl=ar" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                <a href="https://shorturl.at/WmomM" class="social-icon" target="_blank">
+                    <i class="fas fa-star"></i>
+                </a>
+                <a href="tel:+962788885914" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <a href="VCF/goat-gaming.vcf" class="action-button primary" download>
+                <i class="fas fa-download"></i>
+                Save Contact
+            </a>
+            <a href="tel:+962788885914" class="action-button">
+                <i class="fas fa-phone"></i>
+                Call Now
+            </a>
+            <a href="https://maps.google.com/maps/search/Goat%20Gaming%20Center/@32.100704193115234,36.09450149536133,17z?hl=ar" class="action-button" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+                View Location
+            </a>
+            <a href="https://wa.me/962788885914" class="action-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">GOAT GAMING CENTER - The Ultimate PlayStation Experience</p>
+            <p class="footer-text">Largest Gaming Center • PS5 Pro Setup • VIP Rooms • Tournaments</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Click to call animation
+            const clickToCall = document.querySelector('.click-to-call');
+            if (clickToCall) {
+                clickToCall.addEventListener('click', function() {
+                    window.location.href = 'tel:+962788885914';
+                });
+                
+                // Pulsing animation
+                setInterval(() => {
+                    clickToCall.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        clickToCall.style.transform = 'scale(1)';
+                    }, 500);
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
