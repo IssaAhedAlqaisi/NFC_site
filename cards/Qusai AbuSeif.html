@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qusai AbuSeif - Influencer & Mentor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --primary-light: #333333;
+            --primary-dark: #000000;
+            --accent: #ff6b35;
+            --gold: #FFD700;
+            --gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            --gradient-accent: linear-gradient(135deg, #1a1a1a 0%, #ff6b35 100%);
+            --light-bg: #0a0a0a;
+            --light-card: #1a1a1a;
+            --dark-text: #ffffff;
+            --light-text: #b0b0b0;
+            --shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+            --shadow-lg: 0 20px 40px rgba(255, 107, 53, 0.3);
+            --border: 1px solid #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Tajawal', sans-serif;
+        }
+        
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-card);
+        }
+        
+        .cover-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.8);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 50px;
+            text-align: center;
+            margin-top: -100px;
+            z-index: 2;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            display: block;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            border: 3px solid var(--light-card);
+            font-weight: bold;
+        }
+        
+        .profile-name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .profile-username {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin: 15px 0;
+            border: var(--border);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+            font-family: 'Tajawal', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-right: 5px solid var(--accent);
+            text-align: center;
+        }
+        
+        .highlight-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--light-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: var(--border);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 107, 53, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .service-desc {
+            font-size: 1rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            padding: 20px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            color: var(--dark-text);
+            border: var(--border);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 107, 53, 0.2);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            width: 40px;
+        }
+        
+        .business-contact {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-lg);
+            border: none;
+        }
+        
+        .business-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .business-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .social-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--dark-text);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: var(--light-card);
+            position: relative;
+            border: 2px solid var(--border);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-accent);
+            color: white;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 35px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient-accent);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-button i {
+            font-size: 1.4rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 50px 0;
+            text-align: center;
+            margin-top: 80px;
+            color: var(--light-text);
+            border-top: 3px solid var(--accent);
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-username {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .cover-container {
+                height: 400px;
+            }
+            
+            .social-icon {
+                width: 75px;
+                height: 75px;
+                font-size: 1.8rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats-container {
+                gap: 30px;
+            }
+            
+            .about-section, .services-section, .contact-section {
+                padding: 30px 20px;
+                margin: 30px auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-container {
+                height: 350px;
+            }
+            
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .social-icons-grid {
+                gap: 20px;
+            }
+            
+            .social-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.6rem;
+            }
+            
+            .stats-container {
+                gap: 25px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <div class="cover-container">
+            <img src="https://i.imgur.com/JE55gE1.png" alt="Qusai AbuSeif Cover" class="cover-photo">
+        </div>
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/4Bku4Br.png" alt="Qusai AbuSeif" class="profile-image">
+                <div class="verified-badge">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">Qusai AbuSeif</h1>
+            <div class="profile-username">@qusai_abuseif1</div>
+            
+            <div class="location-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Dubai | Amman 📍🇦🇪🇯🇴</span>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">109</span>
+                    <span class="stat-label">Posts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1.5M</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2,314</span>
+                    <span class="stat-label">Following</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6K+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <h2 class="section-title">About Qusai</h2>
+            <div class="about-text">
+                Influencer • Mentor • Business Owner
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">ممكن تساعدك</div>
+                <div class="about-text">
+                    Qusai AbuSeif is a prominent influencer and mentor helping thousands of students 
+                    achieve their goals. With over 1.5 million followers, he shares valuable insights 
+                    about business, personal development, and success strategies.
+                </div>
+            </div>
+            
+            <div class="about-text">
+                Owner of @qas_figures • 6K+ students worldwide • Based in Dubai & Amman
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-2">
+            <h2 class="section-title">What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-name">Mentorship</h3>
+                    <p class="service-desc">Personalized guidance and coaching for 6,000+ students worldwide</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-name">Business Insights</h3>
+                    <p class="service-desc">Valuable business strategies and success principles</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="service-name">Community</h3>
+                    <p class="service-desc">Join 1.5M+ followers in our growing community</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-name">Inspiration</h3>
+                    <p class="service-desc">Daily motivation and success stories</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>@qusai_abuseif1</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-snapchat"></i>
+                    <span>@qusai_abusaif</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <span>@qas_life</span>
+                </div>
+            </div>
+            
+            <div class="business-contact">
+                <div class="business-title">For Business Inquiries</div>
+                <div class="business-number">@qas_figures</div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">Follow Me</h2>
+            <div class="social-icons-grid">
+                <a href="https://www.instagram.com/qusai_abuseif1?igsh=NmUzbGpmbHNoOTlk" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/qusai_abusaif" class="social-icon" target="_blank">
+                    <i class="fab fa-snapchat"></i>
+                </a>
+                <a href="https://t.me/qas_life" class="social-icon" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://goo.gl/maps/8HEHvjtBzqmFj32j8" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <button class="action-button primary" onclick="downloadVCF()">
+                <i class="fas fa-download"></i>
+                Save Contact
+            </button>
+            <a href="https://www.instagram.com/qusai_abuseif1?igsh=NmUzbGpmbHNoOTlk" class="action-button" target="_blank">
+                <i class="fab fa-instagram"></i>
+                Follow on Instagram
+            </a>
+            <a href="https://t.me/qas_life" class="action-button" target="_blank">
+                <i class="fab fa-telegram"></i>
+                Join Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Qusai AbuSeif - Influencer & Mentor</p>
+            <p class="footer-text">Dubai | Amman • 1.5M Followers • 6K+ Students</p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadVCF() {
+            const vcfContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Qusai AbuSeif
+ORG:Influencer & Mentor;
+TEL;TYPE=WORK,VOICE:Business Inquiries
+URL:https://www.instagram.com/qusai_abuseif1
+URL:https://www.snapchat.com/add/qusai_abusaif
+URL:https://t.me/qas_life
+NOTE:Qusai AbuSeif - Influencer & Mentor with 1.5M followers. Owner of @qas_figures. 6K+ students worldwide. Based in Dubai & Amman. ممكن تساعدك
+END:VCARD`;
+
+            const blob = new Blob([vcfContent], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'qusai-abuseif.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
