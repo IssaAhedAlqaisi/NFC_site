@@ -100,7 +100,6 @@
             object-fit: cover;
             box-shadow: var(--shadow-lg);
             display: block;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
         }
         
         .verified-badge {
@@ -233,6 +232,95 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--accent);
+        }
+        
+        /* Gallery Slider Section */
+        .gallery-section {
+            background: var(--dark-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .slider-container {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 25px;
+            padding: 15px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            border-radius: 20px;
+        }
+        
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .gallery-item {
+            min-width: 350px;
+            background: rgba(106, 17, 203, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            color: var(--light-text);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-btn:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-50%) scale(1.1);
+            color: var(--dark-bg);
+        }
+        
+        .slider-btn.prev {
+            left: -30px;
+        }
+        
+        .slider-btn.next {
+            right: -30px;
         }
         
         /* Features Section */
@@ -369,6 +457,13 @@
             border: none;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .click-to-call:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 255, 136, 0.4);
         }
         
         .click-to-call::before {
@@ -554,9 +649,27 @@
                 gap: 30px;
             }
             
-            .about-section, .features-section, .contact-section {
+            .about-section, .features-section, .contact-section, .gallery-section {
                 padding: 30px 20px;
                 margin: 30px auto;
+            }
+            
+            .slider-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .slider-btn.prev {
+                left: -25px;
+            }
+            
+            .slider-btn.next {
+                right: -25px;
+            }
+            
+            .gallery-item {
+                min-width: 300px;
             }
         }
         
@@ -595,6 +708,10 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .gallery-item {
+                min-width: 280px;
+            }
         }
     </style>
 </head>
@@ -606,7 +723,7 @@
         </div>
         <div class="profile-info">
             <div class="profile-image-container">
-                <div class="profile-image"></div>
+                <img src="https://i.imgur.com/SDdINEZ.jpeg" alt="GOAT Gaming Center" class="profile-image">
                 <div class="verified-badge">
                     <i class="fas fa-crown"></i>
                 </div>
@@ -649,6 +766,33 @@
                     يضم المحل غرف VIP لمحبي الخصوصية، ومنطقة مخصصة للمنافسات والتحديات الجماعية، بالإضافة إلى مقهى صغير يقدم مشروبات وسناك لذيذة تجعل التجربة أكثر متعة.
 
                     في GOAT، لا يتعلق الأمر فقط باللعب، بل بخلق تجربة ترفيه متكاملة تجمع الأصدقاء وتطلق روح التحدي.
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Slider Section -->
+        <div class="gallery-section fade-in delay-2">
+            <h2 class="section-title">GAMING ZONE</h2>
+            <div class="slider-container">
+                <button class="slider-btn prev" onclick="scrollSlider(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next" onclick="scrollSlider(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="slider" id="gallerySlider">
+                    <div class="gallery-item">
+                        <img src="https://i.imgur.com/JcpuW3q.jpeg" alt="GOAT Gaming Setup 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.imgur.com/BmirMkF.jpeg" alt="GOAT Gaming Setup 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.imgur.com/JcpuW3q.jpeg" alt="GOAT Gaming Setup 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.imgur.com/BmirMkF.jpeg" alt="GOAT Gaming Setup 4">
+                    </div>
                 </div>
             </div>
         </div>
@@ -706,7 +850,7 @@
                 </div>
             </div>
             
-            <div class="click-to-call">
+            <div class="click-to-call" onclick="window.location.href='tel:+962788885914'">
                 <div class="click-title">⚡ CLICK TO CALL NOW ⚡</div>
                 <div class="click-number">+962 7 8888 5914</div>
             </div>
@@ -764,6 +908,13 @@
     </footer>
 
     <script>
+        // Slider functionality
+        function scrollSlider(direction) {
+            const slider = document.getElementById('gallerySlider');
+            const scrollAmount = 400;
+            slider.scrollLeft += direction * scrollAmount;
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button');
@@ -779,10 +930,6 @@
             // Click to call animation
             const clickToCall = document.querySelector('.click-to-call');
             if (clickToCall) {
-                clickToCall.addEventListener('click', function() {
-                    window.location.href = 'tel:+962788885914';
-                });
-                
                 // Pulsing animation
                 setInterval(() => {
                     clickToCall.style.transform = 'scale(1.02)';
@@ -791,6 +938,11 @@
                     }, 500);
                 }, 2000);
             }
+
+            // Auto slide gallery every 5 seconds
+            setInterval(() => {
+                scrollSlider(1);
+            }, 5000);
         });
     </script>
 </body>
