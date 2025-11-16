@@ -136,6 +136,18 @@
             letter-spacing: 1px;
         }
         
+        .profile-tagline {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
         .stats-container {
             display: flex;
             justify-content: center;
@@ -305,6 +317,56 @@
             font-size: 1rem;
             color: var(--light-text);
             line-height: 1.6;
+        }
+        
+        /* Trading Section */
+        .trading-section {
+            background: var(--light-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .trading-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #FFD700 0%, #ff6b35 100%);
+        }
+        
+        .trading-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 25px 40px;
+            background: linear-gradient(135deg, #FFD700 0%, #ff6b35 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            margin: 20px 0;
+        }
+        
+        .trading-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(255, 107, 53, 0.4);
+        }
+        
+        .trading-button i {
+            font-size: 1.8rem;
         }
         
         /* Contact Section */
@@ -530,9 +592,14 @@
                 gap: 30px;
             }
             
-            .about-section, .services-section, .contact-section {
+            .about-section, .services-section, .contact-section, .trading-section {
                 padding: 30px 20px;
                 margin: 30px auto;
+            }
+            
+            .trading-button {
+                padding: 20px 30px;
+                font-size: 1.2rem;
             }
         }
         
@@ -589,6 +656,7 @@
             </div>
             <h1 class="profile-name">Qusai AbuSeif</h1>
             <div class="profile-username">@qusai_abuseif1</div>
+            <div class="profile-tagline">Career Coach & Financial Markets Expert</div>
             
             <div class="location-badge">
                 <i class="fas fa-map-marker-alt"></i>
@@ -622,20 +690,21 @@
         <div class="about-section fade-in delay-1">
             <h2 class="section-title">About Qusai</h2>
             <div class="about-text">
-                Influencer • Mentor • Business Owner
+                Influencer • Mentor • Career Coach • Financial Markets Expert
             </div>
             
             <div class="highlight-box">
                 <div class="highlight-title">ممكن تساعدك</div>
                 <div class="about-text">
-                    Qusai AbuSeif is a prominent influencer and mentor helping thousands of students 
-                    achieve their goals. With over 1.5 million followers, he shares valuable insights 
-                    about business, personal development, and success strategies.
+                    Qusai AbuSeif is a prominent influencer, career coach, and financial markets expert 
+                    helping thousands of students achieve their goals. With over 1.5 million followers, 
+                    he shares valuable insights about business, personal development, career growth, 
+                    and financial market strategies.
                 </div>
             </div>
             
             <div class="about-text">
-                Owner of @qas_figures • 6K+ students worldwide • Based in Dubai & Amman
+                Owner of @qas_figures • 6K+ students worldwide • Career Coach • Financial Markets Expert • Based in Dubai & Amman
             </div>
         </div>
 
@@ -647,30 +716,47 @@
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="service-name">Mentorship</h3>
-                    <p class="service-desc">Personalized guidance and coaching for 6,000+ students worldwide</p>
+                    <h3 class="service-name">Career Coaching</h3>
+                    <p class="service-desc">Professional career guidance and coaching for 6,000+ students worldwide</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="service-name">Business Insights</h3>
-                    <p class="service-desc">Valuable business strategies and success principles</p>
+                    <h3 class="service-name">Financial Markets</h3>
+                    <p class="service-desc">Expert insights and strategies for financial markets and trading</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="service-name">Community</h3>
-                    <p class="service-desc">Join 1.5M+ followers in our growing community</p>
+                    <h3 class="service-name">Mentorship</h3>
+                    <p class="service-desc">Personalized mentorship programs for career and financial growth</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="service-name">Inspiration</h3>
-                    <p class="service-desc">Daily motivation and success stories</p>
+                    <h3 class="service-name">Business Insights</h3>
+                    <p class="service-desc">Valuable business strategies and success principles</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Trading Section -->
+        <div class="trading-section fade-in delay-2">
+            <h2 class="section-title">Start Your Trading Journey</h2>
+            <div class="about-text">
+                افتح حساب تداول مع Equiti واحصل على أفضل شروط التداول في الأسواق المالية
+            </div>
+            
+            <a href="https://portal.my-equiti.com/sc/register/?accountType=Standard&clickid=1143329&affid=C02209866" class="trading-button" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                افتح حساب تداول الآن
+            </a>
+            
+            <div class="about-text">
+                استفد من خبرة قصي في الأسواق المالية وابدأ رحلتك في التداول بمزايا حصرية
             </div>
         </div>
 
@@ -737,8 +823,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Qusai AbuSeif - Influencer & Mentor</p>
-            <p class="footer-text">Dubai | Amman • 1.5M Followers • 6K+ Students</p>
+            <p class="footer-text">Qusai AbuSeif - Career Coach & Financial Markets Expert</p>
+            <p class="footer-text">Dubai | Amman • 1.5M Followers • 6K+ Students • Trading Expert</p>
         </div>
     </footer>
 
@@ -747,12 +833,13 @@
             const vcfContent = `BEGIN:VCARD
 VERSION:3.0
 FN:Qusai AbuSeif
-ORG:Influencer & Mentor;
+ORG:Career Coach & Financial Markets Expert;
 TEL;TYPE=WORK,VOICE:Business Inquiries
 URL:https://www.instagram.com/qusai_abuseif1
 URL:https://www.snapchat.com/add/qusai_abusaif
 URL:https://t.me/qas_life
-NOTE:Qusai AbuSeif - Influencer & Mentor with 1.5M followers. Owner of @qas_figures. 6K+ students worldwide. Based in Dubai & Amman. ممكن تساعدك
+URL:https://portal.my-equiti.com/sc/register/?accountType=Standard&clickid=1143329&affid=C02209866
+NOTE:Qusai AbuSeif - Career Coach & Financial Markets Expert with 1.5M followers. Owner of @qas_figures. 6K+ students worldwide. Based in Dubai & Amman. ممكن تساعدك
 END:VCARD`;
 
             const blob = new Blob([vcfContent], { type: 'text/vcard' });
@@ -769,7 +856,7 @@ END:VCARD`;
 
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .trading-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
