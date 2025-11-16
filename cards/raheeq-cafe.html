@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كافيه رحيق - تجربة طعام فريدة</title>
+    <title>Qusai AbuSeif - Influencer & Mentor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B4513;
-            --primary-light: #A0522D;
-            --primary-dark: #654321;
-            --accent: #D2691E;
+            --primary: #1a1a1a;
+            --primary-light: #333333;
+            --primary-dark: #000000;
+            --accent: #ff6b35;
             --gold: #FFD700;
-            --gradient: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-            --gradient-gold: linear-gradient(135deg, #8B4513 0%, #FFD700 100%);
-            --light-bg: #FFF8F0;
-            --light-card: #FFFFFF;
-            --dark-text: #5D4037;
-            --light-text: #8D6E63;
-            --shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
-            --shadow-lg: 0 20px 40px rgba(139, 69, 19, 0.25);
-            --border: 1px solid #F0E6D2;
+            --gradient: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            --gradient-accent: linear-gradient(135deg, #1a1a1a 0%, #ff6b35 100%);
+            --light-bg: #0a0a0a;
+            --light-card: #1a1a1a;
+            --dark-text: #ffffff;
+            --light-text: #b0b0b0;
+            --shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+            --shadow-lg: 0 20px 40px rgba(255, 107, 53, 0.3);
+            --border: 1px solid #333333;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'El Messiri', sans-serif;
+            font-family: 'Inter', 'Tajawal', sans-serif;
         }
         
         html {
@@ -40,7 +40,7 @@
             background: var(--light-bg);
             color: var(--dark-text);
             min-height: 100vh;
-            line-height: 1.8;
+            line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -66,7 +66,7 @@
         
         .cover-container {
             width: 100%;
-            height: 450px;
+            height: 500px;
             overflow: hidden;
             position: relative;
         }
@@ -76,27 +76,27 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: brightness(0.9);
+            filter: brightness(0.8);
         }
         
         .profile-info {
             position: relative;
-            padding: 0 20px 40px;
+            padding: 0 20px 50px;
             text-align: center;
-            margin-top: -80px;
+            margin-top: -100px;
             z-index: 2;
         }
         
         .profile-image-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 25px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             border: 5px solid var(--light-card);
             object-fit: cover;
             box-shadow: var(--shadow-lg);
@@ -105,41 +105,54 @@
         
         .verified-badge {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: var(--gold);
-            color: var(--dark-text);
-            width: 35px;
-            height: 35px;
+            bottom: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
             border: 3px solid var(--light-card);
             font-weight: bold;
         }
         
         .profile-name {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 10px;
             color: var(--dark-text);
-            font-family: 'El Messiri', serif;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .profile-username {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
         
         .profile-tagline {
             font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 25px;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
         .stats-container {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 25px 0;
+            gap: 50px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
         
@@ -148,8 +161,8 @@
         }
         
         .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--accent);
             display: block;
         }
@@ -158,14 +171,25 @@
             font-size: 0.9rem;
             color: var(--light-text);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+        }
+        
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 107, 53, 0.1);
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin: 15px 0;
+            border: var(--border);
         }
         
         /* About Section */
         .about-section {
             background: var(--light-card);
-            margin: 40px auto;
-            padding: 40px;
+            margin: 50px auto;
+            padding: 50px;
             border-radius: 25px;
             max-width: 900px;
             text-align: center;
@@ -181,15 +205,15 @@
             right: 0;
             width: 100%;
             height: 4px;
-            background: var(--gradient);
+            background: var(--gradient-accent);
         }
         
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 30px;
             color: var(--dark-text);
-            font-family: 'El Messiri', serif;
+            font-family: 'Tajawal', sans-serif;
             position: relative;
             display: inline-block;
         }
@@ -197,10 +221,10 @@
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -12px;
+            bottom: -15px;
             right: 50%;
             transform: translateX(50%);
-            width: 70px;
+            width: 80px;
             height: 3px;
             background: var(--accent);
         }
@@ -214,12 +238,12 @@
         }
         
         .highlight-box {
-            background: rgba(210, 105, 30, 0.1);
+            background: rgba(255, 107, 53, 0.1);
             padding: 30px;
             border-radius: 20px;
             margin: 30px 0;
             border-right: 5px solid var(--accent);
-            text-align: right;
+            text-align: center;
         }
         
         .highlight-title {
@@ -229,11 +253,11 @@
             color: var(--accent);
         }
         
-        /* Menu Button Section */
-        .menu-section {
+        /* Services Section */
+        .services-section {
             background: var(--light-card);
-            margin: 40px auto;
-            padding: 40px;
+            margin: 50px auto;
+            padding: 50px;
             border-radius: 25px;
             max-width: 900px;
             text-align: center;
@@ -241,13 +265,90 @@
             border: var(--border);
         }
         
-        .menu-button {
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: var(--border);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 107, 53, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .service-desc {
+            font-size: 1rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* Trading Section */
+        .trading-section {
+            background: var(--light-card);
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .trading-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #FFD700 0%, #ff6b35 100%);
+        }
+        
+        .trading-button {
             display: inline-flex;
             align-items: center;
             gap: 15px;
             padding: 25px 40px;
-            background: var(--gradient-gold);
-            color: var(--dark-text);
+            background: linear-gradient(135deg, #FFD700 0%, #ff6b35 100%);
+            color: white;
             border: none;
             border-radius: 20px;
             font-size: 1.4rem;
@@ -259,87 +360,20 @@
             margin: 20px 0;
         }
         
-        .menu-button:hover {
+        .trading-button:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(139, 69, 19, 0.3);
+            box-shadow: 0 25px 50px rgba(255, 107, 53, 0.4);
         }
         
-        .menu-button i {
+        .trading-button i {
             font-size: 1.8rem;
-        }
-        
-        /* Features Section */
-        .features-section {
-            background: var(--light-card);
-            margin: 40px auto;
-            padding: 40px;
-            border-radius: 25px;
-            max-width: 900px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: var(--border);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature-card {
-            background: rgba(210, 105, 30, 0.1);
-            padding: 35px 25px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s ease;
-            border: var(--border);
-            position: relative;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            background: rgba(210, 105, 30, 0.15);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background: var(--gradient-gold);
-        }
-        
-        .feature-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--dark-text);
-        }
-        
-        .feature-desc {
-            font-size: 1rem;
-            color: var(--light-text);
-            line-height: 1.6;
         }
         
         /* Contact Section */
         .contact-section {
             background: var(--light-card);
-            margin: 40px auto;
-            padding: 40px;
+            margin: 50px auto;
+            padding: 50px;
             border-radius: 25px;
             max-width: 900px;
             text-align: center;
@@ -350,18 +384,18 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-bottom: 35px;
+            gap: 25px;
+            margin-bottom: 40px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             font-size: 1.2rem;
             padding: 20px;
-            background: rgba(210, 105, 30, 0.1);
+            background: rgba(255, 107, 53, 0.1);
             border-radius: 15px;
             transition: all 0.3s ease;
             color: var(--dark-text);
@@ -369,87 +403,69 @@
         }
         
         .contact-item:hover {
-            background: rgba(210, 105, 30, 0.2);
+            background: rgba(255, 107, 53, 0.2);
             transform: translateY(-5px);
+            box-shadow: var(--shadow);
         }
         
         .contact-item i {
             color: var(--accent);
-            font-size: 1.4rem;
-            width: 35px;
+            font-size: 1.5rem;
+            width: 40px;
         }
         
-        .click-to-call {
-            background: var(--gradient-gold);
-            color: var(--dark-text);
+        .business-contact {
+            background: var(--gradient-accent);
+            color: white;
             padding: 25px;
             border-radius: 20px;
             margin-top: 30px;
             box-shadow: var(--shadow-lg);
             border: none;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
         
-        .click-to-call:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
-        }
-        
-        .click-to-call::before {
-            content: '💳';
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            font-size: 1.8rem;
-            animation: pulse 2s infinite;
-        }
-        
-        .click-title {
+        .business-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
         
-        .click-number {
+        .business-number {
             font-size: 1.8rem;
             font-weight: 900;
-            direction: ltr;
         }
         
         /* Social Icons Section */
         .social-section {
             text-align: center;
-            padding: 50px 0 30px;
+            padding: 60px 0 40px;
         }
         
         .social-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: var(--dark-text);
-            font-family: 'El Messiri', serif;
+            font-family: 'Tajawal', sans-serif;
         }
         
         .social-icons-grid {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
         .social-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            width: 90px;
+            height: 90px;
+            border-radius: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--light-text);
             text-decoration: none;
             transition: all 0.4s ease;
@@ -460,9 +476,9 @@
         }
         
         .social-icon:hover {
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-10px) scale(1.1);
             box-shadow: var(--shadow-lg);
-            background: var(--gradient);
+            background: var(--gradient-accent);
             color: white;
         }
         
@@ -470,21 +486,21 @@
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
+            gap: 25px;
+            margin: 50px 0;
             flex-wrap: wrap;
         }
         
         .action-button {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 18px 32px;
+            gap: 15px;
+            padding: 20px 35px;
             background: var(--light-card);
             color: var(--dark-text);
             border: 2px solid var(--accent);
-            border-radius: 15px;
-            font-size: 1.1rem;
+            border-radius: 20px;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -493,31 +509,32 @@
         }
         
         .action-button.primary {
-            background: var(--gradient);
+            background: var(--gradient-accent);
             color: white;
             border: 2px solid var(--accent);
         }
         
         .action-button:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
         
         .action-button i {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         /* Footer */
         footer {
             background: var(--primary-dark);
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
-            margin-top: 60px;
-            color: white;
+            margin-top: 80px;
+            color: var(--light-text);
+            border-top: 3px solid var(--accent);
         }
         
         .footer-text {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         
@@ -525,17 +542,12 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
         }
         
         .fade-in {
@@ -549,25 +561,25 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-name {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
-            .profile-tagline {
-                font-size: 1.1rem;
+            .profile-username {
+                font-size: 1.2rem;
             }
             
             .profile-image {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
             }
             
             .cover-container {
-                height: 350px;
+                height: 400px;
             }
             
             .social-icon {
-                width: 70px;
-                height: 70px;
+                width: 75px;
+                height: 75px;
                 font-size: 1.8rem;
             }
             
@@ -580,7 +592,12 @@
                 gap: 30px;
             }
             
-            .menu-button {
+            .about-section, .services-section, .contact-section, .trading-section {
+                padding: 30px 20px;
+                margin: 30px auto;
+            }
+            
+            .trading-button {
                 padding: 20px 30px;
                 font-size: 1.2rem;
             }
@@ -588,38 +605,38 @@
         
         @media (max-width: 480px) {
             .profile-image {
-                width: 110px;
-                height: 110px;
+                width: 120px;
+                height: 120px;
             }
             
             .cover-container {
-                height: 300px;
+                height: 350px;
             }
             
             .profile-name {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .social-icons-grid {
-                gap: 15px;
+                gap: 20px;
             }
             
             .social-icon {
-                width: 60px;
-                height: 60px;
+                width: 65px;
+                height: 65px;
                 font-size: 1.6rem;
             }
             
             .stats-container {
-                gap: 20px;
+                gap: 25px;
             }
             
             .stat-number {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -628,30 +645,40 @@
     <!-- Header Section -->
     <header class="profile-header fade-in">
         <div class="cover-container">
-            <img src="https://i.imgur.com/OZTQ64h.jpeg" alt="كافيه رحيق" class="cover-photo">
+            <img src="https://i.imgur.com/JE55gE1.png" alt="Qusai AbuSeif Cover" class="cover-photo">
         </div>
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/UgALve4.png" alt="كافيه رحيق" class="profile-image">
+                <img src="https://i.imgur.com/4Bku4Br.png" alt="Qusai AbuSeif" class="profile-image">
                 <div class="verified-badge">
-                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-check"></i>
                 </div>
             </div>
-            <h1 class="profile-name">رحيق</h1>
-            <div class="profile-tagline">مطعم وكافيه</div>
+            <h1 class="profile-name">Qusai AbuSeif</h1>
+            <div class="profile-username">@qusai_abuseif1</div>
+            <div class="profile-tagline">Career Coach & Financial Markets Expert</div>
+            
+            <div class="location-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Dubai | Amman 📍🇦🇪🇯🇴</span>
+            </div>
             
             <div class="stats-container">
                 <div class="stat-item">
-                    <span class="stat-number">☕</span>
-                    <span class="stat-label">مشروبات</span>
+                    <span class="stat-number">109</span>
+                    <span class="stat-label">Posts</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">🍽️</span>
-                    <span class="stat-label">أطباق</span>
+                    <span class="stat-number">1.5M</span>
+                    <span class="stat-label">Followers</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">⭐</span>
-                    <span class="stat-label">تقييم</span>
+                    <span class="stat-number">2,314</span>
+                    <span class="stat-label">Following</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6K+</span>
+                    <span class="stat-label">Students</span>
                 </div>
             </div>
         </div>
@@ -661,126 +688,134 @@
     <div class="container">
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
-            <h2 class="section-title">مرحباً بكم في رحيق</h2>
+            <h2 class="section-title">About Qusai</h2>
             <div class="about-text">
-                نقدم لكم المذاقات العالمية بأسلوب حديث ومبتكر، يجمع بين جودة المكونات، وجمال التقديم، وأجواء راقية تمنح الزائر تجربة فريدة تجمع بين الإبداع والمذاق اللذيذ
+                Influencer • Mentor • Career Coach • Financial Markets Expert
             </div>
             
             <div class="highlight-box">
-                <div class="highlight-title">شغلتنا نغيرلك جوك</div>
+                <div class="highlight-title">ممكن تساعدك</div>
                 <div class="about-text">
-                    في رحيق، نحن لا نقدم فقط الطعام والشراب، بل نخلق تجربة متكاملة تلامس جميع الحواس. 
-                    من أول لحظة تدخل فيها مكاننا، ستشعر بالدفء والترحيب، وستستمتع بأجواء راقية تجمع بين الأصالة والحداثة.
+                    Qusai AbuSeif is a prominent influencer, career coach, and financial markets expert 
+                    helping thousands of students achieve their goals. With over 1.5 million followers, 
+                    he shares valuable insights about business, personal development, career growth, 
+                    and financial market strategies.
                 </div>
             </div>
-        </div>
-
-        <!-- Menu Button Section -->
-        <div class="menu-section fade-in delay-2">
-            <h2 class="section-title">قائمتنا المميزة</h2>
+            
             <div class="about-text">
-                اكتشف تشكيلتنا الواسعة من المأكولات والمشروبات المبتكرة
+                Owner of @qas_figures • 6K+ students worldwide • Career Coach • Financial Markets Expert • Based in Dubai & Amman
             </div>
-            <a href="https://sites.google.com/view/raheeqmenu/home-page" class="menu-button" target="_blank">
-                <i class="fas fa-utensils"></i>
-                تصفح المنيو
-            </a>
         </div>
 
-        <!-- Features Section -->
-        <div class="features-section fade-in delay-2">
-            <h2 class="section-title">لماذا رحيق؟</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-2">
+            <h2 class="section-title">What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="feature-name">جودة عالية</h3>
-                    <p class="feature-desc">نستخدم أفضل المكونات الطازجة في تحضير جميع أطباقنا</p>
+                    <h3 class="service-name">Career Coaching</h3>
+                    <p class="service-desc">Professional career guidance and coaching for 6,000+ students worldwide</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="feature-name">تجربة فريدة</h3>
-                    <p class="feature-desc">أجواء راقية وتقديم مبتكر يخلق ذكريات لا تنسى</p>
+                    <h3 class="service-name">Financial Markets</h3>
+                    <p class="service-desc">Expert insights and strategies for financial markets and trading</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
-                    <h3 class="feature-name">مشروبات مميزة</h3>
-                    <p class="feature-desc">تشكيلة واسعة من القهوة والشاي والمشروبات المبتكرة</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="feature-name">خدمة ممتازة</h3>
-                    <p class="feature-desc">طاقم مدرب لضمان راحتكم وتجربة استثنائية</p>
+                    <h3 class="service-name">Mentorship</h3>
+                    <p class="service-desc">Personalized mentorship programs for career and financial growth</p>
                 </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-name">Business Insights</h3>
+                    <p class="service-desc">Valuable business strategies and success principles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Section -->
+        <div class="trading-section fade-in delay-2">
+            <h2 class="section-title">Start Your Trading Journey</h2>
+            <div class="about-text">
+                افتح حساب تداول مع Equiti واحصل على أفضل شروط التداول في الأسواق المالية
+            </div>
+            
+            <a href="https://portal.my-equiti.com/sc/register/?accountType=Standard&clickid=1143329&affid=C02209866" class="trading-button" target="_blank">
+                <i class="fas fa-chart-bar"></i>
+                افتح حساب تداول الآن
+            </a>
+            
+            <div class="about-text">
+                استفد من خبرة قصي في الأسواق المالية وابدأ رحلتك في التداول بمزايا حصرية
             </div>
         </div>
 
         <!-- Contact Section -->
         <div class="contact-section fade-in delay-3">
-            <h2 class="section-title">اتصل بنا</h2>
+            <h2 class="section-title">Connect With Me</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+962 7 8146 0409</span>
+                    <i class="fab fa-instagram"></i>
+                    <span>@qusai_abuseif1</span>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>كافيه رحيق - تجربة طعام فريدة</span>
+                    <i class="fab fa-snapchat"></i>
+                    <span>@qusai_abusaif</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <span>@qas_life</span>
                 </div>
             </div>
             
-            <div class="click-to-call" onclick="window.location.href='tel:0781460409'">
-                <div class="click-title">💳 للدفع والطلبات 💳</div>
-                <div class="click-number">0781460409</div>
+            <div class="business-contact">
+                <div class="business-title">For Business Inquiries</div>
+                <div class="business-number">@qas_figures</div>
             </div>
         </div>
 
         <!-- Social Icons -->
         <div class="social-section fade-in delay-3">
-            <h2 class="social-title">تابعونا على</h2>
+            <h2 class="social-title">Follow Me</h2>
             <div class="social-icons-grid">
-                <a href="https://www.instagram.com/cafe.raheeq?igsh=eGFlcGFjZnEyazM4" class="social-icon" target="_blank">
+                <a href="https://www.instagram.com/qusai_abuseif1?igsh=NmUzbGpmbHNoOTlk" class="social-icon" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.facebook.com/share/1A348Yi9QZ/?mibextid=wwXIfr" class="social-icon" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://maps.app.goo.gl/gUxuyQتقjixarXFAbd9?g_st=ipc" class="social-icon" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <a href="https://shorturl.at/6nfHQ" class="social-icon" target="_blank">
-                    <i class="fas fa-star"></i>
-                </a>
-                <a href="https://www.snapchat.com/add/raheeq_rescafe?share_id=068F5Jq9lqM&locale=ar-EG" class="social-icon" target="_blank">
+                <a href="https://www.snapchat.com/add/qusai_abusaif" class="social-icon" target="_blank">
                     <i class="fab fa-snapchat"></i>
+                </a>
+                <a href="https://t.me/qas_life" class="social-icon" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://goo.gl/maps/8HEHvjtBzqmFj32j8" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
                 </a>
             </div>
         </div>
 
         <!-- Action Buttons -->
         <div class="action-buttons fade-in delay-3">
-            <a href="VCF/raheeq-cafe.vcf" class="action-button primary" download>
+            <button class="action-button primary" onclick="downloadVCF()">
                 <i class="fas fa-download"></i>
-                حفظ جهة الاتصال
+                Save Contact
+            </button>
+            <a href="https://www.instagram.com/qusai_abuseif1?igsh=NmUzbGpmbHNoOTlk" class="action-button" target="_blank">
+                <i class="fab fa-instagram"></i>
+                Follow on Instagram
             </a>
-            <a href="tel:0781460409" class="action-button">
-                <i class="fas fa-phone"></i>
-                اتصل الآن
-            </a>
-            <a href="https://maps.app.goo.gl/gUxuyQتقjixarXFAbd9?g_st=ipc" class="action-button" target="_blank">
-                <i class="fas fa-map-marker-alt"></i>
-                الموقع
-            </a>
-            <a href="https://sites.google.com/view/raheeqmenu/home-page" class="action-button" target="_blank">
-                <i class="fas fa-utensils"></i>
-                المنيو
+            <a href="https://t.me/qas_life" class="action-button" target="_blank">
+                <i class="fab fa-telegram"></i>
+                Join Telegram
             </a>
         </div>
     </div>
@@ -788,15 +823,40 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">كافيه رحيق - تجربة طعام فريدة</p>
-            <p class="footer-text">نغيرلك جوك • أجواء راقية • مذاقات عالمية</p>
+            <p class="footer-text">Qusai AbuSeif - Career Coach & Financial Markets Expert</p>
+            <p class="footer-text">Dubai | Amman • 1.5M Followers • 6K+ Students • Trading Expert</p>
         </div>
     </footer>
 
     <script>
+        function downloadVCF() {
+            const vcfContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Qusai AbuSeif
+ORG:Career Coach & Financial Markets Expert;
+TEL;TYPE=WORK,VOICE:Business Inquiries
+URL:https://www.instagram.com/qusai_abuseif1
+URL:https://www.snapchat.com/add/qusai_abusaif
+URL:https://t.me/qas_life
+URL:https://portal.my-equiti.com/sc/register/?accountType=Standard&clickid=1143329&affid=C02209866
+NOTE:Qusai AbuSeif - Career Coach & Financial Markets Expert with 1.5M followers. Owner of @qas_figures. 6K+ students worldwide. Based in Dubai & Amman. ممكن تساعدك
+END:VCARD`;
+
+            const blob = new Blob([vcfContent], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'qusai-abuseif.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button, .menu-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .trading-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
@@ -805,18 +865,6 @@
                     }, 150);
                 });
             });
-            
-            // Click to call animation
-            const clickToCall = document.querySelector('.click-to-call');
-            if (clickToCall) {
-                // Pulsing animation
-                setInterval(() => {
-                    clickToCall.style.transform = 'scale(1.02)';
-                    setTimeout(() => {
-                        clickToCall.style.transform = 'scale(1)';
-                    }, 500);
-                }, 2000);
-            }
         });
     </script>
 </body>
