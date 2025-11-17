@@ -512,6 +512,34 @@
             box-shadow: var(--shadow-lg);
         }
         
+        /* Google Review Button */
+        .review-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .review-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
+        }
+        
+        .review-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(66, 133, 244, 0.4);
+        }
+        
         /* Footer */
         footer {
             background: var(--light-card);
@@ -605,6 +633,11 @@
             .cliq-code {
                 font-size: 1.5rem;
             }
+            
+            .review-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -646,6 +679,11 @@
             .cliq-code {
                 font-size: 1.3rem;
                 letter-spacing: 2px;
+            }
+            
+            .review-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -692,17 +730,6 @@
                 <p>مرحباً بكم في <strong>Blink</strong> - وجهتكم الأولى للموضة والأناقة! نحن نؤمن بأن الملابس ليست مجرد قماش، بل هي تعبير عن الشخصية والأسلوب.</p>
                 <p>نقدم لكم أحدث صيحات الموضة من ملابس عصرية تناسب جميع الأذواق والمناسبات. من القطع الكاجوال اليومية إلى الملابس الرسمية الأنيقة، لدينا كل ما تحتاجونه لتكوين خزانة ملابس متكاملة.</p>
                 <p>جودة لا تضاهى، أسعار منافسة، وخدمة عملاء استثنائية - هذه هي رؤيتنا في Blink لتجربة تسوق لا تُنسى.</p>
-                
-                <div class="rating">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span>تقييم 5 نجوم على جوجل</span>
-                </div>
             </div>
         </div>
 
@@ -745,6 +772,14 @@
                 <div class="cliq-code" id="cliqCode">BLINK2024</div>
                 <div class="cliq-note">انقر لنسخ الكود</div>
             </div>
+        </div>
+
+        <!-- Google Review Button -->
+        <div class="review-section fade-in delay-2">
+            <a href="https://shorturl.at/yZyjE" class="review-button" target="_blank">
+                <i class="fab fa-google"></i>
+                قيمنا على جوجل
+            </a>
         </div>
 
         <!-- Contact Section -->
