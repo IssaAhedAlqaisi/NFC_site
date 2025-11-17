@@ -128,6 +128,7 @@
             font-weight: 700;
             color: var(--primary-dark);
             margin-bottom: 15px;
+            letter-spacing: 2px;
         }
         
         .click-label {
@@ -388,7 +389,7 @@
         <!-- Click to Copy Card -->
         <div class="click-card-section fade-in delay-1">
             <div class="click-card" id="clickCard">
-                <div class="click-text" id="clickText">Islamic Bank</div>
+                <div class="click-text" id="clickText">HARB8899</div>
                 <div class="click-label">Click to copy</div>
                 <div class="copy-notification" id="copyNotification">Copied! ✅</div>
             </div>
@@ -450,13 +451,11 @@
         // Click to Copy Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const clickCard = document.getElementById('clickCard');
-            const clickText = document.getElementById('clickText');
             const copyNotification = document.getElementById('copyNotification');
             
             clickCard.addEventListener('click', function() {
-                // Copy text to clipboard
-                const textToCopy = clickText.textContent;
-                navigator.clipboard.writeText(textToCopy).then(() => {
+                // Copy "HARB8899" to clipboard
+                navigator.clipboard.writeText("HARB8899").then(() => {
                     // Show notification
                     copyNotification.classList.add('show');
                     setTimeout(() => {
