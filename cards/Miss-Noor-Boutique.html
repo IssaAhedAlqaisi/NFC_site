@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss Noor Boutique | متجر ميس نور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E8B4B8;
+            --primary-light: #F5D7D9;
+            --primary-dark: #D8959B;
+            --accent: #C97B84;
+            --gold: #D4AF37;
+            --gradient: linear-gradient(135deg, #E8B4B8 0%, #F5D7D9 100%);
+            --gradient-accent: linear-gradient(135deg, #E8B4B8 0%, #C97B84 100%);
+            --light-bg: #FFF9F9;
+            --light-card: #FFFFFF;
+            --dark-text: #5D4037;
+            --light-text: #8D6E63;
+            --shadow: 0 10px 30px rgba(232, 180, 184, 0.2);
+            --shadow-lg: 0 20px 40px rgba(232, 180, 184, 0.3);
+            --border: 1px solid #F5E6E7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-card);
+        }
+        
+        .cover-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background-color: var(--light-bg);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 40px;
+            text-align: center;
+            margin-top: -80px;
+            z-index: 2;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 5px solid var(--light-card);
+            box-shadow: var(--shadow-lg);
+            background-color: var(--light-bg);
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--gold);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 2px solid var(--light-card);
+            z-index: 10;
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .profile-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background: rgba(232, 180, 184, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-right: 4px solid var(--accent);
+        }
+        
+        .highlight-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: rgba(232, 180, 184, 0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(232, 180, 184, 0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .service-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--light-text);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            padding: 15px;
+            background: rgba(232, 180, 184, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: var(--dark-text);
+        }
+        
+        .contact-item:hover {
+            background: rgba(232, 180, 184, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.3rem;
+            width: 30px;
+        }
+        
+        .business-contact {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .business-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .business-number {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+        
+        /* CliQ Box */
+        .cliq-box {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cliq-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(232, 180, 184, 0.1);
+        }
+        
+        .cliq-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cliq-text {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        .cliq-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            background: rgba(232, 180, 184, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        /* Social Icons */
+        .social-section {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+        
+        .social-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: white;
+            position: relative;
+            border: 2px solid var(--accent);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient);
+            color: white;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 32px;
+            background: white;
+            color: var(--dark-text);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient-accent);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .action-button i {
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--light-card);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            color: var(--light-text);
+            border-top: var(--border);
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            margin-top: 2%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            left: 35px;
+            color: var(--accent);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--primary-light);
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes zoomIn {
+            from {transform: scale(0.8);}
+            to {transform: scale(1);}
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-image-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .cover-container {
+                height: 300px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover-container {
+                height: 250px;
+            }
+            
+            .profile-image-container {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <div class="cover-container" onclick="openModal('cover')">
+            <img src="https://i.imgur.com/gPMOon7.jpeg" alt="Miss Noor Boutique Cover" class="cover-photo" id="cover">
+        </div>
+        <div class="profile-info">
+            <div class="profile-image-container" onclick="openModal('profile')">
+                <img src="https://i.imgur.com/gPMOon7.jpeg" alt="Miss Noor Boutique" class="profile-image" id="profile">
+                <div class="verified-badge">
+                    <i class="fas fa-crown"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">Miss Noor Boutique</h1>
+            <div class="profile-title">متجر ميس نور للأزياء</div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">أنيق</span>
+                    <span class="stat-label">التصميم</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5★</span>
+                    <span class="stat-label">التقييم</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">جودة</span>
+                    <span class="stat-label">عالية</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <h2 class="section-title">مرحباً بكم في متجر ميس نور</h2>
+            <div class="about-text">
+                وجهتكم المفضلة لأحدث صيحات الموضة والأزياء
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">قصتنا</div>
+                <div class="about-text">
+                    متجر ميس نور يقدم لكم تشكيلة مميزة من أحدث صيحات الموضة والأزياء 
+                    التي تناسب جميع الأذواق والمناسبات. نحن نحرص على تقديم أفضل 
+                    المنتجات بجودة عالية وأسعار مناسبة، مع خدمة عملاء متميزة 
+                    تضمن تجربة تسوق لا تُنسى.
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-2">
+            <h2 class="section-title">منتجاتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="service-name">ملابس نسائية</h3>
+                    <p class="service-desc">أحدث صيحات الموضة للنساء</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="service-name">إكسسوارات</h3>
+                    <p class="service-desc">مجوهرات وإكسسوارات متنوعة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="service-name">حقائب</h3>
+                    <p class="service-desc">تشكيلة مميزة من الحقائب</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="service-name">أحذية</h3>
+                    <p class="service-desc">أحدث موديلات الأحذية</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CliQ Box -->
+        <div class="cliq-box fade-in delay-2" onclick="copyCliQ()">
+            <h2 class="cliq-title">CliQ</h2>
+            <div class="cliq-text">انقر لنسخ رقم CliQ</div>
+            <div class="cliq-number">0789934424</div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-info">
+                <a href="tel:962789934424" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>962789934424</span>
+                </a>
+                <a href="https://maps.google.com/maps?q=32.100807189941406%2C36.10467529296875&z=17&hl=ar" class="contact-item" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>الموقع على الخريطة</span>
+                </a>
+            </div>
+            
+            <div class="business-contact">
+                <div class="business-title">للطلبات والاستفسارات</div>
+                <div class="business-number">00962789934424</div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-3">
+            <h2 class="social-title">تابعونا</h2>
+            <div class="social-icons-grid">
+                <a href="https://maps.google.com/maps?q=32.100807189941406%2C36.10467529296875&z=17&hl=ar" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                <a href="tel:962789934424" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-3">
+            <a href="#" class="action-button primary" onclick="saveContact()">
+                <i class="fas fa-download"></i>
+                حفظ جهة الاتصال
+            </a>
+            <a href="https://maps.google.com/maps?q=32.100807189941406%2C36.10467529296875&z=17&hl=ar" class="action-button" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+                الموقع على الخريطة
+            </a>
+            <a href="tel:962789934424" class="action-button">
+                <i class="fas fa-phone"></i>
+                اتصل الآن
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Miss Noor Boutique - متجر ميس نور للأزياء</p>
+            <p class="footer-text">أحدث صيحات الموضة • جودة عالية • أسعار مناسبة</p>
+        </div>
+    </footer>
+
+    <script>
+        // Save Contact functionality
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Miss Noor Boutique
+ORG:Miss Noor Boutique
+TEL:962789934424
+END:VCARD`;
+            
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'miss-noor-boutique.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('تم حفظ جهة الاتصال بنجاح!');
+        }
+
+        // CliQ functionality
+        function copyCliQ() {
+            const cliqNumber = '0789934424';
+            navigator.clipboard.writeText(cliqNumber).then(function() {
+                alert('تم نسخ رقم CliQ: ' + cliqNumber);
+            }, function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = cliqNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('تم نسخ رقم CliQ: ' + cliqNumber);
+            });
+        }
+
+        // Image Modal functionality
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        function openModal(type) {
+            modal.style.display = "block";
+            if (type === 'profile') {
+                modalImg.src = document.getElementById('profile').src;
+            } else if (type === 'cover') {
+                modalImg.src = document.getElementById('cover').src;
+            }
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add click effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
