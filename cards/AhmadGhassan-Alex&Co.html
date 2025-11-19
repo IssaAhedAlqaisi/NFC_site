@@ -73,9 +73,10 @@
         .cover-photo {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* تغيير من cover إلى contain */
             display: block;
             filter: brightness(0.7);
+            background-color: var(--dark-bg); /* خلفية سوداء للأجزاء الفارغة */
         }
         
         .profile-info {
@@ -90,15 +91,19 @@
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
-        }
-        
-        .profile-image {
             width: 150px;
             height: 150px;
             border-radius: 20px;
+            overflow: hidden;
             border: 5px solid var(--dark-card);
-            object-fit: cover;
             box-shadow: var(--shadow-lg);
+            background-color: var(--dark-bg); /* خلفية سوداء */
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* تغيير من cover إلى contain */
             display: block;
         }
         
@@ -116,6 +121,7 @@
             justify-content: center;
             font-size: 0.8rem;
             border: 2px solid var(--dark-card);
+            z-index: 10;
         }
         
         .profile-name {
@@ -472,6 +478,55 @@
             display: block;
         }
         
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            margin-top: 2%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: var(--primary);
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--primary-light);
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        @keyframes zoomIn {
+            from {transform: scale(0.8);}
+            to {transform: scale(1);}
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -498,7 +553,7 @@
                 font-size: 2rem;
             }
             
-            .profile-image {
+            .profile-image-container {
                 width: 120px;
                 height: 120px;
             }
@@ -516,18 +571,39 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover-container {
+                height: 250px;
+            }
+            
+            .profile-image-container {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
     <!-- Header Section -->
     <header class="profile-header fade-in">
-        <div class="cover-container">
-            <img src="https://i.imgur.com/4Nk7a5X.png" alt="Ahmad Ghassan Cover" class="cover-photo">
+        <div class="cover-container" onclick="openModal('cover')">
+            <img src="https://i.imgur.com/4Nk7a5X.png" alt="Ahmad Ghassan Cover" class="cover-photo" id="cover">
         </div>
         <div class="profile-info">
-            <div class="profile-image-container">
-                <img src="https://i.imgur.com/4Nk7a5X.png" alt="Ahmad Ghassan" class="profile-image">
+            <div class="profile-image-container" onclick="openModal('profile')">
+                <img src="https://i.imgur.com/4Nk7a5X.png" alt="Ahmad Ghassan" class="profile-image" id="profile">
                 <div class="verified-badge">
                     <i class="fas fa-crown"></i>
                 </div>
@@ -779,6 +855,30 @@ END:VCARD`;
             URL.revokeObjectURL(url);
             
             alert('Contact saved successfully!');
+        }
+
+        // Image Modal functionality
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        function openModal(type) {
+            modal.style.display = "block";
+            if (type === 'profile') {
+                modalImg.src = document.getElementById('profile').src;
+            } else if (type === 'cover') {
+                modalImg.src = document.getElementById('cover').src;
+            }
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
 
         // Add click effects
