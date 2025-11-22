@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتور عامر رماحة - الرئيس التنفيذي للمؤسسة الطبية الثنائية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a4d8c;
+            --primary-light: #2a6fd6;
+            --primary-dark: #0d2b52;
+            --accent: #3a8cff;
+            --gold: #d4af37;
+            --light-bg: #f5f9ff;
+            --light-card: #ffffff;
+            --dark-text: #1a2b4c;
+            --light-text: #6b7b9c;
+            --shadow: 0 10px 30px rgba(26, 77, 140, 0.15);
+            --shadow-heavy: 0 15px 40px rgba(26, 77, 140, 0.25);
+            --border: 1px solid #e6f0ff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #e6f0ff 100%);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Professional Style */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 30px 30px;
+            box-shadow: var(--shadow-heavy);
+            background: var(--light-card);
+        }
+        
+        .cover-container {
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.0);
+            filter: brightness(0.85);
+            transition: transform 8s ease;
+        }
+        
+        .cover-container:hover .cover-photo {
+            transform: scale(1.05);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 0 20px 40px;
+            text-align: center;
+            margin-top: -60px;
+            z-index: 2;
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow-heavy);
+            display: block;
+        }
+        
+        .profile-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .profile-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+        
+        .profile-badge {
+            display: inline-block;
+            background: var(--gradient-gold);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--dark-text);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .tagline {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--primary);
+            line-height: 1.5;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tagline::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .gallery-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .gallery-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            height: 450px;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            z-index: 10;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary);
+        }
+        
+        .gallery-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--primary-dark);
+            transform: scale(1.3);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.4rem;
+            padding: 20px;
+            background: rgba(26, 77, 140, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            color: var(--dark-text);
+            border: 1px solid rgba(26, 77, 140, 0.1);
+        }
+        
+        .contact-item:hover {
+            background: rgba(26, 77, 140, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(26, 77, 140, 0.1);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.6rem;
+            width: 40px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .services-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .services-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: var(--light-bg);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(26, 77, 140, 0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(26, 77, 140, 0.2);
+        }
+        
+        .service-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .service-desc {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* Social Icons Section */
+        .social-section {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .social-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .social-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: var(--primary);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(26, 77, 140, 0.3);
+            background: var(--primary-light);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 35px;
+            background: var(--light-card);
+            color: var(--dark-text);
+            border: var(--border);
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .action-button.primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 10px 25px rgba(26, 77, 140, 0.3);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(26, 77, 140, 0.25);
+        }
+        
+        .action-button.primary:hover {
+            box-shadow: 0 15px 35px rgba(26, 77, 140, 0.4);
+        }
+        
+        .action-button i {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            color: white;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.2rem;
+            }
+            
+            .profile-title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .cover-container {
+                height: 50vh;
+            }
+            
+            .social-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .social-icons-grid {
+                gap: 20px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+            
+            .about-text {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-slide {
+                height: 350px;
+            }
+            
+            .gallery-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .cover-container {
+                height: 40vh;
+            }
+            
+            .profile-name {
+                font-size: 1.9rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .about-text {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-slide {
+                height: 280px;
+            }
+            
+            .gallery-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <div class="cover-container">
+            <img src="https://i.imgur.com/SRGbpwj.png" alt="الدكتور عامر رماحة" class="cover-photo">
+        </div>
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/By7fENW.png" alt="الدكتور عامر رماحة" class="profile-image">
+            </div>
+            <h1 class="profile-name">الدكتور عامر رماحة</h1>
+            <p class="profile-title">الرئيس التنفيذي للمؤسسة الطبية الثنائية</p>
+            <div class="profile-badge">طبي مرموق</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <div class="tagline">
+                المؤسسة الطبية الثنائية - ريادة في التجهيزات الطبية والرعاية الصحية
+            </div>
+            <div class="about-text">
+                الرئيس التنفيذي للمؤسسة الطبية الثنائية، متخصص في المستلزمات الطبية والاستهلاكية، بما في ذلك كل ما يلزم لجراحة العظام، مثل المواد القابلة للزرع من الوكالات الدولية مثل Austofix (أستراليا) و Ortho-Trauma (إنجلترا)، بالإضافة إلى مجموعة كاملة من أدوات جراحة العظام، وأنظمة التثبيت الخارجي، ومجموعة متنوعة من الأجهزة الطبية، ومستلزمات المستشفيات، ومعدات غرفة العمليات.
+            </div>
+            <div class="about-text">
+                بالإضافة إلى مستودع أدوية شامل مخزون بوكالات المستحضرات الصيدلانية والمكملات الغذائية من جميع أنحاء العالم. لدينا أيضًا صيدليتنا الخاصة لبيع المنتجات الطبية والأدوية.
+            </div>
+            <div class="about-text">
+                نقدم أيضًا الرعاية الصحية للمرضى القادمين من الخارج للعلاج، مما يسهل ذلك من خلال تعاوننا مع الأطباء والمستشفيات والصيدليات والمختبرات ومراكز الأشعة والتشخيص وغيرها من مؤسسات الرعاية الصحية. نحن نسهل إجراءاتهم الجراحية والعلاجات الطبية اللازمة في المستشفيات داخل المملكة الأردنية الهاشمية.
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in delay-2">
+            <h2 class="gallery-title">معرض المؤسسة الطبية الثنائية</h2>
+            <div class="gallery-wrapper">
+                <div class="gallery-container">
+                    <div class="gallery-slides">
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/jJTFEvA.png" alt="المؤسسة الطبية الثنائية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/gPGAtB2.png" alt="المستلزمات الطبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/29lyojk.png" alt="أدوات جراحة العظام">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/POANJnU.png" alt="المواد القابلة للزرع">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/EbCk3zQ.png" alt="معدات غرفة العمليات">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/By7fENW.png" alt="الدكتور عامر رماحة">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/wQkwFb5.png" alt="المؤسسة الطبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/X5Wk7Io.png" alt="الرعاية الصحية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/Ow1zXmo.png" alt="التجهيزات الطبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/6x2yr5C.png" alt="المستلزمات الطبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/N4TfzjJ.png" alt="الخدمات الطبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/5ExZMW6.png" alt="المؤسسة الطبية الثنائية">
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn prev-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="gallery-btn next-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="gallery-dots">
+                <!-- سيتم إضافة النقاط ديناميكيًا عبر JavaScript -->
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-3">
+            <h2 class="services-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3 class="service-name">مواد جراحة العظام</h3>
+                    <p class="service-desc">مواد قابلة للزرع من وكالات دولية مثل Austofix و Ortho-Trauma</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-name">أدوات جراحية</h3>
+                    <p class="service-desc">مجموعة كاملة من أدوات جراحة العظام وأنظمة التثبيت الخارجي</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="service-name">مستلزمات المستشفيات</h3>
+                    <p class="service-desc">معدات غرفة العمليات والأجهزة الطبية والمستلزمات الاستهلاكية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3 class="service-name">مستودع أدوية شامل</h3>
+                    <p class="service-desc">مستحضرات صيدلانية ومكملات غذائية من وكالات عالمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="service-name">رعاية المرضى الدوليين</h3>
+                    <p class="service-desc">تسهيل العلاج للمرضى القادمين من الخارج في الأردن</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-name">شبكة تعاون طبية</h3>
+                    <p class="service-desc">تعاون مع أطباء، مستشفيات، صيدليات، مختبرات ومراكز تشخيص</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="contact-title">معلومات الاتصال</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>هاتف: 065692727</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>جوال: 0790408227</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>البريد الإلكتروني: Rammaha@medical-binary.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>جبل الحسين - مقابل مستشفى هبة، مجمع لولوات القريني 198</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-id-card"></i>
+                    <span>Medical Binary ClicQ: AMERRAMAHA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section fade-in delay-4">
+            <h2 class="social-title">تواصل معنا</h2>
+            <div class="social-icons-grid">
+                <a href="tel:0790408227" class="social-icon">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <a href="https://wa.me/962790408227" class="social-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                
+                <a href="mailto:Rammaha@medical-binary.com" class="social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                <a href="#" class="social-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons fade-in delay-4">
+            <a href="VCF/dr-amer-ramaha.vcf" class="action-button primary" download>
+                <i class="fas fa-download"></i>
+                حفظ جهة الاتصال
+            </a>
+            <a href="https://wa.me/962790408227" class="action-button" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                واتساب
+            </a>
+            <a href="tel:0790408227" class="action-button">
+                <i class="fas fa-phone"></i>
+                اتصل الآن
+            </a>
+            <a href="mailto:Rammaha@medical-binary.com" class="action-button">
+                <i class="fas fa-envelope"></i>
+                إرسال بريد
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">المؤسسة الطبية الثنائية</div>
+            <p class="footer-text">الدكتور عامر رماحة - الرئيس التنفيذي</p>
+            <p class="footer-text">ريادة في التجهيزات الطبية والرعاية الصحية</p>
+            <p class="footer-text"></p>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.gallery-slides');
+            const slidesCount = document.querySelectorAll('.gallery-slide').length;
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dotsContainer = document.querySelector('.gallery-dots');
+            
+            let currentSlide = 0;
+            
+            // Create dots based on number of slides
+            for (let i = 0; i < slidesCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('gallery-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('data-index', i);
+                dotsContainer.appendChild(dot);
+            }
+            
+            const dots = document.querySelectorAll('.gallery-dot');
+            
+            // Update slide position
+            function updateSlide() {
+                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            // Next slide
+            nextBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            });
+            
+            // Previous slide
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+                updateSlide();
+            });
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentSlide = index;
+                    updateSlide();
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            }, 5000);
+            
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
