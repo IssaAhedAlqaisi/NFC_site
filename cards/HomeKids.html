@@ -65,14 +65,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: var(--light-bg);
         }
         
         .cover-photo {
-            width: auto;
+            /* تم تقليل التكبير بشكل كبير */
+            width: 100%;
             height: 100%;
             object-fit: contain;
             display: block;
             filter: brightness(0.95);
+            transform: scale(0.7); /* تقليل التكبير إلى 70% */
         }
         
         .profile-info {
@@ -99,6 +102,7 @@
             display: block;
             background-color: var(--light-bg);
             padding: 10px;
+            transform: scale(0.9); /* تقليل تكبير الصورة الشخصية قليلاً */
         }
         
         .profile-name {
@@ -245,6 +249,7 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            transform: scale(0.9); /* تقليل تكبير الصور في المعرض */
         }
         
         .gallery-nav {
@@ -623,6 +628,10 @@
                 height: 40vh;
             }
             
+            .cover-photo {
+                transform: scale(0.8); /* تكبير أكبر قليلاً للجوال */
+            }
+            
             .social-icon {
                 width: 70px;
                 height: 70px;
@@ -669,6 +678,10 @@
             
             .cover-container {
                 height: 35vh;
+            }
+            
+            .cover-photo {
+                transform: scale(0.85); /* تكبير أكبر للشاشات الصغيرة */
             }
             
             .profile-name {
@@ -896,7 +909,7 @@
             <p class="footer-text">وكيل تشيلك التركية لغرف نوم الأطفال والشباب</p>
             <p class="footer-text">منتجات فارلين للأم والطفل</p>
             <p class="footer-text">بيت أحلام طفلك يبدأ من هنا</p>
-            <p class="footer-text">جميع الحقوق محفوظة © 2023</p>
+            <p class="footer-text"></p>
         </div>
     </footer>
 
