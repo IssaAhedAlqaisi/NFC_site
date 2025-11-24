@@ -137,31 +137,102 @@
             letter-spacing: 1px;
         }
         
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
+        /* Social Icons Section - Moved to top */
+        .social-section {
             text-align: center;
+            padding: 20px 0 30px;
         }
         
-        .stat-number {
-            font-size: 2.2rem;
+        .social-title {
+            font-size: 1.8rem;
             font-weight: 800;
-            color: var(--accent);
-            display: block;
+            margin-bottom: 30px;
+            color: var(--light-text);
             font-family: 'Orbitron', sans-serif;
         }
         
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--light-accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: var(--gradient);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-accent);
+            color: var(--dark-bg);
+        }
+        
+        /* Contact Section - Moved to top */
+        .contact-section-top {
+            background: var(--dark-card);
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .contact-info-top {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            padding: 15px;
+            background: rgba(106, 17, 203, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: var(--light-text);
+            border: var(--border);
+        }
+        
+        .contact-item-top:hover {
+            background: rgba(106, 17, 203, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item-top i {
+            color: var(--accent);
+            font-size: 1.3rem;
+            width: 30px;
         }
         
         /* About Section */
@@ -487,53 +558,6 @@
             font-family: 'Orbitron', sans-serif;
         }
         
-        /* Social Icons Section */
-        .social-section {
-            text-align: center;
-            padding: 60px 0 40px;
-        }
-        
-        .social-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 50px;
-            color: var(--light-text);
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .social-icons-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .social-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            color: var(--light-text);
-            text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: var(--shadow);
-            background: var(--gradient);
-            position: relative;
-            border: 2px solid transparent;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: var(--shadow-lg);
-            background: var(--gradient-accent);
-            color: var(--dark-bg);
-        }
-        
         /* Action Buttons */
         .action-buttons {
             display: flex;
@@ -635,18 +659,14 @@
             }
             
             .social-icon {
-                width: 75px;
-                height: 75px;
-                font-size: 1.8rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
             }
             
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-            
-            .stats-container {
-                gap: 30px;
             }
             
             .about-section, .features-section, .contact-section, .gallery-section {
@@ -688,21 +708,13 @@
             }
             
             .social-icons-grid {
-                gap: 20px;
+                gap: 15px;
             }
             
             .social-icon {
-                width: 65px;
-                height: 65px;
-                font-size: 1.6rem;
-            }
-            
-            .stats-container {
-                gap: 25px;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
             }
             
             .section-title {
@@ -731,18 +743,44 @@
             <h1 class="profile-name">GOAT GAMING</h1>
             <div class="profile-tagline">Ultimate PlayStation Experience</div>
             
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">PS5</span>
-                    <span class="stat-label">Latest Consoles</span>
+            <!-- Social Icons - Moved to top -->
+            <div class="social-section">
+                <h2 class="social-title">CONNECT WITH GOAT</h2>
+                <div class="social-icons-grid">
+                    <a href="https://www.instagram.com/goat_gaming_center?igsh=MTdqZXZ4MnZvNW1oZQ==" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/14FXpn6qGmg/" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/962788885914" class="social-icon" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://maps.google.com/maps/search/Goat%20Gaming%20Center/@32.100704193115234,36.09450149536133,17z?hl=ar" class="social-icon" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                    <a href="https://shorturl.at/WmomM" class="social-icon" target="_blank">
+                        <i class="fas fa-star"></i>
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">VIP</span>
-                    <span class="stat-label">Private Rooms</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Gaming</span>
+            </div>
+            
+            <!-- Contact Section - Moved to top -->
+            <div class="contact-section-top">
+                <div class="contact-title">CONTACT US</div>
+                <div class="contact-info-top">
+                    <div class="contact-item-top">
+                        <i class="fas fa-phone"></i>
+                        <span>+962 7 8577 5515</span>
+                    </div>
+                    <div class="contact-item-top">
+                        <i class="fas fa-phone"></i>
+                        <span>+962 7 8888 5914</span>
+                    </div>
+                    <div class="contact-item-top">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Goat Gaming Center</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -853,28 +891,6 @@
             <div class="click-to-call" onclick="window.location.href='tel:+962788885914'">
                 <div class="click-title">⚡ CLICK TO CALL NOW ⚡</div>
                 <div class="click-number">+962 7 8888 5914</div>
-            </div>
-        </div>
-
-        <!-- Social Icons -->
-        <div class="social-section fade-in delay-3">
-            <h2 class="social-title">CONNECT WITH GOAT</h2>
-            <div class="social-icons-grid">
-                <a href="https://www.instagram.com/goat_gaming_center?igsh=MTdqZXZ4MnZvNW1oZQ==" class="social-icon" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/14FXpn6qGmg/" class="social-icon" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://maps.google.com/maps/search/Goat%20Gaming%20Center/@32.100704193115234,36.09450149536133,17z?hl=ar" class="social-icon" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <a href="https://shorturl.at/WmomM" class="social-icon" target="_blank">
-                    <i class="fas fa-star"></i>
-                </a>
-                <a href="tel:+962788885914" class="social-icon">
-                    <i class="fas fa-phone"></i>
-                </a>
             </div>
         </div>
 
