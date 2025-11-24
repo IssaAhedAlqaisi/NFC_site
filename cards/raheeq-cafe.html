@@ -135,6 +135,102 @@
             margin-bottom: 25px;
         }
         
+        /* Social Icons Section - Moved to top */
+        .social-section {
+            text-align: center;
+            padding: 20px 0 30px;
+        }
+        
+        .social-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+            font-family: 'El Messiri', serif;
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            background: var(--light-card);
+            position: relative;
+            border: 2px solid var(--border);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient);
+            color: white;
+        }
+        
+        /* Cliq Service Section */
+        .cliq-section {
+            background: var(--light-card);
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .cliq-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .cliq-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: var(--gradient-gold);
+            color: var(--dark-text);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .cliq-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .cliq-button.copied {
+            background: var(--gradient);
+            color: white;
+        }
+        
         .stats-container {
             display: flex;
             justify-content: center;
@@ -419,53 +515,6 @@
             direction: ltr;
         }
         
-        /* Social Icons Section */
-        .social-section {
-            text-align: center;
-            padding: 50px 0 30px;
-        }
-        
-        .social-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-            color: var(--dark-text);
-            font-family: 'El Messiri', serif;
-        }
-        
-        .social-icons-grid {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .social-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--light-text);
-            text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: var(--shadow);
-            background: var(--light-card);
-            position: relative;
-            border: 2px solid var(--border);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: var(--shadow-lg);
-            background: var(--gradient);
-            color: white;
-        }
-        
         /* Action Buttons */
         .action-buttons {
             display: flex;
@@ -566,9 +615,9 @@
             }
             
             .social-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.8rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
             }
             
             .action-buttons {
@@ -605,9 +654,9 @@
             }
             
             .social-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.6rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
             }
             
             .stats-container {
@@ -640,6 +689,38 @@
             <h1 class="profile-name">رحيق</h1>
             <div class="profile-tagline">مطعم وكافيه</div>
             
+            <!-- Social Icons - Moved to top -->
+            <div class="social-section">
+                <h2 class="social-title">تابعونا على</h2>
+                <div class="social-icons-grid">
+                    <a href="https://www.instagram.com/cafe.raheeq?igsh=eGFlcGFjZnEyazM4" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1A348Yi9QZ/?mibextid=wwXIfr" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/gUxuyQjixarXFAbd9?g_st=ipc" class="social-icon" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                    <a href="https://shorturl.at/6nfHQ" class="social-icon" target="_blank">
+                        <i class="fas fa-star"></i>
+                    </a>
+                    <a href="https://www.snapchat.com/add/raheeq_rescafe?share_id=068F5Jq9lqM&locale=ar-EG" class="social-icon" target="_blank">
+                        <i class="fab fa-snapchat"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Cliq Service Section -->
+            <div class="cliq-section">
+                <div class="cliq-title">خدمة Cliq</div>
+                <button class="cliq-button" id="cliqButton" onclick="copyCliqNumber()">
+                    <i class="fas fa-copy"></i>
+                    نسخ الرقم: RAHEEQCAFE
+                </button>
+            </div>
+            
+            <!-- Stats Section -->
             <div class="stats-container">
                 <div class="stat-item">
                     <span class="stat-number">☕</span>
@@ -742,28 +823,6 @@
             </div>
         </div>
 
-        <!-- Social Icons -->
-        <div class="social-section fade-in delay-3">
-            <h2 class="social-title">تابعونا على</h2>
-            <div class="social-icons-grid">
-                <a href="https://www.instagram.com/cafe.raheeq?igsh=eGFlcGFjZnEyazM4" class="social-icon" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1A348Yi9QZ/?mibextid=wwXIfr" class="social-icon" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://maps.app.goo.gl/gUxuyQjixarXFAbd9?g_st=ipc" class="social-icon" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <a href="https://shorturl.at/6nfHQ" class="social-icon" target="_blank">
-                    <i class="fas fa-star"></i>
-                </a>
-                <a href="https://www.snapchat.com/add/raheeq_rescafe?share_id=068F5Jq9lqM&locale=ar-EG" class="social-icon" target="_blank">
-                    <i class="fab fa-snapchat"></i>
-                </a>
-            </div>
-        </div>
-
         <!-- Action Buttons -->
         <div class="action-buttons fade-in delay-3">
             <a href="VCF/raheeq-cafe.vcf" class="action-button primary" download>
@@ -794,6 +853,28 @@
     </footer>
 
     <script>
+        // Function to copy Cliq number
+        function copyCliqNumber() {
+            const cliqNumber = 'RAHEEQCAFE';
+            navigator.clipboard.writeText(cliqNumber).then(() => {
+                const button = document.getElementById('cliqButton');
+                const originalText = button.innerHTML;
+                
+                // Change button style to indicate success
+                button.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+                button.classList.add('copied');
+                
+                // Revert back after 2 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('تعذر نسخ الرقم، يرجى المحاولة مرة أخرى');
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button, .menu-button');
