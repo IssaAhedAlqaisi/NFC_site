@@ -171,6 +171,45 @@
             border: var(--border);
         }
         
+        /* Opening Hours Section */
+        .opening-hours-section {
+            background: var(--light-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 206, 209, 0.1);
+            border-radius: 10px;
+            border: var(--border);
+        }
+        
+        .day {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+        
+        .hours {
+            font-weight: 500;
+            color: var(--accent);
+        }
+        
         .section-title {
             font-size: 2rem;
             font-weight: 800;
@@ -581,6 +620,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -606,10 +649,6 @@
                     <span class="stat-label">Services</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Service</span>
-                </div>
-                <div class="stat-item">
                     <span class="stat-number">⭐</span>
                     <span class="stat-label">Rating</span>
                 </div>
@@ -632,6 +671,41 @@
                     مرحبًا بكم في 12 Million Coffee 
                     وجهتكم المفضلة للاستمتاع بأجواء مريحة وخدمة مميزة.
                     نوفر لكم مجموعة من التجارب الممتعة تشمل ألعاب الذكاء، إنترنت سريع، محطات شحن (باور بانك)، لوح الذكريات لتوثيق اجمل الذكريات،بالإضافة إلى تنظيم أعياد الميلاد بأجواء فريدة.نسعد بزيارتكم دائمًا!
+                </div>
+            </div>
+        </div>
+
+        <!-- Opening Hours Section -->
+        <div class="opening-hours-section fade-in delay-1">
+            <h2 class="section-title">Opening Hours</h2>
+            <div class="hours-grid">
+                <div class="hour-item">
+                    <div class="day">Sunday</div>
+                    <div class="hours">9 AM - 1 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Monday</div>
+                    <div class="hours">9 AM - 1 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Tuesday</div>
+                    <div class="hours">9 AM - 1 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Wednesday</div>
+                    <div class="hours">9 AM - 1 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Thursday</div>
+                    <div class="hours">9 AM - 2 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Friday</div>
+                    <div class="hours">12 PM - 1 AM</div>
+                </div>
+                <div class="hour-item">
+                    <div class="day">Saturday</div>
+                    <div class="hours">9 AM - 1 AM</div>
                 </div>
             </div>
         </div>
