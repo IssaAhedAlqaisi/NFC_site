@@ -634,13 +634,31 @@
                 <div class="gallery-container">
                     <div class="gallery-slides">
                         <div class="gallery-slide">
-                            <img src="https://i.imgur.com/fqttofa.png" alt="مركز الياسمين للعلاج الطبيعي">
+                            <img src="https://i.imgur.com/kUJABi1.png" alt="مركز الياسمين للعلاج الطبيعي">
                         </div>
                         <div class="gallery-slide">
-                            <img src="https://i.imgur.com/fqttofa.png" alt="جلسات العلاج الطبيعي">
+                            <img src="https://i.imgur.com/Sbn7Vch.png" alt="جلسات العلاج الطبيعي">
                         </div>
                         <div class="gallery-slide">
-                            <img src="https://i.imgur.com/fqttofa.png" alt="أجهزة العلاج الطبيعي">
+                            <img src="https://i.imgur.com/aGWi6Cv.png" alt="أجهزة العلاج الطبيعي">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/E01lZxV.png" alt="علاج العظام">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/GpIaSno.png" alt="التأهيل الطبيعي">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/0Wv4lHS.png" alt="علاج الأطفال">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/qPDtFLE.png" alt="الحالات العصبية">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/fC5RoDf.png" alt="مركز متكامل">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="https://i.imgur.com/lZDsrpG.png" alt="بيئة علاجية مريحة">
                         </div>
                     </div>
                 </div>
@@ -657,6 +675,12 @@
                 <div class="gallery-dot active" data-index="0"></div>
                 <div class="gallery-dot" data-index="1"></div>
                 <div class="gallery-dot" data-index="2"></div>
+                <div class="gallery-dot" data-index="3"></div>
+                <div class="gallery-dot" data-index="4"></div>
+                <div class="gallery-dot" data-index="5"></div>
+                <div class="gallery-dot" data-index="6"></div>
+                <div class="gallery-dot" data-index="7"></div>
+                <div class="gallery-dot" data-index="8"></div>
             </div>
         </div>
 
@@ -725,6 +749,10 @@
                 <a href="https://wa.me/962796479908" class="social-icon" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                 </a>
+
+                <a href="https://shorturl.at/k2RuQ" class="social-icon" target="_blank">
+                    <i class="fab fa-google"></i>
+                </a>
             </div>
         </div>
 
@@ -742,9 +770,9 @@
                 <i class="fas fa-phone"></i>
                 اتصل الآن
             </a>
-            <a href="https://www.facebook.com/share/1FTRFLMmAv/?mibextid=wwXIfr" class="action-button" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-                فيسبوك
+            <a href="https://shorturl.at/k2RuQ" class="action-button" target="_blank">
+                <i class="fas fa-star"></i>
+                تقييم على جوجل
             </a>
         </div>
     </div>
@@ -798,6 +826,12 @@
                     updateSlide();
                 });
             });
+            
+            // Auto slide every 5 seconds
+            setInterval(function() {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlide();
+            }, 5000);
             
             // Add click effects to buttons
             const buttons = document.querySelectorAll('.social-icon, .action-button, .gallery-btn');
