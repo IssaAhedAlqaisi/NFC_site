@@ -149,7 +149,7 @@
             line-height: 1.5;
         }
         
-        /* Gallery Section */
+        /* Gallery Section - UPDATED */
         .gallery-section {
             background: var(--light-card);
             margin: 30px auto;
@@ -181,6 +181,7 @@
             overflow: hidden;
             border-radius: 15px;
             box-shadow: var(--shadow);
+            background-color: var(--light-bg);
         }
         
         .gallery-slides {
@@ -191,13 +192,17 @@
         .gallery-slide {
             min-width: 100%;
             height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-bg);
         }
         
         .gallery-slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            background-color: var(--light-bg);
+            object-fit: cover; /* تغيير من contain إلى cover */
+            display: block;
         }
         
         .gallery-nav {
@@ -627,7 +632,7 @@
             </div>
         </div>
 
-        <!-- Gallery Section -->
+        <!-- Gallery Section - UPDATED -->
         <div class="gallery-section fade-in delay-2">
             <h2 class="gallery-title">معرض المركز</h2>
             <div class="gallery-wrapper">
