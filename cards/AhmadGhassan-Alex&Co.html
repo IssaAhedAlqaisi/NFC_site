@@ -73,10 +73,10 @@
         .cover-photo {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* تغيير من cover إلى contain */
+            object-fit: contain;
             display: block;
             filter: brightness(0.7);
-            background-color: var(--dark-bg); /* خلفية سوداء للأجزاء الفارغة */
+            background-color: var(--dark-bg);
         }
         
         .profile-info {
@@ -97,13 +97,13 @@
             overflow: hidden;
             border: 5px solid var(--dark-card);
             box-shadow: var(--shadow-lg);
-            background-color: var(--dark-bg); /* خلفية سوداء */
+            background-color: var(--dark-bg);
         }
         
         .profile-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* تغيير من cover إلى contain */
+            object-fit: contain;
             display: block;
         }
         
@@ -280,6 +280,63 @@
             color: var(--lighter-text);
         }
         
+        /* Locations Section */
+        .locations-section {
+            background: var(--dark-card);
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .locations-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .location-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 25px;
+            background: rgba(193, 154, 107, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: var(--border);
+            min-width: 180px;
+        }
+        
+        .location-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(193, 154, 107, 0.15);
+        }
+        
+        .location-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 1.5rem;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+        
         /* Contact Section */
         .contact-section {
             background: var(--dark-card);
@@ -336,11 +393,6 @@
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 10px;
-        }
-        
-        .business-number {
-            font-size: 1.3rem;
-            font-weight: 800;
         }
         
         /* Social Icons */
@@ -575,6 +627,12 @@
             .modal-content {
                 width: 95%;
             }
+            
+            .locations-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -739,6 +797,25 @@
                 </div>
             </div>
 
+            <!-- Locations Section -->
+            <div class="locations-section fade-in delay-2">
+                <h2 class="section-title">Our Locations</h2>
+                <div class="locations-container">
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-name">الزرقاء</div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="location-name">عبدون</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Company Contact Section -->
             <div class="contact-section fade-in delay-3">
                 <h2 class="section-title">Company Contact</h2>
@@ -759,11 +836,6 @@
                         <i class="fab fa-facebook"></i>
                         <span>Alex & Co Facebook</span>
                     </a>
-                </div>
-                
-                <div class="business-contact">
-                    <div class="business-title">Visit Our Locations</div>
-                    <div class="business-number">الزرقاء | عبدون</div>
                 </div>
             </div>
 
