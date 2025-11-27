@@ -280,66 +280,6 @@
             color: var(--lighter-text);
         }
         
-        /* Locations Section */
-        .locations-section {
-            background: var(--dark-card);
-            margin: 40px auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: var(--border);
-        }
-        
-        .locations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .location-card {
-            background: rgba(193, 154, 107, 0.1);
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: var(--border);
-        }
-        
-        .location-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            background: rgba(193, 154, 107, 0.15);
-        }
-        
-        .location-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            color: black;
-            font-size: 1.8rem;
-        }
-        
-        .location-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--light-text);
-        }
-        
-        .location-address {
-            font-size: 0.95rem;
-            color: var(--lighter-text);
-            margin-bottom: 15px;
-        }
-        
         /* Contact Section */
         .contact-section {
             background: var(--dark-card);
@@ -635,10 +575,6 @@
             .modal-content {
                 width: 95%;
             }
-            
-            .locations-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 480px) {
@@ -803,35 +739,6 @@
                 </div>
             </div>
 
-            <!-- Locations Section -->
-            <div class="locations-section fade-in delay-2">
-                <h2 class="section-title">Our Locations</h2>
-                <div class="locations-grid">
-                    <div class="location-card">
-                        <div class="location-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="location-name">الزرقاء</h3>
-                        <p class="location-address">الزرقاء - مجمع ابو عواد - مقابل سوق ابو عواد</p>
-                        <a href="https://maps.app.goo.gl/R1p4MFui2zXxH7n48" class="action-button" target="_blank" style="margin-top: 10px;">
-                            <i class="fas fa-map"></i>
-                            View on Map
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <div class="location-icon">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <h3 class="location-name">عبدون</h3>
-                        <p class="location-address">عبدون - شارع المدينة المنورة - مجمع رويال بلازا</p>
-                        <a href="https://maps.app.goo.gl/5qi9SR234tC9zTY76" class="action-button" target="_blank" style="margin-top: 10px;">
-                            <i class="fas fa-map"></i>
-                            View on Map
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <!-- Company Contact Section -->
             <div class="contact-section fade-in delay-3">
                 <h2 class="section-title">Company Contact</h2>
@@ -856,7 +763,7 @@
                 
                 <div class="business-contact">
                     <div class="business-title">Visit Our Locations</div>
-                    <div class="business-number">Two Premium Locations in Jordan</div>
+                    <div class="business-number">الزرقاء | عبدون</div>
                 </div>
             </div>
 
