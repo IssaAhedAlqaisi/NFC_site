@@ -280,7 +280,7 @@
             color: var(--lighter-text);
         }
         
-        /* Locations Section */
+        /* Unified Locations Section */
         .locations-section {
             background: var(--dark-card);
             margin: 40px auto;
@@ -294,47 +294,93 @@
         
         .locations-container {
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            flex-direction: column;
+            gap: 30px;
             margin-top: 30px;
+        }
+        
+        .location-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
         
-        .location-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding: 25px;
+        .location-option {
+            padding: 15px 30px;
             background: rgba(193, 154, 107, 0.1);
             border-radius: 15px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            border: var(--border);
-            min-width: 180px;
+            border: 2px solid transparent;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
-        .location-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            background: rgba(193, 154, 107, 0.15);
+        .location-option:hover {
+            background: rgba(193, 154, 107, 0.2);
+            transform: translateY(-3px);
         }
         
-        .location-icon {
-            width: 60px;
-            height: 60px;
+        .location-option.active {
             background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: black;
-            font-size: 1.5rem;
+            border: 2px solid var(--accent);
+            box-shadow: var(--shadow);
+        }
+        
+        .location-details {
+            background: rgba(193, 154, 107, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: var(--border);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .location-details.active {
+            display: block;
+        }
+        
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .location-name {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--light-text);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .location-address {
+            font-size: 1.2rem;
+            color: var(--lighter-text);
+            margin-bottom: 20px;
+        }
+        
+        .location-map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: black;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            border: 2px solid transparent;
+        }
+        
+        .location-map-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
         
         /* Contact Section */
@@ -628,10 +674,15 @@
                 width: 95%;
             }
             
-            .locations-container {
+            .location-selector {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;
+                gap: 15px;
+            }
+            
+            .location-option {
+                width: 100%;
+                max-width: 300px;
             }
         }
 
@@ -643,6 +694,18 @@
             .profile-image-container {
                 width: 100px;
                 height: 100px;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .location-name {
+                font-size: 1.5rem;
+            }
+            
+            .location-address {
+                font-size: 1rem;
             }
         }
     </style>
@@ -797,21 +860,37 @@
                 </div>
             </div>
 
-            <!-- Locations Section -->
+            <!-- Unified Locations Section -->
             <div class="locations-section fade-in delay-2">
                 <h2 class="section-title">Our Locations</h2>
                 <div class="locations-container">
-                    <div class="location-item">
-                        <div class="location-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="location-name">الزرقاء</div>
+                    <div class="location-selector">
+                        <div class="location-option active" onclick="showLocation('zarqa')">الزرقاء | Zarqa</div>
+                        <div class="location-option" onclick="showLocation('abdoun')">عبدون | Abdoun</div>
                     </div>
-                    <div class="location-item">
-                        <div class="location-icon">
-                            <i class="fas fa-location-dot"></i>
+                    
+                    <!-- Zarqa Location Details -->
+                    <div id="zarqa-details" class="location-details active">
+                        <div class="location-info">
+                            <div class="location-name">Alex & Co - الزرقاء | Zarqa</div>
+                            <div class="location-address">الزرقاء، شارع الملك عبدالله الثاني، مجمع البساتين</div>
+                            <a href="https://maps.app.goo.gl/R1p4MFui2zXxH7n48" class="location-map-btn" target="_blank">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Open in Google Maps
+                            </a>
                         </div>
-                        <div class="location-name">عبدون</div>
+                    </div>
+                    
+                    <!-- Abdoun Location Details -->
+                    <div id="abdoun-details" class="location-details">
+                        <div class="location-info">
+                            <div class="location-name">Alex & Co - عبدون | Abdoun</div>
+                            <div class="location-address">عبدون، شارع المدينة المنورة، مقابل مركز عبدون</div>
+                            <a href="https://maps.app.goo.gl/5qi9SR234tC9zTY76" class="location-map-btn" target="_blank">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Open in Google Maps
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -850,13 +929,10 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="https://www.facebook.com/share/17j4kfRXvX/" class="social-icon" target="_blank">
-                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-faceboard"></i>
                     </a>
                     <a href="https://maps.app.goo.gl/R1p4MFui2zXxH7n48" class="social-icon" target="_blank">
                         <i class="fas fa-map-marker-alt"></i>
-                    </a>
-                    <a href="https://maps.app.goo.gl/5qi9SR234tC9zTY76" class="social-icon" target="_blank">
-                        <i class="fas fa-location-dot"></i>
                     </a>
                 </div>
             </div>
@@ -902,6 +978,24 @@
             
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
+        }
+
+        // Location selector functionality
+        function showLocation(locationType) {
+            // Update active button
+            const locationOptions = document.querySelectorAll('.location-option');
+            locationOptions.forEach(option => {
+                option.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Show selected location details
+            const locationDetails = document.querySelectorAll('.location-details');
+            locationDetails.forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            document.getElementById(`${locationType}-details`).classList.add('active');
         }
 
         // Save Contact functionality
