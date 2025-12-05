@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Service | بطاقة موظف 4</title>
+    <title>Smart Service | بطاقة موظف 5</title>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* نفس الـ :root و الـ CSS بالضبط من صفحة موظف 3 */
         :root {
             --yellow-main: #ffc800;
             --yellow-soft: #fff5b5;
@@ -21,42 +20,282 @@
             --radius-md: 16px;
             --shadow-soft: 0 12px 26px rgba(0, 0, 0, 0.12);
         }
-        *{box-sizing:border-box;margin:0;padding:0;font-family:"Cairo",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;}
-        body{background:var(--yellow-bg);color:var(--black-main);min-height:100vh;padding:18px 10px 32px;}
-        .page-wrapper{max-width:520px;margin:0 auto;}
-        .hero{background:var(--yellow-main);border-radius:26px;padding:20px 18px 22px;box-shadow:var(--shadow-soft);margin-bottom:20px;border:2px solid #000;position:relative;overflow:hidden;}
-        .hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;}
-        .hero-logo{font-weight:900;font-size:1.1rem;letter-spacing:0.5px;text-transform:uppercase;}
-        .hero-tag{font-size:0.75rem;padding:4px 10px;border-radius:999px;border:1px solid #000;background:#fff7c2;}
-        .hero-title{font-size:1.5rem;font-weight:900;margin-bottom:6px;}
-        .hero-sub{font-size:0.95rem;color:#222;margin-bottom:10px;}
-        .hero-points{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:0.82rem;}
-        .hero-pill{padding:5px 10px;border-radius:999px;border:1px dashed #000;background:#fffbe2;display:inline-flex;align-items:center;gap:6px;}
-        .hero-pill i{font-size:0.8rem;}
-        .section-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:18px 4px 8px;color:#444;}
-        .card{background:#fff;border-radius:var(--radius-lg);padding:16px 14px 18px;margin-bottom:14px;box-shadow:var(--shadow-soft);border:1px solid var(--gray-light);}
-        .card-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-        .card-icon{width:32px;height:32px;border-radius:12px;background:var(--yellow-soft);display:flex;align-items:center;justify-content:center;border:1px solid #000;font-size:0.9rem;}
-        .card-title{font-size:1.05rem;font-weight:800;}
-        .card-text{font-size:0.9rem;line-height:1.8;color:var(--gray-text);}
-        .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;}
-        .service{border-radius:var(--radius-md);border:1px solid #000;background:#fffef4;padding:10px 9px 11px;font-size:0.86rem;line-height:1.6;position:relative;overflow:hidden;}
-        .service::before{content:"";position:absolute;inset-inline-end:-20px;inset-block-start:-20px;width:40px;height:40px;border-radius:50%;border:3px solid #000;opacity:0.06;}
-        .service-title{font-weight:800;margin-bottom:4px;color:#000;}
-        .service-badge{display:inline-flex;align-items:center;gap:4px;font-size:0.75rem;margin-bottom:2px;padding:2px 7px;border-radius:999px;background:#000;color:#fff;}
-        .employee-card{border-inline-start:4px solid #000;}
-        .employee-id{font-weight:900;font-size:1rem;margin-bottom:4px;color:#000;}
-        .rating-card{background:#000;color:#fff;border-radius:24px;padding:18px 14px 20px;box-shadow:var(--shadow-soft);border:2px solid var(--yellow-main);text-align:center;margin-top:6px;}
-        .rating-card h2{font-size:1.1rem;margin-bottom:6px;}
-        .rating-card p{font-size:0.9rem;color:#f2f2f2;margin-bottom:10px;}
-        .rating-buttons{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-        .rate-btn{min-width:54px;padding:7px 9px;border-radius:999px;border:1px solid #fff;background:#ffc800;color:#000;font-weight:800;font-size:0.9rem;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:4px;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;box-shadow:0 6px 12px rgba(0,0,0,0.25);}
-        .rate-btn span{font-size:0.8rem;}
-        .rate-btn:hover{transform:translateY(-2px);box-shadow:0 10px 18px rgba(0,0,0,0.35);background:#ffe065;}
-        .rating-hint{font-size:0.8rem;color:#f6f6f6;}
-        .rating-hint strong{color:var(--yellow-main);}
-        .footer-mini{text-align:center;margin-top:16px;font-size:0.78rem;color:#666;}
-        @media(max-width:480px){.hero-title{font-size:1.3rem;}.services-grid{grid-template-columns:1fr;}}
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: var(--yellow-bg);
+            color: var(--black-main);
+            min-height: 100vh;
+            padding: 18px 10px 32px;
+        }
+
+        .page-wrapper {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: var(--yellow-main);
+            border-radius: 26px;
+            padding: 20px 18px 22px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .hero-logo {
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid #000;
+            background: #fff7c2;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .hero-sub {
+            font-size: 0.95rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .hero-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: 0.82rem;
+        }
+
+        .hero-pill {
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px dashed #000;
+            background: #fffbe2;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-pill i {
+            font-size: 0.8rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 18px 4px 8px;
+            color: #444;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 16px 14px 18px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--gray-light);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            background: var(--yellow-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            font-size: 0.9rem;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--gray-text);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .service {
+            border-radius: var(--radius-md);
+            border: 1px solid #000;
+            background: #fffef4;
+            padding: 10px 9px 11px;
+            font-size: 0.86rem;
+            line-height: 1.6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service::before {
+            content: "";
+            position: absolute;
+            inset-inline-end: -20px;
+            inset-block-start: -20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid #000;
+            opacity: 0.06;
+        }
+
+        .service-title {
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: #000;
+        }
+
+        .service-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: #000;
+            color: #fff;
+        }
+
+        .employee-card {
+            border-inline-start: 4px solid #000;
+        }
+
+        .employee-id {
+            font-weight: 900;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: #000;
+        }
+
+        .rating-card {
+            background: #000;
+            color: #fff;
+            border-radius: 24px;
+            padding: 18px 14px 20px;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid var(--yellow-main);
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        .rating-card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .rating-card p {
+            font-size: 0.9rem;
+            color: #f2f2f2;
+            margin-bottom: 10px;
+        }
+
+        .rating-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .rate-btn {
+            min-width: 54px;
+            padding: 7px 9px;
+            border-radius: 999px;
+            border: 1px solid #fff;
+            background: #ffc800;
+            color: #000;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+
+        .rate-btn span {
+            font-size: 0.8rem;
+        }
+
+        .rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+            background: #ffe065;
+        }
+
+        .rating-hint {
+            font-size: 0.8rem;
+            color: #f6f6f6;
+        }
+
+        .rating-hint strong {
+            color: var(--yellow-main);
+        }
+
+        .footer-mini {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.78rem;
+            color: #666;
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.3rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -69,7 +308,7 @@
                 <div class="hero-tag">خدمة صيانة متكاملة للمنزل والأعمال</div>
             </div>
             <div style="font-size:0.8rem; text-align:left;">
-                بطاقة موظف<br><strong>#4</strong>
+                بطاقة موظف<br><strong>#5</strong>
             </div>
         </div>
 
@@ -79,9 +318,15 @@
         </p>
 
         <div class="hero-points">
-            <div class="hero-pill"><i class="fas fa-bolt"></i> استجابة سريعة</div>
-            <div class="hero-pill"><i class="fas fa-user-shield"></i> فنيون معتمدون</div>
-            <div class="hero-pill"><i class="fas fa-medal"></i> ضمان على أعمال الصيانة</div>
+            <div class="hero-pill">
+                <i class="fas fa-bolt"></i> استجابة سريعة
+            </div>
+            <div class="hero-pill">
+                <i class="fas fa-user-shield"></i> فنيون معتمدون
+            </div>
+            <div class="hero-pill">
+                <i class="fas fa-medal"></i> ضمان على أعمال الصيانة
+            </div>
         </div>
     </section>
 
@@ -170,7 +415,7 @@
 
     <div class="section-label">EMPLOYEE</div>
     <section class="card employee-card">
-        <p class="employee-id">بطاقة موظف رقم: 4</p>
+        <p class="employee-id">بطاقة موظف رقم: 5</p>
         <p class="card-text">
             هذه الصفحة مخصصة لتعريفك بخدمات Smart Service وتقييم تجربتك مع موظفنا صاحب هذه البطاقة.
             رأيك يساعدنا نطور الخدمة، ونكافئ الموظفين المتميزين، ونتعامل بجدية مع أي ملاحظة.
@@ -179,28 +424,28 @@
 
     <div class="section-label">RATING</div>
     <section class="rating-card">
-        <h2>بماذا تقيم موظفنا رقم 4؟</h2>
+        <h2>بماذا تقيم موظفنا رقم 5؟</h2>
         <p>اختر التقييم المناسب، وسيتم فتح رسالة جاهزة على بريدك ليصل تقييمك مباشرة إلى إدارة Smart Service.</p>
 
         <div class="rating-buttons">
             <a class="rate-btn"
-               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%204&body=أقيّم%20موظفكم%20رقم%204%20بدرجة%205%20من%205.%0Aملاحظاتي:%0A">
+               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%205&body=أقيّم%20موظفكم%20رقم%205%20بدرجة%205%20من%205.%0Aملاحظاتي:%0A">
                 5 ★<span>ممتاز</span>
             </a>
             <a class="rate-btn"
-               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%204&body=أقيّم%20موظفكم%20رقم%204%20بدرجة%204%20من%205.%0Aملاحظاتي:%0A">
+               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%205&body=أقيّم%20موظفكم%20رقم%205%20بدرجة%204%20من%205.%0Aملاحظاتي:%0A">
                 4 ★<span>جيد جداً</span>
             </a>
             <a class="rate-btn"
-               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%204&body=أقيّم%20موظفكم%20رقم%204%20بدرجة%203%20من%205.%0Aملاحظاتي:%0A">
+               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%205&body=أقيّم%20موظفكم%20رقم%205%20بدرجة%203%20من%205.%0Aملاحظاتي:%0A">
                 3 ★<span>جيد</span>
             </a>
             <a class="rate-btn"
-               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%204&body=أقيّم%20موظفكم%20رقم%204%20بدرجة%202%20من%205.%0Aملاحظاتي:%0A">
+               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%205&body=أقيّم%20موظفكم%20رقم%205%20بدرجة%202%20من%205.%0Aملاحظاتي:%0A">
                 2 ★<span>مقبول</span>
             </a>
             <a class="rate-btn"
-               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%204&body=أقيّم%20موظفكم%20رقم%204%20بدرجة%201%20من%205.%0Aملاحظاتي:%0A">
+               href="mailto:info@smartservice-jo.com?subject=تقييم%20موظف%20رقم%205&body=أقيّم%20موظفكم%20رقم%205%20بدرجة%۲۰۱%20من%205.%0Aملاحظاتي:%0A">
                 1 ★<span>سيئ</span>
             </a>
         </div>
