@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Service | بطاقة موظف 101</title>
+
+    <!-- أيقونات بسيطة (اختياري) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --yellow-main: #ffc800;
+            --yellow-soft: #fff7cf;
+            --purple-dark: #1d1236;
+            --purple-soft: #2c1f4a;
+            --text-main: #222;
+            --text-muted: #666;
+            --radius-lg: 24px;
+            --radius-md: 18px;
+            --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Cairo", sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #fff7cf 0, #f4f4f8 40%, #e7e9f3 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 20px 12px 40px;
+        }
+
+        .page-wrapper {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* هيدر */
+        .hero-card {
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple-soft));
+            color: #fff;
+            border-radius: 28px;
+            padding: 22px 20px 26px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 22px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 11px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.18);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-badge i {
+            color: var(--yellow-main);
+        }
+
+        .hero-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: #f5f5f5;
+            margin-bottom: 14px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            font-size: 0.85rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            opacity: 0.9;
+        }
+
+        .meta-item i {
+            color: var(--yellow-main);
+        }
+
+        .hero-strip {
+            position: absolute;
+            inset-inline-start: -40px;
+            bottom: -55px;
+            width: 200%;
+            height: 120px;
+            background: radial-gradient(circle at center, rgba(255, 200, 0, 0.25), transparent 55%);
+            opacity: 0.85;
+            pointer-events: none;
+        }
+
+        /* كرت "من نحن" */
+        .card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 18px 16px 20px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title i {
+            color: var(--yellow-main);
+        }
+
+        .card-text {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* كروت الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .service-item {
+            background: var(--yellow-soft);
+            border-radius: var(--radius-md);
+            padding: 10px 10px 12px;
+            font-size: 0.86rem;
+            line-height: 1.6;
+            border: 1px solid #f1e3a6;
+        }
+
+        .service-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #865900;
+        }
+
+        .service-desc {
+            color: #694b00;
+        }
+
+        /* كرت الموظف */
+        .employee-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 18px 16px 20px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow-soft);
+            border-inline-start: 4px solid var(--yellow-main);
+        }
+
+        .employee-id {
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .employee-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* التقييم */
+        .rating-card {
+            background: var(--purple-dark);
+            color: #fff;
+            border-radius: 26px;
+            padding: 18px 16px 22px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+        }
+
+        .rating-card h2 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .rating-card p {
+            font-size: 0.9rem;
+            color: #f3f3f3;
+            margin-bottom: 14px;
+        }
+
+        .rating-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .rate-btn {
+            min-width: 54px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: none;
+            background: var(--yellow-main);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .rate-btn span {
+            font-size: 0.8rem;
+        }
+
+        .rating-hint {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            color: #ddd;
+        }
+
+        /* فوتر صغير */
+        .footer-mini {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.78rem;
+            color: #777;
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.25rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- هيدر تعريفي -->
+    <section class="hero-card">
+        <div class="hero-badge">
+            <i class="fas fa-screwdriver-wrench"></i>
+            <span>Smart Service | صيانة متكاملة</span>
+        </div>
+        <h1 class="hero-title">نخدم بيتك وأعمالك بخبرة واحترافية</h1>
+        <p class="hero-subtitle">
+            فريق متخصص في صيانة الأجهزة المنزلية، الكهرباء، الإلكترونيات، وأعمال الديكور.
+        </p>
+
+        <div class="hero-meta">
+            <div class="meta-item">
+                <i class="fas fa-bolt"></i>
+                <span>سرعة في الاستجابة</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-user-shield"></i>
+                <span>مهندسون وفنيون معتمدون</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-location-dot"></i>
+                <span>نغطي أغلب مناطق الأردن</span>
+            </div>
+        </div>
+
+        <div class="hero-strip"></div>
+    </section>
+
+    <!-- من نحن -->
+    <section class="card">
+        <h2 class="card-title">
+            <i class="fas fa-circle-info"></i>
+            من نحن؟
+        </h2>
+        <p class="card-text">
+            Smart Service شركة متخصصة في خدمات الصيانة والدعم الفني للأفراد والشركات.
+            جمعنا بين الخبرة الهندسية وسرعة التنفيذ لنقدّم للعميل خدمة احترافية من أول زيارة
+            وحتى إتمام العمل بأعلى جودة.
+        </p>
+    </section>
+
+    <!-- رؤيتنا ورسالتنا -->
+    <section class="card">
+        <h2 class="card-title">
+            <i class="fas fa-bullseye"></i>
+            رسالتنا ورؤيتنا
+        </h2>
+        <p class="card-text">
+            نسعى لأن نكون الخيار الأول في الأردن لخدمات الصيانة المتكاملة، من خلال:
+        </p>
+        <ul class="card-text" style="margin-top:8px; padding-right:18px;">
+            <li>الالتزام بالمواعيد ودقة التنفيذ.</li>
+            <li>المصداقية في التعامل مع العملاء والأسعار.</li>
+            <li>ضمان على أعمال الصيانة المنفَّذة.</li>
+        </ul>
+    </section>
+
+    <!-- أقسام الخدمات -->
+    <section class="card">
+        <h2 class="card-title">
+            <i class="fas fa-layer-group"></i>
+            الأقسام التي نخدمها
+        </h2>
+
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-title">التكييف والتبريد</div>
+                <div class="service-desc">
+                    تركيب وصيانة المكيفات والجلرّات بجميع أحجامها.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-title">أجهزة المنزل الكهربائية</div>
+                <div class="service-desc">
+                    غسالات، أفران، ثلاجات، مكانس، وأجهزة منزلية مختلفة.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-title">الشاشات والرسيفرات</div>
+                <div class="service-desc">
+                    تركيب وبرمجة وصيانة الشاشات والرسيفرات والأنظمة الصوتية.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-title">تكنولوجيا المعلومات والهاردوير</div>
+                <div class="service-desc">
+                    صيانة أجهزة الكمبيوتر واللابتوبات والطابعات والشبكات المنزلية.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بطاقة الموظف -->
+    <section class="employee-card">
+        <div class="employee-id">بطاقة موظف رقم: <strong>101</strong></div>
+        <p class="employee-note">
+            هذه الصفحة مخصصة لتعريفك بخدمات Smart Service ولتقييم تجربتك مع موظفنا صاحب هذه
+            البطاقة. رأيك يساعدنا نطوّر الخدمة ونكافئ الموظفين المتميزين.
+        </p>
+    </section>
+
+    <!-- التقييم عبر الإيميل -->
+    <section class="rating-card">
+        <h2>بماذا تقيم موظفنا رقم 101؟</h2>
+        <p>اختر التقييم المناسب لك، وسيتم فتح رسالة جاهزة على بريدك لإرسال رأيك مباشرة إلى الإدارة.</p>
+
+        <div class="rating-buttons">
+            <a class="rate-btn"
+               href="mailto:Saleh-Abuali-531@hotmail.com?subject=تقييم%20موظف%20رقم%20101&body=أقيّم%20موظفكم%20رقم%20101%20بدرجة%205%20من%205.%0Aاكتب%20ملاحظاتك%20هنا:">
+                5 ★<span>ممتاز</span>
+            </a>
+            <a class="rate-btn"
+               href="mailto:Saleh-Abuali-531@hotmail.com?subject=تقييم%20موظف%20رقم%20101&body=أقيّم%20موظفكم%20رقم%20101%20بدرجة%204%20من%205.%0Aاكتب%20ملاحظاتك%20هنا:">
+                4 ★<span>جيد جداً</span>
+            </a>
+            <a class="rate-btn"
+               href="mailto:Saleh-Abuali-531@hotmail.com?subject=تقييم%20موظف%20رقم%20101&body=أقيّم%20موظفكم%20رقم%20101%20بدرجة%203%20من%205.%0Aاكتب%20ملاحظاتك%20هنا:">
+                3 ★<span>جيد</span>
+            </a>
+            <a class="rate-btn"
+               href="mailto:Saleh-Abuali-531@hotmail.com?subject=تقييم%20موظف%20رقم%20101&body=أقيّم%20موظفكم%20رقم%20101%20بدرجة%202%20من%205.%0Aاكتب%20ملاحظاتك%20هنا:">
+                2 ★<span>مقبول</span>
+            </a>
+            <a class="rate-btn"
+               href="mailto:Saleh-Abuali-531@hotmail.com?subject=تقييم%20موظف%20رقم%20101&body=أقيّم%20موظفكم%20رقم%20101%20بدرجة%201%20من%205.%0Aاكتب%20ملاحظاتك%20هنا:">
+                1 ★<span>سيّئ</span>
+            </a>
+        </div>
+
+        <div class="rating-hint">
+            إذا لم يفتح البريد تلقائياً، يمكنك نسخ الإيميل التالي وإرسال تقييمك:
+            <br>
+            <strong>Saleh-Abuali-531@hotmail.com</strong>
+        </div>
+    </section>
+
+    <div class="footer-mini">
+        Smart Service &copy; جميع الحقوق محفوظة
+    </div>
+</div>
+</body>
+</html>
