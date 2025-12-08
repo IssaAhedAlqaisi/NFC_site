@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eng. Saleh AbuAli - Professional Portfolio</title>
+    <title>المهندس صالح أبو علي - الملف الشخصي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #000000;
@@ -30,7 +31,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Tajawal', 'Inter', sans-serif;
         }
         
         body {
@@ -39,6 +40,7 @@
             min-height: 100vh;
             line-height: 1.7;
             overflow-x: hidden;
+            text-align: right;
         }
         
         .container {
@@ -58,7 +60,7 @@
         
         .cover-photo {
             width: 100%;
-            height: 500px;
+            height: 450px; /* تصغير ارتفاع الصورة الخلفية */
             object-fit: cover;
             display: block;
             filter: brightness(0.7);
@@ -66,46 +68,56 @@
         
         .profile-info {
             position: relative;
-            padding: 0 20px 60px;
+            padding: 0 20px 50px; /* تقليل الحشوة السفلية */
             text-align: center;
-            margin-top: -120px;
+            margin-top: -100px; /* تقليل الارتفاع السالب */
             z-index: 2;
         }
         
         .profile-image-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 25px; /* تقليل المسافة */
         }
         
+        /* تصغير الصورة الشخصية وتقليل الزووم */
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px; /* تصغير من 240px إلى 180px */
+            height: 180px;
             border-radius: 50%;
-            border: 5px solid var(--accent);
+            border: 4px solid var(--accent); /* تخفيف الحدود */
             object-fit: cover;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* تخفيف الظل */
             display: block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            transform: scale(0.95); /* تصغير الصورة بنسبة 5% */
+        }
+        
+        /* تأثير خفيف عند التمرير فقط */
+        .profile-image-container:hover .profile-image {
+            transform: scale(1); /* فقط إرجاع للحجم الطبيعي */
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3); /* ظل خفيف */
         }
         
         .profile-badge {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 8px; /* تعديل الموقع */
+            right: 8px;
             background: var(--accent);
             color: var(--primary-dark);
-            width: 40px;
-            height: 40px;
+            width: 35px; /* تصغير البادج */
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: 3px solid var(--light-card);
         }
         
         .profile-name {
-            font-size: 3.5rem;
+            font-size: 3rem; /* تصغير حجم الاسم */
             font-weight: 800;
             margin-bottom: 10px;
             color: var(--dark-text);
@@ -114,30 +126,156 @@
         }
         
         .profile-title {
-            font-size: 1.4rem;
+            font-size: 1.2rem; /* تصغير */
             font-weight: 600;
             color: var(--accent);
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            margin-bottom: 15px; /* تقليل المسافة */
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
         
         .profile-quote {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* تصغير */
             font-style: italic;
             color: var(--light-text);
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 15px 0; /* تقليل الحشوة */
             border-top: 1px solid rgba(255, 215, 0, 0.3);
             border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Offers Section */
+        .offers-section {
+            background: var(--light-card);
+            margin: 50px auto; /* تقليل المسافة */
+            padding: 40px; /* تقليل الحشوة */
+            border-radius: 20px;
+            max-width: 1000px;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .offers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .festival-title {
+            color: var(--accent);
+            text-align: center;
+            font-size: 1.8rem; /* تصغير */
+            margin-bottom: 25px;
+            padding: 10px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* تصغير */
+            gap: 20px; /* تقليل المسافة */
+            margin-top: 25px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px; /* تقليل الحشوة */
+            border-radius: 15px;
+            border: var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .service-card.highlight {
+            border: 2px solid var(--accent);
+            background: rgba(255, 215, 0, 0.08);
+        }
+        
+        .service-title {
+            font-size: 1.2rem; /* تصغير */
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--light-text);
+            font-size: 1rem; /* تصغير */
+        }
+        
+        .new-price {
+            color: var(--accent);
+            font-size: 1.3rem; /* تصغير */
+            font-weight: 800;
+        }
+        
+        .discount-badge {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 4px 8px; /* تصغير */
+            border-radius: 15px; /* تصغير */
+            font-size: 0.8rem; /* تصغير */
+            font-weight: 700;
+            position: absolute;
+            top: -8px; /* تعديل الموقع */
+            left: 15px;
+        }
+        
+        .contact-info-box {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px; /* تصغير */
+            border-radius: 15px;
+            margin-top: 30px; /* تقليل */
+            border-right: 5px solid var(--accent);
+            text-align: center;
+        }
+        
+        .contact-numbers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px; /* تقليل المسافة */
+            margin-top: 15px;
+        }
+        
+        .contact-number-item {
+            text-align: center;
+        }
+        
+        .contact-label-small {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 5px;
         }
         
         /* About Section */
         .about-section {
             background: var(--light-card);
-            margin: 60px auto;
-            padding: 50px;
+            margin: 50px auto; /* تقليل المسافة */
+            padding: 40px; /* تقليل الحشوة */
             border-radius: 20px;
             max-width: 800px;
             text-align: center;
@@ -151,16 +289,16 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             width: 100%;
             height: 4px;
             background: var(--accent);
         }
         
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2rem; /* تصغير */
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--dark-text);
             font-family: 'Playfair Display', serif;
             position: relative;
@@ -170,43 +308,43 @@
         .section-title:after {
             content: '';
             position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 70px; /* تصغير */
             height: 3px;
             background: var(--accent);
         }
         
         .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.1rem; /* تصغير */
+            line-height: 1.7;
             color: var(--light-text);
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .highlight-box {
             background: rgba(255, 215, 0, 0.1);
-            padding: 30px;
+            padding: 25px; /* تقليل الحشوة */
             border-radius: 15px;
-            margin: 30px 0;
-            border-left: 5px solid var(--accent);
-            text-align: left;
+            margin: 25px 0;
+            border-right: 5px solid var(--accent);
+            text-align: right;
         }
         
         .highlight-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem; /* تصغير */
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--accent);
         }
         
         /* Contact Information */
         .contact-section {
             background: var(--light-card);
-            margin: 60px auto;
-            padding: 50px;
+            margin: 50px auto;
+            padding: 40px;
             border-radius: 20px;
             max-width: 800px;
             text-align: center;
@@ -217,13 +355,13 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            gap: 20px; /* تقليل المسافة */
+            margin-top: 30px;
         }
         
         .contact-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px 25px;
+            padding: 25px 20px; /* تقليل الحشوة */
             border-radius: 15px;
             text-align: center;
             transition: all 0.4s ease;
@@ -236,7 +374,7 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             width: 100%;
             height: 3px;
             background: var(--accent);
@@ -249,34 +387,34 @@
         }
         
         .contact-icon {
-            width: 70px;
-            height: 70px;
+            width: 65px; /* تصغير */
+            height: 65px;
             background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             color: var(--primary-dark);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             transition: all 0.3s ease;
         }
         
         .contact-card:hover .contact-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1) rotate(-5deg);
         }
         
         .contact-label {
-            font-size: 1.1rem;
+            font-size: 1rem; /* تصغير */
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--light-text);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
         .contact-value {
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* تصغير */
             font-weight: 700;
             color: var(--accent);
             word-break: break-all;
@@ -285,20 +423,20 @@
         .email-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 8px;
+            margin-top: 8px;
         }
         
         /* Social Media Section */
         .social-section {
             text-align: center;
-            padding: 60px 0 40px;
+            padding: 50px 0 30px; /* تقليل المسافة */
         }
         
         .social-title {
-            font-size: 2rem;
+            font-size: 1.8rem; /* تصغير */
             font-weight: 800;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: var(--dark-text);
             font-family: 'Playfair Display', serif;
         }
@@ -307,64 +445,64 @@
             max-width: 600px;
             margin: 0 auto;
             background: var(--light-card);
-            padding: 40px;
+            padding: 30px; /* تقليل الحشوة */
             border-radius: 20px;
             box-shadow: var(--shadow);
             border: var(--border);
         }
         
         .social-icon-large {
-            width: 100px;
-            height: 100px;
+            width: 90px; /* تصغير */
+            height: 90px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* تصغير */
             color: var(--primary-dark);
             text-decoration: none;
             transition: all 0.4s ease;
             box-shadow: var(--shadow);
             background: var(--accent);
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
         }
         
         .social-icon-large:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px) scale(1.05); /* تقليل التأثير */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
         
         .social-handle {
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* تصغير */
             font-weight: 600;
             color: var(--light-text);
-            margin-top: 15px;
+            margin-top: 12px;
         }
         
         /* Action Buttons */
         .action-section {
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0; /* تقليل المسافة */
         }
         
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin: 40px 0;
+            gap: 20px; /* تقليل المسافة */
+            margin: 30px 0; /* تقليل المسافة */
             flex-wrap: wrap;
         }
         
         .action-button {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 20px 35px;
+            gap: 12px;
+            padding: 18px 30px; /* تصغير */
             background: var(--light-card);
             color: var(--dark-text);
             border: var(--border-accent);
             border-radius: 15px;
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* تصغير */
             font-weight: 600;
             cursor: pointer;
             transition: all 0.4s ease;
@@ -385,28 +523,39 @@
         }
         
         .action-button i {
-            font-size: 1.5rem;
+            font-size: 1.3rem; /* تصغير */
         }
         
         /* Footer */
         footer {
             background: var(--primary-dark);
-            padding: 40px 0;
+            padding: 30px 0; /* تصغير */
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px; /* تقليل المسافة */
             color: var(--light-text);
             border-top: 3px solid var(--accent);
         }
         
         .footer-text {
-            font-size: 1rem;
+            font-size: 0.9rem; /* تصغير */
             opacity: 0.8;
         }
         
         .copyright {
-            font-size: 0.9rem;
+            font-size: 0.8rem; /* تصغير */
             color: var(--accent);
-            margin-top: 15px;
+            margin-top: 12px;
+        }
+        
+        /* Clickable Links */
+        .clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .clickable:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
         
         /* Animations */
@@ -432,30 +581,30 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-name {
-                font-size: 2.5rem;
+                font-size: 2.2rem; /* تصغير */
             }
             
             .profile-title {
-                font-size: 1.2rem;
+                font-size: 1rem; /* تصغير */
             }
             
             .profile-image {
-                width: 160px;
-                height: 160px;
+                width: 150px; /* تصغير للجوال */
+                height: 150px;
             }
             
             .cover-photo {
-                height: 400px;
+                height: 350px; /* تصغير للجوال */
             }
             
             .profile-info {
-                margin-top: -80px;
+                margin-top: -70px;
             }
             
             .social-icon-large {
-                width: 80px;
-                height: 80px;
-                font-size: 2rem;
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
             }
             
             .action-buttons {
@@ -467,36 +616,49 @@
                 grid-template-columns: 1fr;
             }
             
-            .about-section, .contact-section {
-                padding: 35px;
+            .about-section, .contact-section, .offers-section {
+                padding: 25px; /* تقليل الحشوة للجوال */
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-numbers {
+                flex-direction: column;
+                gap: 12px;
             }
         }
         
         @media (max-width: 480px) {
             .profile-image {
-                width: 140px;
-                height: 140px;
+                width: 130px; /* تصغير أكثر للجوال الصغير */
+                height: 130px;
             }
             
             .cover-photo {
-                height: 350px;
+                height: 300px;
             }
             
             .profile-name {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .social-container {
-                padding: 25px;
+                padding: 20px;
             }
             
             .action-button {
-                padding: 18px 25px;
-                font-size: 1.1rem;
+                padding: 15px 20px;
+                font-size: 1rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+            
+            .festival-title {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -507,66 +669,153 @@
         <img src="https://i.imgur.com/LHUiNMC.jpeg" alt="Cover Photo" class="cover-photo">
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/DAyiyMP.png" alt="Eng. Saleh AbuAli" class="profile-image">
+                <img src="https://i.imgur.com/DAyiyMP.png" alt="المهندس صالح أبو علي" class="profile-image">
                 <div class="profile-badge">
                     <i class="fas fa-cogs"></i>
                 </div>
             </div>
-            <h1 class="profile-name">Eng. Saleh AbuAli</h1>
-            <div class="profile-title">Professional Engineer & Business Leader</div>
+            <h1 class="profile-name">المهندس صالح أبو علي</h1>
+            <div class="profile-title">مهندس محترف وقائد أعمال</div>
             <div class="profile-quote">
-                "Engineering excellence meets visionary leadership to create sustainable solutions for tomorrow's challenges."
+                "التفوق الهندسي يلتقي بالقيادة الرؤيوية لخلق حلول مستدامة لتحديات الغد."
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <div class="container">
+        <!-- Smart Service Offers -->
+        <div class="offers-section fade-in delay-1">
+            <h2 class="festival-title">🎉 بمناسبة عيد الفطر السعيد 🎉</h2>
+            <h2 class="section-title">سمارت سيرفيس... أفضل صيانة في المملكة</h2>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="discount-badge">خصم 60%</div>
+                    <div class="service-title">صيانة مكيف</div>
+                    <div class="price-container">
+                        <div class="old-price">25 دينار</div>
+                        <div class="new-price">10 دنانير فقط</div>
+                    </div>
+                </div>
+                
+                <div class="service-card highlight">
+                    <div class="discount-badge">الأكثر طلباً</div>
+                    <div class="service-title">تركيب مكيف</div>
+                    <div class="price-container">
+                        <div class="old-price">40 دينار</div>
+                        <div class="new-price">30 دنانير فقط</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="discount-badge">خصم 33%</div>
+                    <div class="service-title">تعبئة غاز</div>
+                    <div class="price-container">
+                        <div class="old-price">30 دينار</div>
+                        <div class="new-price">20 دينار فقط</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="discount-badge">خصم 67%</div>
+                    <div class="service-title">تنظيف مكيف في الموقع</div>
+                    <div class="price-container">
+                        <div class="old-price">30 دينار</div>
+                        <div class="new-price">10 دنانير فقط</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="discount-badge">خصم 33%</div>
+                    <div class="service-title">نقل مكيف</div>
+                    <div class="price-container">
+                        <div class="old-price">60 دينار</div>
+                        <div class="new-price">40 دنانير فقط</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="discount-badge">خصم 55%</div>
+                    <div class="service-title">صيانة مكيف مركزي</div>
+                    <div class="price-container">
+                        <div class="old-price">55 دينار</div>
+                        <div class="new-price">25 دنانير فقط</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card" style="margin-top: 25px; text-align: center;">
+                <div class="service-title">تمديدات المكيف (مواسير + كهرباء + تصريف)</div>
+                <div class="price-container" style="justify-content: center; gap: 25px;">
+                    <div class="old-price">25 دينار/متر</div>
+                    <div class="new-price">12 دينار/متر فقط</div>
+                </div>
+            </div>
+            
+            <div class="contact-info-box">
+                <h3 style="color: var(--accent); margin-bottom: 15px;">لحجز المواعيد أو الاستفسارات</h3>
+                <div class="contact-numbers">
+                    <div class="contact-number-item">
+                        <div class="contact-label-small">هاتف</div>
+                        <a href="tel:0793300010" class="contact-value clickable">0793300010</a>
+                    </div>
+                    <div class="contact-number-item">
+                        <div class="contact-label-small">واتساب</div>
+                        <a href="https://wa.me/962793300010" class="contact-value clickable">0793300010</a>
+                        <a href="https://wa.me/962793030004" class="contact-value clickable">0793030004</a>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <div class="contact-label-small">خدمات إضافية</div>
+                    <div class="contact-value" style="font-size: 1.1rem; margin-top: 8px;">تركيب نقاط شحن السيارات الكهربائية</div>
+                </div>
+            </div>
+        </div>
+
         <!-- About Section -->
-        <div class="about-section fade-in delay-1">
-            <h2 class="section-title">Professional Profile</h2>
+        <div class="about-section fade-in delay-2">
+            <h2 class="section-title">الملف الشخصي</h2>
             <div class="about-text">
-                A distinguished engineer and business leader with extensive experience in technical management 
-                and strategic development. Combining technical expertise with visionary leadership to drive 
-                innovation and operational excellence.
+                مهندس وقائد أعمال متميز يتمتع بخبرة واسعة في الإدارة الفنية والتطوير الاستراتيجي. 
+                يجمع بين الخبرة التقنية والقيادة الرؤيوية لدفع الابتكار والتميز التشغيلي.
             </div>
             
             <div class="highlight-box">
-                <div class="highlight-title">Core Competencies</div>
+                <div class="highlight-title">الكفاءات الأساسية</div>
                 <div class="about-text">
-                    • Strategic Planning & Business Development<br>
-                    • Technical Project Management<br>
-                    • Operational Excellence<br>
-                    • Team Leadership & Development<br>
-                    • Innovation & Technology Implementation
+                    • التخطيط الاستراتيجي وتطوير الأعمال<br>
+                    • إدارة المشاريع الفنية<br>
+                    • التميز التشغيلي<br>
+                    • قيادة الفريق وتطويره<br>
+                    • الابتكار وتنفيذ التكنولوجيا
                 </div>
             </div>
             
             <div class="about-text">
-                Dedicated to creating sustainable solutions and driving growth through innovative approaches 
-                and meticulous attention to detail.
+                ملتزم بخلق حلول مستدامة ودفع النمو من خلال الأساليب المبتكرة والاهتمام الدقيق بالتفاصيل.
             </div>
         </div>
 
         <!-- Contact Information -->
-        <div class="contact-section fade-in delay-2">
-            <h2 class="section-title">Contact Information</h2>
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">معلومات الاتصال</h2>
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <div class="contact-label">Direct Contact</div>
-                    <div class="contact-value">+962793030004</div>
+                    <div class="contact-label">الاتصال المباشر</div>
+                    <a href="tel:+962793030004" class="contact-value clickable">+962 79 303 0004</a>
                 </div>
                 
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-label">Professional Email</div>
+                    <div class="contact-label">البريد الإلكتروني الشخصي</div>
                     <div class="email-list">
-                        <div class="contact-value">saleh-abuali@smartservice-jo.com</div>
+                        <a href="mailto:saleh-abuali@smartservice-jo.com" class="contact-value clickable">saleh-abuali@smartservice-jo.com</a>
                     </div>
                 </div>
                 
@@ -574,10 +823,10 @@
                     <div class="contact-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <div class="contact-label">Company Emails</div>
+                    <div class="contact-label">بريد الشركة</div>
                     <div class="email-list">
-                        <div class="contact-value">info@smartservice-jo.com</div>
-                        <div class="contact-value">info2@smartservice-jo.com</div>
+                        <a href="mailto:info@smartservice-jo.com" class="contact-value clickable">info@smartservice-jo.com</a>
+                        <a href="mailto:info2@smartservice-jo.com" class="contact-value clickable">info2@smartservice-jo.com</a>
                     </div>
                 </div>
             </div>
@@ -585,14 +834,14 @@
 
         <!-- Social Media Section -->
         <div class="social-section fade-in delay-3">
-            <h2 class="social-title">Professional Network</h2>
+            <h2 class="social-title">الشبكة المهنية</h2>
             <div class="social-container">
-                <a href="https://www.facebook.com/saleh.abuali.94" class="social-icon-large" target="_blank">
+                <a href="https://www.facebook.com/smartservice4all" class="social-icon-large" target="_blank">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <div class="social-handle">Connect on Facebook</div>
+                <div class="social-handle">صفحة سمارت سيرفيس على الفيسبوك</div>
                 <div class="about-text">
-                    Stay updated with professional insights, industry developments, and connect for potential collaborations.
+                    تابع آخر العروض والتخفيضات، وتعرف على خدماتنا المتميزة في الصيانة والتركيب.
                 </div>
             </div>
         </div>
@@ -602,15 +851,15 @@
             <div class="action-buttons">
                 <a href="VCF/saleh-abuali.vcf" class="action-button primary" download>
                     <i class="fas fa-download"></i>
-                    Save Contact
+                    حفظ جهة الاتصال
                 </a>
                 <a href="tel:+962793030004" class="action-button">
                     <i class="fas fa-phone"></i>
-                    Call Now
+                    اتصل الآن
                 </a>
                 <a href="mailto:saleh-abuali@smartservice-jo.com" class="action-button">
                     <i class="fas fa-envelope"></i>
-                    Send Email
+                    إرسال بريد إلكتروني
                 </a>
             </div>
         </div>
@@ -619,16 +868,16 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Eng. Saleh AbuAli - Professional Portfolio</p>
-            <p class="footer-text">Engineering Excellence & Strategic Leadership</p>
-            <p class="copyright">© 2024 All Rights Reserved</p>
+            <p class="footer-text">المهندس صالح أبو علي - الملف الشخصي</p>
+            <p class="footer-text">مدير سمارت سيرفيس - أفضل صيانة في المملكة</p>
+            <p class="copyright">جميع الحقوق محفوظة © 2024</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Add click effects to buttons and icons
-            const interactiveElements = document.querySelectorAll('.social-icon-large, .action-button, .contact-card');
+            const interactiveElements = document.querySelectorAll('.social-icon-large, .action-button, .contact-card, .clickable');
             interactiveElements.forEach(element => {
                 element.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
@@ -636,6 +885,38 @@
                         this.style.transform = '';
                     }, 150);
                 });
+            });
+            
+            // إزالة تأثير الزووم القوي للصورة الشخصية
+            const profileImage = document.querySelector('.profile-image');
+            profileImage.addEventListener('click', function() {
+                // لا يوجد تكبير إضافي - فقط تأثير خفيف
+                this.style.boxShadow = this.style.boxShadow === '0 0 30px rgba(255, 215, 0, 0.5)' 
+                    ? '0 5px 20px rgba(0, 0, 0, 0.5)' 
+                    : '0 0 30px rgba(255, 215, 0, 0.5)';
+                this.style.transform = this.style.transform === 'scale(1.05)' 
+                    ? 'scale(0.95)' 
+                    : 'scale(1.05)';
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all sections
+            document.querySelectorAll('section, .about-section, .contact-section, .offers-section, .social-section').forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
