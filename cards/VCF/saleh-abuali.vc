@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Eng. Saleh AbuAli
+N:AbuAli;Saleh;;Eng.;
+TITLE:Professional Engineer & Business Leader
+ORG:Smart Service Jordan;
+EMAIL;TYPE=WORK,PREF:saleh-abuali@smartservice-jo.com
+EMAIL;TYPE=WORK:info@smartservice-jo.com
+EMAIL;TYPE=WORK:info2@smartservice-jo.com
+TEL;TYPE=WORK,VOICE:+962793030004
+URL;TYPE=WORK:https://www.facebook.com/saleh.abuali.94
+NOTE:Distinguished engineer and business leader with extensive experience in technical management and strategic development. Combining technical expertise with visionary leadership to drive innovation and operational excellence.
+END:VCARD
