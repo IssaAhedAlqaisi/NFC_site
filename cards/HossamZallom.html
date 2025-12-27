@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hossam Zallom - Owner of Angel Laser Clinic</title>
+    <title id="pageTitle">د. حسام زلوم - مالك عيادة Angel Laser Clinic</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
             color: var(--dark-text);
             min-height: 100vh;
             line-height: 1.6;
-            direction: ltr;
+            direction: rtl; /* default Arabic */
         }
         
         .container {
@@ -131,7 +131,36 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
-        
+
+        /* === ADDED: Language switch button (under profile image) === */
+        .lang-switch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+            padding: 12px 22px;
+            border-radius: 14px;
+            border: var(--border);
+            background: var(--light-card);
+            color: var(--dark-text);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        .lang-switch:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        .lang-switch.primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+        }
+
         /* About Section */
         .about-section {
             background: var(--light-card);
@@ -522,9 +551,32 @@
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/A7csShw.png" alt="Dr. Hossam Zallom" class="profile-image">
             </div>
-            <h1 class="profile-name">Dr. Hossam Zallom</h1>
-            <p class="profile-title">Founder & Medical Director of Angel Laser Clinic</p>
-            <div class="profile-badge">Skin Care & Laser Specialist</div>
+
+            <!-- IDs added for switching -->
+            <h1 class="profile-name" id="t_name">د. حسام زلوم</h1>
+            <p class="profile-title" id="t_title">مؤسس والمدير الطبي لعيادة Angel Laser Clinic</p>
+            <div class="profile-badge" id="t_badge">اختصاص العناية بالبشرة والليزر</div>
+
+            <!-- Switch Button under profile image -->
+            <button class="lang-switch primary" id="langBtn" type="button">Switch to EN</button>
+
+            <!-- Social icons moved (copied) above under switch -->
+            <div class="social-section" style="padding: 28px 0 0;">
+                <div class="social-icons-grid">
+                    <a href="https://www.instagram.com/hosamzallom?igsh=M2R5cGt6MGJ3OGR0&utm_source=qr" class="social-icon instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://snapchat.com/t/4sIvr58b" class="social-icon snapchat" target="_blank">
+                        <i class="fab fa-snapchat"></i>
+                    </a>
+                    <a href="https://wa.me/962788765180" class="social-icon whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:+962788765180" class="social-icon phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -532,87 +584,86 @@
     <div class="container">
         <!-- About Section -->
         <div class="about-section fade-in delay-1">
-            <h2 class="section-title">Professional Profile</h2>
-            <div class="about-text">
-                Dr. Hossam Zallom is the founder and medical director of Angel Laser Clinic, 
-                bringing his expertise and passion for dermatology and laser treatments to provide 
-                exceptional care for his patients.
+            <h2 class="section-title" id="t_about_title">نبذة مهنية</h2>
+            <div class="about-text" id="t_about_p1">
+                د. حسام زلوم هو مؤسس ومدير طبي لعيادة Angel Laser Clinic،
+                يجمع بين الخبرة والشغف في مجال الجلدية والليزر لتقديم عناية استثنائية للمرضى.
             </div>
             
             <div class="highlight-box">
-                <div class="highlight-title">Professional Focus</div>
-                <div class="about-text">
-                    • Specialized in laser treatments and skin care<br>
-                    • Committed to using advanced technology<br>
-                    • Focused on patient safety and satisfaction<br>
-                    • Personalized treatment approaches
+                <div class="highlight-title" id="t_focus_title">محور الخبرة</div>
+                <div class="about-text" id="t_focus_list">
+                    • مختص بعلاجات الليزر والعناية بالبشرة<br>
+                    • ملتزم باستخدام أحدث التقنيات<br>
+                    • يركز على أمان المريض ورضاه<br>
+                    • خطط علاج شخصية لكل حالة
                 </div>
             </div>
             
-            <div class="about-text">
-                With a dedication to excellence and continuous learning, Dr. Zallom ensures that 
-                Angel Laser Clinic remains at the forefront of aesthetic and dermatological treatments.
+            <div class="about-text" id="t_about_p2">
+                من خلال الالتزام بالجودة والتطوير المستمر، يحرص د. زلوم على أن تبقى
+                Angel Laser Clinic في طليعة العلاجات الجلدية والتجميلية.
             </div>
         </div>
 
         <!-- Clinic Section -->
         <div class="clinic-section fade-in delay-2">
-            <h2 class="section-title">Angel Laser Clinic</h2>
+            <h2 class="section-title" id="t_clinic_title">عيادة Angel Laser Clinic</h2>
             <img src="https://i.imgur.com/vhrLenE.png" alt="Angel Laser Clinic" class="clinic-logo">
-            <div class="about-text">
-                Established in 2015, Angel Laser Clinic has been providing professional laser treatments 
-                and skin care services to the community with a commitment to quality and excellence.
+            <div class="about-text" id="t_clinic_p1">
+                تأسست العيادة عام 2015، وقدمت خدمات الليزر والعناية بالبشرة للمجتمع
+                بمعايير احترافية عالية والتزام كامل بالجودة.
             </div>
             <div class="highlight-box">
-                <div class="highlight-title">Our Specialties</div>
-                <div class="about-text">
-                    • Laser Hair Removal for Men & Women<br>
-                    • Facial & Skin Treatments<br>
-                    • Professional Skin Care<br>
-                    • Advanced Laser Technology<br>
-                    • Personalized Treatment Plans
+                <div class="highlight-title" id="t_spec_title">مجالاتنا</div>
+                <div class="about-text" id="t_spec_list">
+                    • إزالة الشعر بالليزر للرجال والنساء<br>
+                    • علاجات الوجه والبشرة<br>
+                    • عناية جلدية احترافية<br>
+                    • أجهزة ليزر متقدمة<br>
+                    • خطط علاج مخصصة
                 </div>
             </div>
         </div>
 
         <!-- Services Section -->
         <div class="services-section fade-in delay-3">
-            <h2 class="section-title">Our Services</h2>
+            <h2 class="section-title" id="t_services_title">خدماتنا</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-user-shield"></i>
                     </div>
-                    <h3 class="service-title">Laser Hair Removal</h3>
-                    <p class="service-desc">Safe and effective permanent hair reduction for face and body</p>
+                    <h3 class="service-title" id="t_srv1_title">إزالة الشعر بالليزر</h3>
+                    <p class="service-desc" id="t_srv1_desc">حل آمن وفعّال لتقليل الشعر بشكل دائم للوجه والجسم</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-star-of-life"></i>
                     </div>
-                    <h3 class="service-title">Facial Treatments</h3>
-                    <p class="service-desc">Rejuvenation and revitalization for glowing, healthy skin</p>
+                    <h3 class="service-title" id="t_srv2_title">علاجات الوجه</h3>
+                    <p class="service-desc" id="t_srv2_desc">تجديد وإشراقة لبشرة صحية ونضرة</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hand-holding-medical"></i>
                     </div>
-                    <h3 class="service-title">Skin Care</h3>
-                    <p class="service-desc">Professional skin analysis and personalized care programs</p>
+                    <h3 class="service-title" id="t_srv3_title">العناية بالبشرة</h3>
+                    <p class="service-desc" id="t_srv3_desc">تحليل بشرة وبرامج عناية مخصصة حسب احتياجك</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-stethoscope"></i>
                     </div>
-                    <h3 class="service-title">Consultation</h3>
-                    <p class="service-desc">Personalized consultation and treatment recommendations</p>
+                    <h3 class="service-title" id="t_srv4_title">استشارة</h3>
+                    <p class="service-desc" id="t_srv4_desc">استشارة شخصية وتوصيات علاجية دقيقة</p>
                 </div>
             </div>
         </div>
 
         <!-- Contact Section -->
         <div class="contact-section fade-in delay-4">
-            <h2 class="section-title">Contact Information</h2>
+            <h2 class="section-title" id="t_contact_title">معلومات التواصل</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
@@ -624,14 +675,17 @@
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span class="address">Al Rabieh, Amman - Opposite Specialty Hospital<br>6th Floor, Al Kandi Medical Complex</span>
+                    <span class="address" id="t_address">
+                        الرابية - عمّان (مقابل مستشفى التخصصي)<br>
+                        مجمع الكندي الطبي - الطابق السادس
+                    </span>
                 </div>
             </div>
         </div>
 
-        <!-- Social Icons -->
+        <!-- Social Icons (original stays) -->
         <div class="social-section fade-in delay-4">
-            <h2 class="social-title">Connect With Me</h2>
+            <h2 class="social-title" id="t_connect_title">تواصل معي</h2>
             <div class="social-icons-grid">
                 <a href="https://www.instagram.com/hosamzallom?igsh=M2R5cGt6MGJ3OGR0&utm_source=qr" class="social-icon instagram" target="_blank">
                     <i class="fab fa-instagram"></i>
@@ -652,15 +706,15 @@
         <div class="action-buttons fade-in delay-4">
             <a href="VCF/dr-hossam-zallom.vcf" class="action-button primary" download>
                 <i class="fas fa-download"></i>
-                Save Contact
+                <span id="t_btn_save">حفظ جهة الاتصال</span>
             </a>
             <a href="https://wa.me/962788765180" class="action-button" target="_blank">
                 <i class="fab fa-whatsapp"></i>
-                Book Consultation
+                <span id="t_btn_book">احجز استشارة</span>
             </a>
             <a href="tel:+962788765180" class="action-button">
                 <i class="fas fa-phone"></i>
-                Call Clinic
+                <span id="t_btn_call">اتصل بالعيادة</span>
             </a>
         </div>
     </div>
@@ -668,15 +722,173 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Dr. Hossam Zallom - Founder & Medical Director</p>
-            <p class="footer-text">Angel Laser Clinic • Since 2015</p>
+            <p class="footer-text" id="t_footer_1">د. حسام زلوم - مؤسس ومدير طبي</p>
+            <p class="footer-text" id="t_footer_2">Angel Laser Clinic • منذ 2015</p>
         </div>
     </footer>
 
     <script>
+        // Language toggle (Arabic default)
+        let currentLang = "ar";
+
+        const dict = {
+            ar: {
+                pageTitle: "د. حسام زلوم - مالك عيادة Angel Laser Clinic",
+                name: "د. حسام زلوم",
+                title: "مؤسس والمدير الطبي لعيادة Angel Laser Clinic",
+                badge: "اختصاص العناية بالبشرة والليزر",
+
+                about_title: "نبذة مهنية",
+                about_p1: "د. حسام زلوم هو مؤسس ومدير طبي لعيادة Angel Laser Clinic، يجمع بين الخبرة والشغف في مجال الجلدية والليزر لتقديم عناية استثنائية للمرضى.",
+                focus_title: "محور الخبرة",
+                focus_list: "• مختص بعلاجات الليزر والعناية بالبشرة<br>• ملتزم باستخدام أحدث التقنيات<br>• يركز على أمان المريض ورضاه<br>• خطط علاج شخصية لكل حالة",
+                about_p2: "من خلال الالتزام بالجودة والتطوير المستمر، يحرص د. زلوم على أن تبقى Angel Laser Clinic في طليعة العلاجات الجلدية والتجميلية.",
+
+                clinic_title: "عيادة Angel Laser Clinic",
+                clinic_p1: "تأسست العيادة عام 2015، وقدمت خدمات الليزر والعناية بالبشرة للمجتمع بمعايير احترافية عالية والتزام كامل بالجودة.",
+                spec_title: "مجالاتنا",
+                spec_list: "• إزالة الشعر بالليزر للرجال والنساء<br>• علاجات الوجه والبشرة<br>• عناية جلدية احترافية<br>• أجهزة ليزر متقدمة<br>• خطط علاج مخصصة",
+
+                services_title: "خدماتنا",
+                srv1_title: "إزالة الشعر بالليزر",
+                srv1_desc: "حل آمن وفعّال لتقليل الشعر بشكل دائم للوجه والجسم",
+                srv2_title: "علاجات الوجه",
+                srv2_desc: "تجديد وإشراقة لبشرة صحية ونضرة",
+                srv3_title: "العناية بالبشرة",
+                srv3_desc: "تحليل بشرة وبرامج عناية مخصصة حسب احتياجك",
+                srv4_title: "استشارة",
+                srv4_desc: "استشارة شخصية وتوصيات علاجية دقيقة",
+
+                contact_title: "معلومات التواصل",
+                address: "الرابية - عمّان (مقابل مستشفى التخصصي)<br>مجمع الكندي الطبي - الطابق السادس",
+
+                connect_title: "تواصل معي",
+
+                btn_save: "حفظ جهة الاتصال",
+                btn_book: "احجز استشارة",
+                btn_call: "اتصل بالعيادة",
+
+                footer1: "د. حسام زلوم - مؤسس ومدير طبي",
+                footer2: "Angel Laser Clinic • منذ 2015",
+
+                langBtn: "Switch to EN"
+            },
+            en: {
+                pageTitle: "Dr. Hossam Zallom - Owner of Angel Laser Clinic",
+                name: "Dr. Hossam Zallom",
+                title: "Founder & Medical Director of Angel Laser Clinic",
+                badge: "Skin Care & Laser Specialist",
+
+                about_title: "Professional Profile",
+                about_p1: "Dr. Hossam Zallom is the founder and medical director of Angel Laser Clinic, bringing his expertise and passion for dermatology and laser treatments to provide exceptional care for his patients.",
+                focus_title: "Professional Focus",
+                focus_list: "• Specialized in laser treatments and skin care<br>• Committed to using advanced technology<br>• Focused on patient safety and satisfaction<br>• Personalized treatment approaches",
+                about_p2: "With a dedication to excellence and continuous learning, Dr. Zallom ensures that Angel Laser Clinic remains at the forefront of aesthetic and dermatological treatments.",
+
+                clinic_title: "Angel Laser Clinic",
+                clinic_p1: "Established in 2015, Angel Laser Clinic has been providing professional laser treatments and skin care services to the community with a commitment to quality and excellence.",
+                spec_title: "Our Specialties",
+                spec_list: "• Laser Hair Removal for Men & Women<br>• Facial & Skin Treatments<br>• Professional Skin Care<br>• Advanced Laser Technology<br>• Personalized Treatment Plans",
+
+                services_title: "Our Services",
+                srv1_title: "Laser Hair Removal",
+                srv1_desc: "Safe and effective permanent hair reduction for face and body",
+                srv2_title: "Facial Treatments",
+                srv2_desc: "Rejuvenation and revitalization for glowing, healthy skin",
+                srv3_title: "Skin Care",
+                srv3_desc: "Professional skin analysis and personalized care programs",
+                srv4_title: "Consultation",
+                srv4_desc: "Personalized consultation and treatment recommendations",
+
+                contact_title: "Contact Information",
+                address: "Al Rabieh, Amman - Opposite Specialty Hospital<br>6th Floor, Al Kandi Medical Complex",
+
+                connect_title: "Connect With Me",
+
+                btn_save: "Save Contact",
+                btn_book: "Book Consultation",
+                btn_call: "Call Clinic",
+
+                footer1: "Dr. Hossam Zallom - Founder & Medical Director",
+                footer2: "Angel Laser Clinic • Since 2015",
+
+                langBtn: "التبديل إلى العربية"
+            }
+        };
+
+        function applyLang(lang) {
+            const d = dict[lang];
+
+            // html lang/dir + body direction
+            document.documentElement.lang = lang === "ar" ? "ar" : "en";
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
+
+            // title
+            document.title = d.pageTitle;
+
+            // header
+            document.getElementById("t_name").textContent = d.name;
+            document.getElementById("t_title").textContent = d.title;
+            document.getElementById("t_badge").textContent = d.badge;
+
+            // about
+            document.getElementById("t_about_title").textContent = d.about_title;
+            document.getElementById("t_about_p1").textContent = d.about_p1;
+            document.getElementById("t_focus_title").textContent = d.focus_title;
+            document.getElementById("t_focus_list").innerHTML = d.focus_list;
+            document.getElementById("t_about_p2").textContent = d.about_p2;
+
+            // clinic
+            document.getElementById("t_clinic_title").textContent = d.clinic_title;
+            document.getElementById("t_clinic_p1").textContent = d.clinic_p1;
+            document.getElementById("t_spec_title").textContent = d.spec_title;
+            document.getElementById("t_spec_list").innerHTML = d.spec_list;
+
+            // services
+            document.getElementById("t_services_title").textContent = d.services_title;
+            document.getElementById("t_srv1_title").textContent = d.srv1_title;
+            document.getElementById("t_srv1_desc").textContent = d.srv1_desc;
+            document.getElementById("t_srv2_title").textContent = d.srv2_title;
+            document.getElementById("t_srv2_desc").textContent = d.srv2_desc;
+            document.getElementById("t_srv3_title").textContent = d.srv3_title;
+            document.getElementById("t_srv3_desc").textContent = d.srv3_desc;
+            document.getElementById("t_srv4_title").textContent = d.srv4_title;
+            document.getElementById("t_srv4_desc").textContent = d.srv4_desc;
+
+            // contact
+            document.getElementById("t_contact_title").textContent = d.contact_title;
+            document.getElementById("t_address").innerHTML = d.address;
+
+            // bottom social title
+            document.getElementById("t_connect_title").textContent = d.connect_title;
+
+            // buttons
+            document.getElementById("t_btn_save").textContent = d.btn_save;
+            document.getElementById("t_btn_book").textContent = d.btn_book;
+            document.getElementById("t_btn_call").textContent = d.btn_call;
+
+            // footer
+            document.getElementById("t_footer_1").textContent = d.footer1;
+            document.getElementById("t_footer_2").textContent = d.footer2;
+
+            // lang button
+            document.getElementById("langBtn").textContent = d.langBtn;
+
+            currentLang = lang;
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // default Arabic
+            applyLang("ar");
+
+            // switch click
+            document.getElementById("langBtn").addEventListener("click", function() {
+                applyLang(currentLang === "ar" ? "en" : "ar");
+            });
+
             // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon, .action-button');
+            const buttons = document.querySelectorAll('.social-icon, .action-button, .lang-switch');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
