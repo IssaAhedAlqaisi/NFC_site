@@ -1,514 +1,237 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Services - Largest Maintenance Company in Jordan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --accent: #f59e0b;
-            --gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            --light-bg: #ffffff;
-            --light-card: #ffffff;
-            --dark-text: #1e293b;
-            --light-text: #64748b;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
-            --border: 1px solid #e2e8f0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            background: var(--light-bg);
-            color: var(--dark-text);
-            min-height: 100vh;
-            line-height: 1.7;
-            direction: ltr;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header - Clean Style */
-        .profile-header {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            background: var(--light-card);
-        }
-        
-        .cover-photo {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .profile-info {
-            position: relative;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: -80px;
-            z-index: 2;
-        }
-        
-        .profile-image-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        
-        .profile-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 20px;
-            border: 4px solid var(--light-card);
-            object-fit: cover;
-            box-shadow: var(--shadow);
-            display: block;
-        }
-        
-        .profile-name {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--dark-text);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        
-        .profile-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        /* Click to Copy Card */
-        .click-card-section {
-            text-align: center;
-            margin: 30px 0;
-            padding: 0 20px;
-        }
-        
-        .click-card {
-            background: var(--light-card);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border: 2px solid var(--primary);
-            max-width: 400px;
-            margin: 0 auto;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .click-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .click-card:active {
-            transform: scale(0.98);
-        }
-        
-        .click-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-        
-        .click-label {
-            font-size: 0.9rem;
-            color: var(--light-text);
-        }
-        
-        .copy-notification {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .copy-notification.show {
-            opacity: 1;
-        }
-        
-        /* About Section */
-        .about-section {
-            background: var(--light-card);
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: var(--border);
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: var(--dark-text);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--dark-text);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        /* Services Section */
-        .services-section {
-            background: var(--light-card);
-            margin: 30px auto;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 800px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            border: var(--border);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .service-card {
-            background: var(--light-card);
-            padding: 25px 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: var(--border);
-            box-shadow: var(--shadow);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--light-card);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            color: var(--primary);
-            font-size: 1.8rem;
-            border: 2px solid var(--primary);
-        }
-        
-        .service-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--dark-text);
-        }
-        
-        .service-desc {
-            font-size: 0.9rem;
-            color: var(--light-text);
-            line-height: 1.6;
-        }
-        
-        /* Social Icons Section */
-        .social-section {
-            text-align: center;
-            padding: 40px 0 20px;
-        }
-        
-        .social-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: var(--dark-text);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        
-        .social-icons-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .social-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            background: var(--light-card);
-            border: 2px solid var(--primary);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--light-card);
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 40px;
-            border-top: var(--border);
-            color: var(--light-text);
-        }
-        
-        .footer-text {
-            font-size: 0.9rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; opacity: 0; }
-        .delay-2 { animation-delay: 0.4s; opacity: 0; }
-        .delay-3 { animation-delay: 0.6s; opacity: 0; }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .profile-name {
-                font-size: 2rem;
-            }
-            
-            .profile-title {
-                font-size: 1.1rem;
-            }
-            
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .cover-photo {
-                height: 250px;
-            }
-            
-            .social-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.6rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .profile-image {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .cover-photo {
-                height: 200px;
-            }
-            
-            .profile-name {
-                font-size: 1.8rem;
-            }
-            
-            .social-icons-grid {
-                gap: 15px;
-            }
-            
-            .social-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Services | NFC Card</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#020617;
+    --card:#020617;
+    --primary:#3b82f6;
+    --accent:#22d3ee;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --border:1px solid rgba(255,255,255,.08);
+    --shadow:0 25px 70px rgba(0,0,0,.85);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{
+    background:radial-gradient(circle at top,#020617,#000);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+/* CARD */
+
+.card{
+    width:100%;
+    max-width:430px;
+    background:var(--card);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    border:var(--border);
+    padding:42px 32px;
+    text-align:center;
+}
+
+/* LOGO */
+
+.logo{
+    width:110px;
+    height:110px;
+    border-radius:22px;
+    border:2px solid var(--primary);
+    margin:0 auto 20px;
+    object-fit:cover;
+}
+
+/* TEXT */
+
+.name{
+    font-size:2rem;
+    font-weight:900;
+}
+
+.title{
+    margin-top:8px;
+    color:var(--accent);
+    font-size:1rem;
+    font-weight:600;
+}
+
+/* ACTION BUTTONS */
+
+.actions{
+    margin:34px 0;
+    display:grid;
+    gap:16px;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:16px;
+    font-size:1.05rem;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(135deg,var(--primary),#1e40af);
+    border-radius:18px;
+    text-decoration:none;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.btn.secondary{
+    background:#020617;
+    border:var(--border);
+}
+
+.btn i{font-size:1.3rem;}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+}
+
+/* ABOUT AR */
+
+.about-ar{
+    margin-top:30px;
+    padding:20px;
+    background:#020617;
+    border-radius:20px;
+    border:var(--border);
+    font-size:.95rem;
+    line-height:1.9;
+    direction:rtl;
+    text-align:center;
+    color:#e5e7eb;
+}
+
+/* SOCIAL */
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:26px;
+}
+
+.social a{
+    width:56px;
+    height:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    background:#020617;
+    border:var(--border);
+    color:var(--primary);
+    font-size:1.4rem;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:30px;
+    font-size:.75rem;
+    color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:380px){
+    .name{font-size:1.7rem;}
+    .logo{width:90px;height:90px;}
+}
+</style>
 </head>
+
 <body>
-    <!-- Header Section -->
-    <header class="profile-header fade-in">
-        <img src="https://i.imgur.com/dD3AJOO.jpeg" alt="Cover Photo" class="cover-photo">
-        <div class="profile-info">
-            <div class="profile-image-container">
-                <img src="https://i.imgur.com/dD3AJOO.jpeg" alt="Smart Services" class="profile-image">
-            </div>
-            <h1 class="profile-name">Smart Services</h1>
-            <p class="profile-title">The Largest & Most Trusted Independent Maintenance Company in Jordan</p>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Click to Copy Card -->
-        <div class="click-card-section fade-in delay-1">
-            <div class="click-card" id="clickCard">
-                <div class="click-text" id="clickText">SMART333</div>
-                <div class="click-label">Click to copy CliQ - Jordan Kuwait Bank</div>
-                <div class="copy-notification" id="copyNotification">Copied! ✅</div>
-            </div>
-        </div>
+<div class="card">
 
-        <!-- About Section -->
-        <div class="about-section fade-in delay-1">
-            <h2 class="section-title">Professional Maintenance Solutions</h2>
-            <div class="about-text">
-                Smart Services is Jordan's premier independent maintenance company, providing comprehensive 
-                and reliable solutions for residential, commercial, and industrial clients across the kingdom.
-            </div>
-            <div class="about-text">
-                With years of experience and a team of certified professionals, we have built a reputation 
-                as the most trusted maintenance partner in Jordan.
-            </div>
-        </div>
+    <img src="https://i.imgur.com/dD3AJOO.jpeg" class="logo" alt="Smart Services">
 
-        <!-- Services Section -->
-        <div class="services-section fade-in delay-2">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="service-title">General Maintenance</h3>
-                    <p class="service-desc">Comprehensive maintenance solutions for residential and commercial properties</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="service-title">Electrical Services</h3>
-                    <p class="service-desc">Professional electrical installations, repairs, and maintenance</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-faucet"></i>
-                    </div>
-                    <h3 class="service-title">Plumbing Solutions</h3>
-                    <p class="service-desc">Expert plumbing services for all your water and drainage needs</p>
-                </div>
-            </div>
-        </div>
+    <div class="name">Smart Services</div>
+    <div class="title">Maintenance • Electrical • Plumbing</div>
 
-        <!-- Social Icons -->
-        <div class="social-section fade-in delay-3">
-            <h2 class="social-title">Follow & Contact Us</h2>
-            <div class="social-icons-grid">
-                <a href="https://www.facebook.com/share/1b5ek8Qgg7/?mibextid=LQQJ4d" class="social-icon" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/smartservicejordan?igsh=MTBrMzEwaXhjbmFxcQ==" class="social-icon" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/962793300010" class="social-icon" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://maps.google.com/maps?q=31.988962173461914%2C35.90753936767578&z=17&hl=ar" class="social-icon" target="_blank">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-            </div>
-        </div>
+    <!-- MAIN ACTIONS -->
+    <div class="actions">
+        <a href="tel:+962793300010" class="btn">
+            <i class="fas fa-phone"></i> Call Now
+        </a>
+
+        <a href="https://wa.me/962793300010" class="btn">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="#" class="btn secondary" onclick="downloadVCard()">
+            <i class="fas fa-address-card"></i> Save Contact
+        </a>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-text">Smart Services - Professional Maintenance Solutions</p>
-        </div>
-    </footer>
+    <!-- ABOUT ARABIC -->
+    <div class="about-ar">
+        شركة <strong>Smart Services</strong> هي من كبرى شركات الصيانة المستقلة في الأردن،
+        نقدم حلول صيانة متكاملة تشمل الصيانة العامة، الأعمال الكهربائية، والسباكة،
+        بخبرة طويلة وفريق محترف يضمن أعلى مستويات الجودة والموثوقية لعملائنا في جميع أنحاء المملكة.
+    </div>
 
-    <script>
-        // Click to Copy Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const clickCard = document.getElementById('clickCard');
-            const clickText = document.getElementById('clickText');
-            const copyNotification = document.getElementById('copyNotification');
-            
-            clickCard.addEventListener('click', function() {
-                // Copy text to clipboard
-                const textToCopy = clickText.textContent;
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Show notification
-                    copyNotification.classList.add('show');
-                    setTimeout(() => {
-                        copyNotification.classList.remove('show');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
-            });
-            
-            // Add click effects to buttons
-            const buttons = document.querySelectorAll('.social-icon');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        });
-    </script>
+    <!-- SOCIAL -->
+    <div class="social">
+        <a href="https://www.facebook.com/share/1b5ek8Qgg7/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/smartservicejordan"><i class="fab fa-instagram"></i></a>
+        <a href="https://maps.google.com/maps?q=31.988962173461914,35.90753936767578">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+    </div>
+
+    <div class="footer">
+        Tap • Connect • Smart Services
+    </div>
+
+</div>
+
+<script>
+function downloadVCard(){
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Services;Smart;;;
+FN:Smart Services
+ORG:Smart Services Jordan
+TITLE:Maintenance Company
+TEL;TYPE=CELL:+962793300010
+TEL;TYPE=WHATSAPP:+962793300010
+URL:https://wa.me/962793300010
+ADR;TYPE=WORK:;;Amman;Jordan;;;
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'SmartServices.vcf';
+    link.click();
+}
+</script>
+
 </body>
 </html>
