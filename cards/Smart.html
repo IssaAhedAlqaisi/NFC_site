@@ -47,13 +47,12 @@
             padding: 0 20px;
         }
         
-        /* Header - White & Yellow Style */
+        /* Header with Yellow Separation */
         .profile-header {
             width: 100%;
             position: relative;
             overflow: hidden;
             background: var(--light-card);
-            border-bottom: 3px solid var(--primary);
         }
         
         .cover-photo {
@@ -63,18 +62,29 @@
             display: block;
         }
         
+        /* Yellow Separation Line */
+        .yellow-separator {
+            height: 5px;
+            background: var(--gradient);
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(255, 214, 0, 0.3);
+        }
+        
         .profile-info {
             position: relative;
             padding: 30px 20px 20px;
             text-align: center;
-            margin-top: -80px;
             z-index: 2;
+            background: var(--light-card);
         }
         
         .profile-image-container {
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
+            margin-top: -70px; /* Pull image up over the yellow line */
         }
         
         .profile-image {
@@ -153,6 +163,7 @@
             border: 2px solid var(--primary-dark);
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         
         .phone-display:hover {
@@ -417,12 +428,51 @@
             text-decoration: none;
         }
         
+        /* Save Contact Button - At the End */
+        .save-contact-section {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 20px;
+        }
+        
+        .save-contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 35px;
+            background: var(--primary);
+            color: var(--dark-text);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-dark);
+        }
+        
+        .save-contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .save-contact-button:active {
+            transform: scale(0.98);
+        }
+        
+        .save-contact-button i {
+            font-size: 1.4rem;
+        }
+        
         /* Footer */
         footer {
             background: var(--light-card);
             padding: 30px 0;
             text-align: center;
-            margin-top: 40px;
             border-top: 3px solid var(--primary);
             color: var(--medium-text);
         }
@@ -487,6 +537,11 @@
                 padding: 10px 20px;
             }
             
+            .save-contact-button {
+                padding: 16px 30px;
+                font-size: 1.1rem;
+            }
+            
             .services-grid, .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -496,6 +551,7 @@
             .profile-image {
                 width: 100px;
                 height: 100px;
+                margin-top: -50px;
             }
             
             .cover-photo {
@@ -528,6 +584,11 @@
             .about-section, .services-section, .contact-section {
                 padding: 25px;
             }
+            
+            .save-contact-button {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -535,6 +596,10 @@
     <!-- Header Section -->
     <header class="profile-header fade-in">
         <img src="https://i.imgur.com/dD3AJOO.jpeg" alt="Cover Photo" class="cover-photo">
+        
+        <!-- Yellow Separation Line -->
+        <div class="yellow-separator"></div>
+        
         <div class="profile-info">
             <div class="profile-image-container">
                 <img src="https://i.imgur.com/dD3AJOO.jpeg" alt="Smart Services" class="profile-image">
@@ -674,6 +739,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- Save Contact Button - At the End -->
+        <div class="save-contact-section fade-in delay-3">
+            <button class="save-contact-button" id="saveContactBtn">
+                <i class="fas fa-download"></i>
+                Save Contact
+            </button>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -691,18 +764,18 @@
             const clickCard = document.getElementById('clickCard');
             const clickText = document.getElementById('clickText');
             const copyNotification = document.getElementById('copyNotification');
+            const saveContactBtn = document.getElementById('saveContactBtn');
             
+            // Copy CliQ Code
             clickCard.addEventListener('click', function() {
-                // Copy text to clipboard
                 const textToCopy = clickText.textContent;
                 navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Show notification
                     copyNotification.classList.add('show');
                     setTimeout(() => {
                         copyNotification.classList.remove('show');
                     }, 2000);
                     
-                    // Add visual feedback to card
+                    // Visual feedback
                     this.style.background = 'rgba(255, 214, 0, 0.3)';
                     this.style.borderColor = 'var(--accent)';
                     setTimeout(() => {
@@ -714,8 +787,49 @@
                 });
             });
             
+            // Save Contact Button
+            saveContactBtn.addEventListener('click', function() {
+                // Create vCard content
+                const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Smart Services
+ORG:Smart Services - Maintenance Company
+TEL;TYPE=WORK,VOICE:0791030205
+URL:https://www.facebook.com/share/1b5ek8Qgg7/
+EMAIL:info@smartservices.com
+NOTE:The Largest & Most Trusted Independent Maintenance Company in Jordan
+END:VCARD`;
+                
+                // Create blob and download
+                const blob = new Blob([vCardContent], { type: 'text/vcard' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'Smart-Services.vcf';
+                
+                document.body.appendChild(a);
+                a.click();
+                
+                // Cleanup
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                // Visual feedback
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Saved!';
+                this.style.background = 'var(--accent)';
+                this.style.color = 'white';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '';
+                    this.style.color = '';
+                }, 2000);
+            });
+            
             // Add click effects to social icons
-            const buttons = document.querySelectorAll('.social-icon, .contact-card');
+            const buttons = document.querySelectorAll('.social-icon, .contact-card, .phone-display');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
@@ -725,15 +839,13 @@
                 });
             });
             
-            // Phone number hover effect
-            const phoneDisplay = document.querySelector('.phone-display');
-            phoneDisplay.addEventListener('click', function(e) {
-                // Already a link, let it handle navigation
-                // Just add visual feedback
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
+            // Add hover effect to save button
+            saveContactBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            saveContactBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
             });
         });
     </script>
