@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramez Beauty Salon - Premium Hair & Beauty Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4af37; /* Elegant gold */
+            --primary-light: #e8c96c;
+            --primary-dark: #b8941f;
+            --accent: #8b4513; /* Rich brown */
+            --gradient: linear-gradient(135deg, #d4af37 0%, #e8c96c 100%);
+            --light-bg: #fefefe;
+            --light-card: #ffffff;
+            --dark-text: #2c1810;
+            --medium-text: #5a4a42;
+            --light-text: #8a786f;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --border: 1px solid #f0e6d6;
+            --border-gold: 1px solid #d4af37;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            min-height: 100vh;
+            line-height: 1.7;
+            direction: ltr;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header with Gold Separator */
+        .profile-header {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-card);
+        }
+        
+        .cover-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Gold Separator Line */
+        .gold-separator {
+            height: 6px;
+            background: var(--gradient);
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .profile-info {
+            position: relative;
+            padding: 30px 20px 20px;
+            text-align: center;
+            z-index: 2;
+            background: var(--light-card);
+        }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-top: -75px;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--light-card);
+            object-fit: cover;
+            box-shadow: var(--shadow);
+            display: block;
+        }
+        
+        .profile-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .profile-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        
+        /* Social Icons - Below Profile Image */
+        .social-section {
+            text-align: center;
+            padding: 25px 0 35px;
+            background: var(--light-card);
+        }
+        
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            background: var(--light-card);
+            border: 2px solid var(--primary);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary);
+            color: var(--light-card);
+        }
+        
+        /* Special styling for Snapchat icons */
+        .snapchat-icon {
+            background: linear-gradient(45deg, #FFFC00, #FFFC00);
+            color: #000;
+            border-color: #FFFC00;
+        }
+        
+        .snapchat-icon:hover {
+            background: #FFFC00;
+            color: #000;
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .phone-display {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: var(--light-card);
+            border-radius: 15px;
+            display: inline-block;
+            border: 2px solid var(--primary);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .phone-display:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary);
+            color: var(--light-card);
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--medium-text);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: var(--light-card);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border-gold);
+            box-shadow: var(--shadow);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary-dark);
+        }
+        
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--light-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-dark);
+            font-size: 2rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+        
+        .service-desc {
+            font-size: 1rem;
+            color: var(--medium-text);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            background: var(--light-card);
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: var(--border-gold);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary-dark);
+        }
+        
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--light-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-dark);
+            font-size: 1.6rem;
+            border: 2px solid var(--primary);
+        }
+        
+        .contact-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .contact-info {
+            font-size: 1.05rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Save Contact Button - At the End */
+        .save-contact-section {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 20px;
+        }
+        
+        .save-contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            background: var(--primary);
+            color: var(--dark-text);
+            border: none;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary-dark);
+        }
+        
+        .save-contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-dark);
+            color: var(--light-card);
+        }
+        
+        .save-contact-button:active {
+            transform: scale(0.98);
+        }
+        
+        .save-contact-button i {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--light-card);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 3px solid var(--primary);
+            color: var(--medium-text);
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.2rem;
+            }
+            
+            .profile-title {
+                font-size: 1.15rem;
+            }
+            
+            .profile-image {
+                width: 130px;
+                height: 130px;
+                margin-top: -65px;
+            }
+            
+            .cover-photo {
+                height: 280px;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
+            }
+            
+            .phone-display {
+                font-size: 1.2rem;
+                padding: 12px 25px;
+            }
+            
+            .save-contact-button {
+                padding: 18px 35px;
+                font-size: 1.2rem;
+            }
+            
+            .services-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 110px;
+                height: 110px;
+                margin-top: -55px;
+            }
+            
+            .cover-photo {
+                height: 220px;
+            }
+            
+            .profile-name {
+                font-size: 1.9rem;
+            }
+            
+            .social-icons-grid {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+            
+            .phone-display {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .about-section, .services-section, .contact-section {
+                padding: 25px;
+            }
+            
+            .save-contact-button {
+                padding: 16px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="profile-header fade-in">
+        <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramiz Beauty Salon Cover" class="cover-photo">
+        
+        <!-- Gold Separator Line -->
+        <div class="gold-separator"></div>
+        
+        <div class="profile-info">
+            <div class="profile-image-container">
+                <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramiz Beauty Salon" class="profile-image">
+            </div>
+            <h1 class="profile-name">Ramiz Beauty Salon</h1>
+            <p class="profile-title">Premium Hair & Beauty Services for Men & Women</p>
+        </div>
+    </header>
+
+    <!-- Social Icons - Below Profile Image -->
+    <div class="social-section fade-in delay-1">
+        <div class="container">
+            <div class="social-icons-grid">
+                <a href="http://facebook.com/RamizHairSalons?mibextid=LQQJ4d" class="social-icon" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ramizbeautyjo?igsh=MTlscDl1eWJybWVlMg%3D%3D&utm_source=qr" class="social-icon" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://snapchat.com/t/5WvdjOia" class="social-icon snapchat-icon" target="_blank">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                <a href="https://snapchat.com/t/te3itGYx" class="social-icon snapchat-icon" target="_blank">
+                    <i class="fab fa-snapchat-ghost"></i>
+                </a>
+                <a href="https://maps.google.com/maps?q=31.95763397216797%2C35.86708068847656&z=17&hl=en" class="social-icon" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+            </div>
+            <a href="tel:0791030205" class="phone-display">
+                <i class="fas fa-phone"></i> 0791030205
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section fade-in delay-1">
+            <h2 class="section-title">About Ramiz Beauty Salon</h2>
+            <div class="about-text">
+                Ramiz Beauty Salon is the premier destination for hair and beauty services in the region, 
+                offering comprehensive treatments for both men and women with the highest standards of 
+                quality and professionalism.
+            </div>
+            <div class="about-text">
+                We pride ourselves on our team of expert stylists and beauty specialists, using the latest 
+                techniques and premium international products to deliver exceptional results every time.
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section fade-in delay-2">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="service-title">Hair Styling</h3>
+                    <p class="service-desc">Latest haircuts and styles for men and women by master stylists</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Hair Coloring</h3>
+                    <p class="service-desc">Professional coloring, highlights, and hair treatments with premium products</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="service-title">Skin Care</h3>
+                    <p class="service-desc">Advanced facial treatments, deep cleansing, and daily skincare routines</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="service-title">Hair Removal</h3>
+                    <p class="service-desc">Waxing, threading, and modern hair removal techniques</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3 class="service-title">Nail Care</h3>
+                    <p class="service-desc">Manicure, pedicure, and nail art with the latest fashion trends</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="service-title">Men's Grooming</h3>
+                    <p class="service-desc">Men's haircuts, beard trimming, and professional styling services</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section fade-in delay-3">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">Phone Number</h3>
+                    <a href="tel:0791030205" class="contact-info">0791030205</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Location</h3>
+                    <a href="https://maps.google.com/maps?q=31.95763397216797%2C35.86708068847656&z=17&hl=en" class="contact-info">Get Directions</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="contact-title">Working Hours</h3>
+                    <p class="contact-info">9:00 AM - 10:00 PM</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Days</h3>
+                    <p class="contact-info">Daily</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Contact Button - At the End -->
+        <div class="save-contact-section fade-in delay-3">
+            <button class="save-contact-button" id="saveContactBtn">
+                <i class="fas fa-download"></i>
+                Save Contact
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">Ramiz Beauty Salon - Premium Hair & Beauty Services</p>
+            <p class="footer-text">Professional grooming and beauty treatments for men and women</p>
+            <p class="copyright">© 2024 Ramiz Beauty Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saveContactBtn = document.getElementById('saveContactBtn');
+            
+            // Save Contact Button
+            saveContactBtn.addEventListener('click', function() {
+                // Create vCard content
+                const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Ramiz Beauty Salon
+ORG:Ramiz Beauty Salon
+TEL;TYPE=WORK,VOICE:0791030205
+URL:http://facebook.com/RamizHairSalons
+URL:https://www.instagram.com/ramizbeautyjo
+URL:https://maps.google.com/maps?q=31.95763397216797%2C35.86708068847656
+NOTE:Premium beauty salon for men and women - Hair styling, coloring, skin care, hair removal, nail care, men's grooming
+END:VCARD`;
+                
+                // Create blob and download
+                const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'Ramiz-Beauty-Salon.vcf';
+                
+                document.body.appendChild(a);
+                a.click();
+                
+                // Cleanup
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                // Visual feedback
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Contact Saved!';
+                this.style.background = 'var(--accent)';
+                this.style.color = 'white';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '';
+                    this.style.color = '';
+                }, 2000);
+            });
+            
+            // Add click effects to social icons and contact cards
+            const buttons = document.querySelectorAll('.social-icon, .contact-card, .phone-display');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Add hover effect to save button
+            saveContactBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            saveContactBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+            
+            // Phone number formatting
+            const phoneDisplay = document.querySelector('.phone-display');
+            phoneDisplay.addEventListener('click', function(e) {
+                // Already a link, just add visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
