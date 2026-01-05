@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramez Beauty Salon - Premium Hair & Beauty Services</title>
+    <title>Ramez Beauty Salon - Premium Beauty Services for Women</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,11 @@
             --primary-light: #e8c96c;
             --primary-dark: #b8941f;
             --accent: #8b4513; /* Rich brown */
+            --pink: #e91e63; /* Feminine pink */
+            --pink-light: #f8bbd9;
             --gradient: linear-gradient(135deg, #d4af37 0%, #e8c96c 100%);
+            --whatsapp: #25D366; /* WhatsApp green */
+            --whatsapp-dark: #128C7E;
             --light-bg: #fefefe;
             --light-card: #ffffff;
             --dark-text: #2c1810;
@@ -152,6 +156,19 @@
             color: var(--light-card);
         }
         
+        /* WhatsApp icon styling */
+        .whatsapp-icon {
+            background: var(--whatsapp);
+            color: white;
+            border-color: var(--whatsapp-dark);
+        }
+        
+        .whatsapp-icon:hover {
+            background: var(--whatsapp-dark);
+            color: white;
+            border-color: var(--whatsapp-dark);
+        }
+        
         /* Special styling for Snapchat icons */
         .snapchat-icon {
             background: linear-gradient(45deg, #FFFC00, #FFFC00);
@@ -185,6 +202,32 @@
             box-shadow: var(--shadow-lg);
             background: var(--primary);
             color: var(--light-card);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: var(--whatsapp);
+            color: white;
+            border: 2px solid var(--whatsapp-dark);
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: var(--whatsapp-dark);
+            color: white;
         }
         
         /* YouTube Shorts Gallery Section - Single Video */
@@ -562,6 +605,11 @@
                 padding: 12px 25px;
             }
             
+            .whatsapp-button {
+                padding: 12px 25px;
+                font-size: 1.2rem;
+            }
+            
             .save-contact-button {
                 padding: 18px 35px;
                 font-size: 1.2rem;
@@ -612,6 +660,11 @@
                 padding: 10px 20px;
             }
             
+            .whatsapp-button {
+                padding: 10px 20px;
+                font-size: 1.1rem;
+            }
+            
             .section-title {
                 font-size: 1.7rem;
             }
@@ -646,17 +699,17 @@
 <body>
     <!-- Header Section -->
     <header class="profile-header fade-in">
-        <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramez Beauty Salon Cover" class="cover-photo">
+        <img src="https://i.imgur.com/sgyX9sO.jpeg" alt="Ramez Beauty Salon Cover" class="cover-photo">
         
         <!-- Gold Separator Line -->
         <div class="gold-separator"></div>
         
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramez Beauty Salon" class="profile-image">
+                <img src="https://i.imgur.com/sgyX9sO.jpeg" alt="Ramez Beauty Salon" class="profile-image">
             </div>
             <h1 class="profile-name">Ramez Beauty Salon</h1>
-            <p class="profile-title">Premium Hair & Beauty Services for Men & Women</p>
+            <p class="profile-title">Premium Beauty Services for Women</p>
         </div>
     </header>
 
@@ -670,6 +723,9 @@
                 <a href="https://www.instagram.com/ramizbeautyjo?igsh=MTlscDl1eWJybWVlMg%3D%3D&utm_source=qr" class="social-icon" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
+                <a href="https://wa.me/962777770840?text=مرحباً، أود الحصول على موعد في صالون رامز للتجميل" class="social-icon whatsapp-icon" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
                 <a href="https://snapchat.com/t/5WvdjOia" class="social-icon snapchat-icon" target="_blank">
                     <i class="fab fa-snapchat-ghost"></i>
                 </a>
@@ -680,8 +736,12 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </a>
             </div>
-            <a href="tel:0791030205" class="phone-display">
-                <i class="fas fa-phone"></i> 0791030205
+            <a href="tel:0777770840" class="phone-display">
+                <i class="fas fa-phone"></i> 0777770840
+            </a>
+            <br>
+            <a href="https://wa.me/962777770840?text=مرحباً، أود الحصول على موعد في صالون رامز للتجميل" class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
             </a>
         </div>
     </div>
@@ -726,7 +786,7 @@
         <div class="services-section fade-in delay-2">
             <h2 class="section-title">Our Services</h2>
             <div class="about-text">
-                Discover our comprehensive range of beauty and grooming services
+                Discover our comprehensive range of beauty services for women
             </div>
             
             <div class="services-grid">
@@ -735,7 +795,7 @@
                         <i class="fas fa-cut"></i>
                     </div>
                     <h3 class="service-title">Hair Styling</h3>
-                    <p class="service-desc">Latest haircuts and styles for men and women by master stylists</p>
+                    <p class="service-desc">Latest haircuts and styles for women by master stylists</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -767,10 +827,24 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-magic"></i>
                     </div>
-                    <h3 class="service-title">Men's Grooming</h3>
-                    <p class="service-desc">Men's haircuts, beard trimming, and professional styling services</p>
+                    <h3 class="service-title">Makeup Services</h3>
+                    <p class="service-desc">Professional makeup for special occasions and everyday beauty</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <h3 class="service-title">Hair Treatments</h3>
+                    <p class="service-desc">Keratin treatments, hair straightening, and deep conditioning</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="service-title">Bridal Services</h3>
+                    <p class="service-desc">Complete bridal packages for your special day</p>
                 </div>
             </div>
         </div>
@@ -784,7 +858,14 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3 class="contact-title">Phone Number</h3>
-                    <a href="tel:0791030205" class="contact-info">0791030205</a>
+                    <a href="tel:0777770840" class="contact-info">0777770840</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <a href="https://wa.me/962777770840?text=مرحباً، أود الحصول على موعد في صالون رامز للتجميل" class="contact-info">0777770840</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">
@@ -822,8 +903,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Ramez Beauty Salon - Premium Hair & Beauty Services</p>
-            <p class="footer-text">Professional grooming and beauty treatments for men and women</p>
+            <p class="footer-text">Ramez Beauty Salon - Premium Beauty Services for Women</p>
+            <p class="footer-text">Professional beauty treatments and grooming services exclusively for women</p>
             <p class="copyright">© 2024 Ramez Beauty Salon. All rights reserved.</p>
         </div>
     </footer>
@@ -921,11 +1002,12 @@
 VERSION:3.0
 FN:Ramez Beauty Salon
 ORG:Ramez Beauty Salon
-TEL;TYPE=WORK,VOICE:0791030205
+TEL;TYPE=WORK,VOICE:0777770840
+TEL;TYPE=CELL,WHATSAPP:0777770840
 URL:http://facebook.com/RamizHairSalons
 URL:https://www.instagram.com/ramizbeautyjo
 URL:https://maps.google.com/maps?q=31.95763397216797%2C35.86708068847656
-NOTE:Premium beauty salon for men and women - Hair styling, coloring, skin care, hair removal, nail care, men's grooming
+NOTE:Premium beauty salon for women - Hair styling, coloring, skin care, hair removal, nail care, makeup services
 END:VCARD`;
                 
                 // Create blob and download
@@ -957,7 +1039,7 @@ END:VCARD`;
             });
             
             // Add click effects to social icons and contact cards
-            const buttons = document.querySelectorAll('.social-icon, .contact-card, .phone-display');
+            const buttons = document.querySelectorAll('.social-icon, .contact-card, .phone-display, .whatsapp-button');
             buttons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     this.style.transform = 'scale(0.95)';
