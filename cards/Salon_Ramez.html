@@ -187,8 +187,8 @@
             color: var(--light-card);
         }
         
-        /* About Section */
-        .about-section {
+        /* YouTube Shorts Gallery Section - Single Video */
+        .shorts-gallery-section {
             background: var(--light-card);
             margin: 30px auto;
             padding: 40px;
@@ -200,7 +200,7 @@
             position: relative;
         }
         
-        .about-section::before {
+        .shorts-gallery-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -211,20 +211,65 @@
             border-radius: 20px 20px 0 0;
         }
         
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: var(--dark-text);
-            font-family: 'Playfair Display', serif;
+        .shorts-container {
+            position: relative;
+            width: 100%;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            background: #000;
         }
         
-        .about-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--medium-text);
-            text-align: center;
-            margin-bottom: 20px;
+        .shorts-video {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border: none;
+            display: block;
+        }
+        
+        .shorts-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .shorts-nav-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .shorts-nav-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .shorts-nav-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .shorts-counter {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            min-width: 120px;
         }
         
         /* Services Section */
@@ -249,6 +294,22 @@
             height: 5px;
             background: var(--gradient);
             border-radius: 20px 20px 0 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--medium-text);
+            text-align: center;
+            margin-bottom: 20px;
         }
         
         .services-grid {
@@ -439,24 +500,36 @@
         }
         
         /* Animations */
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
         
         .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
+            animation: fadeIn 0.6s ease forwards;
         }
         
         .delay-1 { animation-delay: 0.2s; opacity: 0; }
         .delay-2 { animation-delay: 0.4s; opacity: 0; }
         .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Video fade transition */
+        @keyframes videoFade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .video-fade {
+            animation: videoFade 0.5s ease forwards;
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -497,6 +570,16 @@
             .services-grid, .contact-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .shorts-video {
+                aspect-ratio: 9/16;
+            }
+            
+            .shorts-nav-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -533,7 +616,7 @@
                 font-size: 1.7rem;
             }
             
-            .about-section, .services-section, .contact-section {
+            .shorts-gallery-section, .services-section, .contact-section {
                 padding: 25px;
             }
             
@@ -541,22 +624,38 @@
                 padding: 16px 30px;
                 font-size: 1.1rem;
             }
+            
+            .shorts-nav-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            
+            .shorts-controls {
+                gap: 20px;
+            }
+            
+            .shorts-counter {
+                font-size: 1rem;
+                padding: 6px 15px;
+                min-width: 100px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="profile-header fade-in">
-        <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramiz Beauty Salon Cover" class="cover-photo">
+        <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramez Beauty Salon Cover" class="cover-photo">
         
         <!-- Gold Separator Line -->
         <div class="gold-separator"></div>
         
         <div class="profile-info">
             <div class="profile-image-container">
-                <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramiz Beauty Salon" class="profile-image">
+                <img src="https://i.imgur.com/A3ac1YM.png" alt="Ramez Beauty Salon" class="profile-image">
             </div>
-            <h1 class="profile-name">Ramiz Beauty Salon</h1>
+            <h1 class="profile-name">Ramez Beauty Salon</h1>
             <p class="profile-title">Premium Hair & Beauty Services for Men & Women</p>
         </div>
     </header>
@@ -589,23 +688,47 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- About Section -->
-        <div class="about-section fade-in delay-1">
-            <h2 class="section-title">About Ramiz Beauty Salon</h2>
+        <!-- YouTube Shorts Gallery Section - Single Video -->
+        <div class="shorts-gallery-section fade-in delay-1">
+            <h2 class="section-title">Our Work Gallery</h2>
             <div class="about-text">
-                Ramiz Beauty Salon is the premier destination for hair and beauty services in the region, 
-                offering comprehensive treatments for both men and women with the highest standards of 
-                quality and professionalism.
+                Watch our latest beauty transformations and styling work on YouTube Shorts
             </div>
-            <div class="about-text">
-                We pride ourselves on our team of expert stylists and beauty specialists, using the latest 
-                techniques and premium international products to deliver exceptional results every time.
+            
+            <div class="shorts-container">
+                <iframe 
+                    class="shorts-video video-fade"
+                    id="currentVideo"
+                    src="https://www.youtube.com/embed/pHn-GnsQcJY" 
+                    title="Ramez Beauty Salon - Work 1"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="shorts-controls">
+                <button class="shorts-nav-btn" id="prevVideo">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="shorts-counter">
+                    Video <span id="currentVideoNum">1</span> of <span id="totalVideos">5</span>
+                </div>
+                
+                <button class="shorts-nav-btn" id="nextVideo">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
 
         <!-- Services Section -->
         <div class="services-section fade-in delay-2">
             <h2 class="section-title">Our Services</h2>
+            <div class="about-text">
+                Discover our comprehensive range of beauty and grooming services
+            </div>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -699,23 +822,105 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">Ramiz Beauty Salon - Premium Hair & Beauty Services</p>
+            <p class="footer-text">Ramez Beauty Salon - Premium Hair & Beauty Services</p>
             <p class="footer-text">Professional grooming and beauty treatments for men and women</p>
-            <p class="copyright">© 2024 Ramiz Beauty Salon. All rights reserved.</p>
+            <p class="copyright">© 2024 Ramez Beauty Salon. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saveContactBtn = document.getElementById('saveContactBtn');
+            const currentVideo = document.getElementById('currentVideo');
+            const currentVideoNum = document.getElementById('currentVideoNum');
+            const prevBtn = document.getElementById('prevVideo');
+            const nextBtn = document.getElementById('nextVideo');
+            
+            // YouTube Shorts Videos Array
+            const youtubeShorts = [
+                "https://www.youtube.com/embed/pHn-GnsQcJY",
+                "https://www.youtube.com/embed/ZCVZYNCJBPc",
+                "https://www.youtube.com/embed/BlfIuKJFFpI",
+                "https://www.youtube.com/embed/JjSUYJIu1Rc",
+                "https://www.youtube.com/embed/vBFDKmULQJI"
+            ];
+            
+            let currentVideoIndex = 0;
+            const totalVideos = youtubeShorts.length;
+            
+            // Update counter display
+            document.getElementById('totalVideos').textContent = totalVideos;
+            
+            // Function to change video
+            function changeVideo(direction) {
+                // Calculate new index
+                if (direction === 'next') {
+                    currentVideoIndex = (currentVideoIndex + 1) % totalVideos;
+                } else if (direction === 'prev') {
+                    currentVideoIndex = (currentVideoIndex - 1 + totalVideos) % totalVideos;
+                }
+                
+                // Update video with fade effect
+                currentVideo.classList.remove('video-fade');
+                void currentVideo.offsetWidth; // Trigger reflow
+                
+                // Change video source
+                currentVideo.src = youtubeShorts[currentVideoIndex];
+                currentVideo.title = `Ramez Beauty Salon - Work ${currentVideoIndex + 1}`;
+                
+                // Add fade effect
+                currentVideo.classList.add('video-fade');
+                
+                // Update counter
+                currentVideoNum.textContent = currentVideoIndex + 1;
+            }
+            
+            // Navigation Button Events
+            prevBtn.addEventListener('click', () => {
+                changeVideo('prev');
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                changeVideo('next');
+            });
+            
+            // Keyboard Navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    changeVideo('prev');
+                } else if (e.key === 'ArrowRight') {
+                    changeVideo('next');
+                }
+            });
+            
+            // Auto-play functionality (optional - يمكن إزالته إذا كنت لا تريده)
+            let autoPlayInterval;
+            
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    changeVideo('next');
+                }, 8000); // Change every 8 seconds
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+            
+            // Pause auto-play on hover
+            const shortsContainer = document.querySelector('.shorts-container');
+            shortsContainer.addEventListener('mouseenter', stopAutoPlay);
+            shortsContainer.addEventListener('mouseleave', startAutoPlay);
+            
+            // Start auto-play initially
+            startAutoPlay();
             
             // Save Contact Button
             saveContactBtn.addEventListener('click', function() {
                 // Create vCard content
                 const vCardContent = `BEGIN:VCARD
 VERSION:3.0
-FN:Ramiz Beauty Salon
-ORG:Ramiz Beauty Salon
+FN:Ramez Beauty Salon
+ORG:Ramez Beauty Salon
 TEL;TYPE=WORK,VOICE:0791030205
 URL:http://facebook.com/RamizHairSalons
 URL:https://www.instagram.com/ramizbeautyjo
@@ -729,7 +934,7 @@ END:VCARD`;
                 const a = document.createElement('a');
                 a.style.display = 'none';
                 a.href = url;
-                a.download = 'Ramiz-Beauty-Salon.vcf';
+                a.download = 'Ramez-Beauty-Salon.vcf';
                 
                 document.body.appendChild(a);
                 a.click();
@@ -771,14 +976,21 @@ END:VCARD`;
                 this.style.transform = 'translateY(0)';
             });
             
-            // Phone number formatting
-            const phoneDisplay = document.querySelector('.phone-display');
-            phoneDisplay.addEventListener('click', function(e) {
-                // Already a link, just add visual feedback
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
+            // Add hover effects to navigation buttons
+            prevBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            prevBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+            
+            nextBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            nextBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
             });
             
             // Smooth scrolling for anchor links
