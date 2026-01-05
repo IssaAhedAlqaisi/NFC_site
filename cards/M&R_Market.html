@@ -189,6 +189,128 @@
             color: var(--light-card);
         }
         
+        /* Gallery Section - معرض الصور المتحرك */
+        .gallery-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+        
+        .gallery-slide {
+            width: 25%;
+            height: 100%;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--medium-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+        
+        .gallery-dot:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: var(--light-card);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            position: relative;
+        }
+        
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-top: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
         /* Products Section */
         .products-section {
             background: var(--light-card);
@@ -509,6 +631,10 @@
                 font-size: 1.2rem;
             }
             
+            .gallery-container {
+                height: 250px;
+            }
+            
             .products-grid, .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -552,7 +678,11 @@
                 font-size: 1.7rem;
             }
             
-            .products-section, .services-section, .contact-section {
+            .gallery-container {
+                height: 200px;
+            }
+            
+            .gallery-section, .video-section, .products-section, .services-section, .contact-section {
                 padding: 25px;
             }
             
@@ -618,8 +748,52 @@
 
     <!-- Main Content -->
     <div class="container">
+        <!-- Gallery Section -->
+        <div class="gallery-section fade-in delay-1">
+            <h2 class="section-title">معرض منتجاتنا</h2>
+            <p style="color: var(--medium-text); margin-bottom: 20px;">تعرف على تشكيلتنا الواسعة من المنتجات الطازجة والعروض الحصرية</p>
+            
+            <div class="gallery-container">
+                <div class="gallery-slider" id="gallerySlider">
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/J5wOtww.jpeg" alt="منتجات M&R Market">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/IX3NpO6.jpeg" alt="أجبان وألبان">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/mZJhden.jpeg" alt="مشروبات وعصائر">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="https://i.imgur.com/vpQMNfi.jpeg" alt="منظفات ومنتجات تنظيف">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-controls">
+                <div class="gallery-dot active" data-index="0"></div>
+                <div class="gallery-dot" data-index="1"></div>
+                <div class="gallery-dot" data-index="2"></div>
+                <div class="gallery-dot" data-index="3"></div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section fade-in delay-1">
+            <h2 class="section-title">فيديو تعريفي</h2>
+            <p style="color: var(--medium-text); margin-bottom: 20px;">شاهد فيديو تعريفي عن سوق M&R Market وعروضنا الحصرية</p>
+            
+            <div class="video-container">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1Fb4BgMWoV%2F&show_text=false&width=560&t=0" 
+                        frameborder="0" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
         <!-- Products Section -->
-        <div class="products-section fade-in delay-1">
+        <div class="products-section fade-in delay-2">
             <h2 class="section-title">منتجاتنا الرئيسية</h2>
             <div class="products-grid">
                 <div class="product-card">
@@ -736,6 +910,60 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const saveContactBtn = document.getElementById('saveContactBtn');
+            const gallerySlider = document.getElementById('gallerySlider');
+            const galleryDots = document.querySelectorAll('.gallery-dot');
+            
+            // Gallery Auto-Slider
+            let currentSlide = 0;
+            const totalSlides = 4;
+            let slideInterval;
+            
+            function startGallery() {
+                slideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateGallery();
+                }, 3000); // تغيير كل 3 ثواني
+            }
+            
+            function updateGallery() {
+                gallerySlider.style.transform = `translateX(-${currentSlide * 25}%)`;
+                
+                // Update dots
+                galleryDots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Add click events to dots
+            galleryDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateGallery();
+                    resetInterval();
+                });
+            });
+            
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startGallery();
+            }
+            
+            // Start gallery auto-slider
+            startGallery();
+            
+            // Pause gallery on hover
+            const galleryContainer = document.querySelector('.gallery-container');
+            galleryContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            galleryContainer.addEventListener('mouseleave', () => {
+                startGallery();
+            });
             
             // Save Contact Button
             saveContactBtn.addEventListener('click', function() {
